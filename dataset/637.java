@@ -7,7 +7,7 @@ public class Main {
     int a[] = new int[n];
     for (int i = 0; i < n; i++) a[i] = sc.nextInt();
     Arrays.sort(a);
-    // boolean
+
     int t = 1, c = 0;
     for (int i = 1; i < n; i++) {
       if (a[i] == a[i - 1]) {

@@ -4,8 +4,6 @@ public class Test {
 
   static int arr[] = new int[] {1, 2, 3, 4, 5};
 
-  // Method for rotation
-
   static void rotate() {
 
     int x = arr[arr.length - 1], i;
@@ -14,8 +12,6 @@ public class Test {
 
     arr[0] = x;
   }
-
-  /* Driver program */
 
   public static void main(String[] args) {
 

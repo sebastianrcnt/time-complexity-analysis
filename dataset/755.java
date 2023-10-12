@@ -63,7 +63,7 @@ public class gambling {
     }
 
     public String readLine() throws IOException {
-      byte[] buf = new byte[64]; // line length
+      byte[] buf = new byte[64];
       int cnt = 0, c;
       while ((c = read()) != -1) {
         if (c == '\n') break;

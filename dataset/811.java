@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Amain {
 
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
+
     Scanner sc = new Scanner(System.in);
     int a[] = new int[100005];
     int vis[] = new int[100005];
@@ -34,7 +34,7 @@ public class Amain {
         }
       }
 
-      ans = Math.abs((s - s1) - (e - e1)); // | s -e |
+      ans = Math.abs((s - s1) - (e - e1));
       maxx = Math.max(maxx, ans);
     }
     System.out.print(maxx);

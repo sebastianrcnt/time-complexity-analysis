@@ -27,12 +27,12 @@ public class Sol {
       int s = 0;
       int t = 1;
       for (int i = 1; i <= maxPos; i++) {
-        // System.out.print(a[i]);
+
         if (s < k - 1 && maxPos - i + 1 > n - t) {
-          // System.out.println(" @");
+
           s++;
         } else {
-          // System.out.println(" #");
+
           s = 0;
           t++;
           o += a[i];
@@ -43,10 +43,8 @@ public class Sol {
     out.close();
   }
 
-  // -----------PrintWriter for faster output-------------
   public static PrintWriter out;
 
-  // -----------MyScanner class for faster input----------
   public static class MyScanner {
     BufferedReader br;
     StringTokenizer st;
@@ -88,5 +86,4 @@ public class Sol {
       return str;
     }
   }
-  // --------------------------------------------------------
 }

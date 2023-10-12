@@ -5,8 +5,6 @@ public class Main {
 
   private static final FS scanner = new FS(System.in);
 
-  // private static final Scanner scanner = new Scanner(System.in);
-
   public static void main(String[] args) throws Exception {
 
     int n = scanner.nextInt();

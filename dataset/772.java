@@ -7,7 +7,6 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
 
-/** Built using CHelper plug-in Actual solution is at the top */
 public class Main {
   public static void main(String[] args) {
     InputStream inputStream = System.in;
@@ -42,7 +41,6 @@ public class Main {
         return;
       }
 
-      // all leaves depth = K
       for (int i = 0; i < n; ++i) {
         if (deg[i] == 1) {
           if (depth[i] != K) {
@@ -104,7 +102,7 @@ public class Main {
       int p = 0;
       for (int i = 0; i < n; i++) {
         deg[i] = g[i].size();
-        if (g[i].size() <= 1) { // < for n=1
+        if (g[i].size() <= 1) {
           q[p++] = i;
         }
       }

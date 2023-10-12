@@ -24,11 +24,11 @@ public class Code {
       double b = Integer.parseInt(l.substring(x[1] + 1, x[2]));
       double c = Integer.parseInt(l.substring(x[3] + 1));
       temp[m++] = (a + b) / c;
-      // System.out.print((a+b)/c + " ");
+
       if (h.containsKey((a + b) / c)) h.put((a + b) / c, h.get((a + b) / c) + 1);
       else h.put((a + b) / c, 1);
     }
-    // System.out.println(h);
+
     for (int i = 0; i < n; i++) {
       System.out.print(h.get(temp[i]) + " ");
     }

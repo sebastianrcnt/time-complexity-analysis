@@ -1,6 +1,3 @@
-// Java program to check fixed point
-// in an array using linear search
-
 class Main {
 
   static int linearSearch(int arr[], int n) {
@@ -12,14 +9,8 @@ class Main {
       if (arr[i] == i) return i;
     }
 
-    /* If no fixed point present
-
-    then return -1 */
-
     return -1;
   }
-
-  // main function
 
   public static void main(String args[]) {
 

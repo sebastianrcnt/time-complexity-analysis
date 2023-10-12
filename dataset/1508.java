@@ -1,6 +1,5 @@
 package com.interview.binarysearch;
 
-/** http://www.geeksforgeeks.org/find-the-point-where-a-function-becomes-negative/ */
 public class MonotonicallyIncreasingFunctionBecomesPositive {
 
   private int f(int x) {

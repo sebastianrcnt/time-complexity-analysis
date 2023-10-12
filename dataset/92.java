@@ -1,5 +1,3 @@
-// Java program to count
-// inversions in an array
 class Test {
 
   static int arr[] = new int[] {1, 20, 6, 4, 5};
@@ -13,8 +11,6 @@ class Test {
 
     return inv_count;
   }
-
-  // Driver method to test the above function
 
   public static void main(String[] args) {
 

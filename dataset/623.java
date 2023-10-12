@@ -4,9 +4,9 @@ import java.util.Scanner;
 public class TaxiDriversAndLyft {
 
   static class Resident {
-    Integer index; // For all residents
-    Integer type; // 1 if driver & 0 for rider
-    Integer requests; // Only for drivers
+    Integer index;
+    Integer type;
+    Integer requests;
 
     public Resident(int index, int type) {
       this.index = index;

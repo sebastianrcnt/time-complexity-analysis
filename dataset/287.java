@@ -1,13 +1,8 @@
-// Java program to find nth ugly number
-
 class UglyNumber {
-
-  /* Function to get the nth ugly number*/
 
   int getNthUglyNo(int n) {
 
     int ugly[] = new int[n];
-    // To store ugly numbers
 
     int i2 = 0, i3 = 0, i5 = 0;
 
@@ -48,12 +43,9 @@ class UglyNumber {
         next_multiple_of_5 = ugly[i5] * 5;
       }
     }
-    /*End of for loop (i=1; i<n; i++) */
 
     return next_ugly_no;
   }
-
-  /* Driver program to test above functions */
 
   public static void main(String args[]) {
 
@@ -64,5 +56,3 @@ class UglyNumber {
     System.out.println(obj.getNthUglyNo(n));
   }
 }
-
-// This code has been contributed by Amit Khandelwal (Amit Khandelwal 1)

@@ -1,6 +1,3 @@
-// A Java program to remove BST
-// keys outside the given range
-
 class Node {
 
   int key;
@@ -12,36 +9,16 @@ class Node {
 
 class GFG {
 
-  // Removes all nodes having value
-
-  // outside the given range and
-
-  // returns the root of modified tree
-
   private static Node removeOutsideRange(Node root, int min, int max) {
-
-    // BASE CASE
 
     if (root == null) {
 
       return null;
     }
 
-    // FIRST FIX THE LEFT AND
-
-    // RIGHT SUBTREE OF ROOT
-
     root.left = removeOutsideRange(root.left, min, max);
 
     root.right = removeOutsideRange(root.right, min, max);
-
-    // NOW FIX THE ROOT. THERE ARE
-
-    // TWO POSSIBLE CASES FOR THE ROOT
-
-    // 1. a) Root's key is smaller than
-
-    // min value(root is not in range)
 
     if (root.key < min) {
 
@@ -52,10 +29,6 @@ class GFG {
       return rchild;
     }
 
-    // 1. b) Root's key is greater than
-
-    // max value (Root is not in range)
-
     if (root.key > max) {
 
       Node lchild = root.left;
@@ -64,8 +37,6 @@ class GFG {
 
       return lchild;
     }
-
-    // 2. Root in range
 
     return root;
   }
@@ -114,8 +85,6 @@ class GFG {
     }
   }
 
-  // Driver code
-
   public static void main(String[] args) {
 
     Node root = null;
@@ -145,6 +114,3 @@ class GFG {
     inorderTraversal(root);
   }
 }
-
-// This code is contributed
-// by Divya

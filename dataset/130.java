@@ -1,7 +1,5 @@
 import java.util.HashMap;
 
-/* Program for finding out majority element in an array */
-
 class MajorityElement {
 
   private static void findMajority(int[] arr) {
@@ -28,8 +26,6 @@ class MajorityElement {
     System.out.println(" No Majority element");
   }
 
-  /* Driver program to test the above functions */
-
   public static void main(String[] args) {
 
     int a[] = new int[] {2, 2, 2, 2, 5, 5, 2, 3, 3};
@@ -37,4 +33,3 @@ class MajorityElement {
     findMajority(a);
   }
 }
-// This code is contributed by karan malhotra

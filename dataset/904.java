@@ -1,5 +1,3 @@
-/* package codechef; // don't place package name! */
-
 import java.io.*;
 import java.util.*;
 

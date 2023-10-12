@@ -26,7 +26,6 @@ public class problem2 {
       if (parts[i].substring(1, 2).equals("s")) tiles[i].suit = 1;
       if (parts[i].substring(1, 2).equals("m")) tiles[i].suit = 2;
       if (parts[i].substring(1, 2).equals("p")) tiles[i].suit = 3;
-      // System.out.println(tiles[i].number + " "+ tiles[i].suit);
     }
     Arrays.sort(tiles);
 

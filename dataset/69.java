@@ -8,10 +8,6 @@ class MinimumDistance {
 
     int prev = 0;
 
-    // Find the first occurence of any of the two numbers (x or y)
-
-    // and store the index of this occurence in prev
-
     for (i = 0; i < n; i++) {
 
       if (arr[i] == x || arr[i] == y) {
@@ -22,19 +18,9 @@ class MinimumDistance {
       }
     }
 
-    // Traverse after the first occurence
-
     for (; i < n; i++) {
 
       if (arr[i] == x || arr[i] == y) {
-
-        // If the current element matches with any of the two then
-
-        // check if current element and prev element are different
-
-        // Also check if this value is smaller than minimum distance
-
-        // so far
 
         if (arr[prev] != arr[i] && (i - prev) < min_dist) {
 
@@ -48,8 +34,6 @@ class MinimumDistance {
 
     return min_dist;
   }
-
-  /* Driver program to test above functions */
 
   public static void main(String[] args) {
 

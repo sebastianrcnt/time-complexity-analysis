@@ -25,7 +25,7 @@ public class test {
         count++;
       }
     }
-    // System.out.println(count + " " + max);
+
     if (max - d > 0) {
       count = count + max - d;
     }

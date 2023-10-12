@@ -1,24 +1,10 @@
-// Java program to find number of operations
-// to make an array palindrome
-
 class GFG {
-
-  // Returns minimum number of count operations
-
-  // required to make arr[] palindrome
 
   static int findMinOps(int[] arr, int n) {
 
     int ans = 0;
-    // Initialize result
-
-    // Start from two corners
 
     for (int i = 0, j = n - 1; i <= j; ) {
-
-      // If corner elements are same,
-
-      // problem reduces arr[i+1..j-1]
 
       if (arr[i] == arr[j]) {
 
@@ -26,15 +12,7 @@ class GFG {
 
         j--;
 
-      }
-
-      // If left element is greater, then
-
-      // we merge right two elements
-
-      else if (arr[i] > arr[j]) {
-
-        // need to merge from tail.
+      } else if (arr[i] > arr[j]) {
 
         j--;
 
@@ -42,11 +20,7 @@ class GFG {
 
         ans++;
 
-      }
-
-      // Else we merge left two elements
-
-      else {
+      } else {
 
         i++;
 
@@ -58,8 +32,6 @@ class GFG {
 
     return ans;
   }
-
-  // Driver method to test the above function
 
   public static void main(String[] args) {
 

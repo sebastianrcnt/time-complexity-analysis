@@ -56,20 +56,6 @@ public class loser {
     for (int i = 0; i < a.length; i++) a[i] = l.get(i);
   }
 
-  /*static long gcd(long a,long b)
-  {
-  if(b==0)
-  return a;
-  else
-  return gcd(b,a%b);
-  }*/
-  /*static boolean valid(int i,int j)
-  {
-  if(i<4 && i>=0 && j<4 && j>=0)
-  return true;
-  else
-  return false;
-  }*/
   static class pair {
     int a, b;
 

@@ -28,7 +28,7 @@ public class Main {
         i < n;
         i++, p1 = (p1 + 1) % 3, p2 = (p2 + 1) % 3, p3 = (p3 + 1) % 3) {
       char ch = str.charAt(i);
-      // c1
+
       if (ch != chs[p1]) {
         c1++;
       }
@@ -43,7 +43,6 @@ public class Main {
         ret = Math.min(ret, c1);
       }
 
-      // c2
       if (ch != chs[p2]) {
         c2++;
       }
@@ -58,7 +57,6 @@ public class Main {
         ret = Math.min(ret, c2);
       }
 
-      // c3
       if (ch != chs[p3]) {
         c3++;
       }

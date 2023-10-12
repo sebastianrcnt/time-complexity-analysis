@@ -2,16 +2,12 @@ import java.io.*;
 import java.util.*;
 
 public class A1008 {
-  public static void main(String[] args) /*throws Exception*/ {
+  public static void main(String[] args) {
     InputStream inputReader = System.in;
     OutputStream outputReader = System.out;
-    InputReader in =
-        new InputReader(
-            inputReader); // new InputReader(new FileInputStream(new File("input.txt")));new
-                          // InputReader(inputReader);
-    PrintWriter out =
-        new PrintWriter(
-            outputReader); // new PrintWriter(new FileOutputStream(new File("output.txt")));
+    InputReader in = new InputReader(inputReader);
+
+    PrintWriter out = new PrintWriter(outputReader);
     Algorithm solver = new Algorithm();
     solver.solve(in, out);
     out.close();

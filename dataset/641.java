@@ -33,7 +33,6 @@ public class Solution {
     int ones = 0;
     for (int i = 0; i + k <= n; i++) {
 
-      // one
       int prefix = ones == i ? k + ones : max;
       int suffix =
           i + k == n
@@ -41,7 +40,7 @@ public class Solution {
               : s[i + k] == '1' && suff[i + k] == n - (i + k) ? k + suff[i + k] : suff[i + k];
       char first = i == 0 ? '1' : s[0], last = i + k == n ? '1' : s[n - 1];
       boolean zero = first == last && prefix + suffix + k >= n || Math.max(prefix, suffix) + k >= n;
-      // zero
+
       prefix = ones == 0 ? k + ones : max;
       suffix =
           i + k == n
@@ -51,7 +50,7 @@ public class Solution {
       last = i + k == n ? '0' : s[n - 1];
       boolean one = first == last && prefix + suffix + k >= n || Math.max(prefix, suffix) + k >= n;
       if (!zero || !one) {
-        //				System.err.println(i+1);
+
         draw = true;
       }
       if (s[i] == '1') ones++;

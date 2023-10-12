@@ -5,11 +5,7 @@ import java.util.*;
 public class C {
   public static void main(String[] args) throws IOException {
 
-    /**/
     Scanner sc = new Scanner(new BufferedReader(new InputStreamReader(System.in)));
-    /*/
-    Scanner sc = new Scanner(new BufferedReader(new InputStreamReader(new FileInputStream("src/c.in"))));
-    /**/
 
     int n = sc.nextInt();
     int[] counts = new int[60];

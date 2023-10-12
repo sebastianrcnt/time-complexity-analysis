@@ -27,12 +27,6 @@ public class SolutionB {
         System.out.println(1);
         return;
       }
-      // if(!set2.contains(b)){
-      // set2.add(b);
-      // }else{
-      //     System.out.println(2);
-      //   return;
-      // }
     }
     for (int i = 0; i < n; i++) {
       int b = a[i] & k;

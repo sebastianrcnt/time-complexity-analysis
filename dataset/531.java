@@ -1,6 +1,3 @@
-// Java program to Find the repeating
-// and missing elements
-
 import java.io.*;
 
 class GFG {
@@ -27,8 +24,6 @@ class GFG {
     }
   }
 
-  // Driver code
-
   public static void main(String[] args) {
 
     int arr[] = {7, 3, 4, 5, 5, 6, 2};
@@ -38,5 +33,3 @@ class GFG {
     printTwoElements(arr, n);
   }
 }
-
-// This code is contributed by Gitanjali

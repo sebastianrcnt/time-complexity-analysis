@@ -36,7 +36,7 @@ public class CF1003E {
     i++;
     int j = 0;
     for (; i < n; i++) {
-      // For all remaining Nodes
+
       while (true) {
         if (j >= n) {
           System.out.println("NO");

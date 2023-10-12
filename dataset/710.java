@@ -16,13 +16,10 @@ public class Main {
 
     try {
 
-      // br = new BufferedReader( new FileReader("input.txt") );
-      // in = new Reader("input.txt");
       in = new Reader("input.txt");
       out = new PrintWriter(new BufferedWriter(new FileWriter("output.txt")));
     } catch (Exception e) {
 
-      // br = new BufferedReader( new InputStreamReader( System.in ) );
       in = new Reader();
       out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
     }
@@ -30,7 +27,6 @@ public class Main {
 
   void go() throws Exception {
 
-    // int t = in.nextInt();
     int t = 1;
     while (t > 0) {
       solve();
@@ -254,7 +250,7 @@ public class Main {
     }
 
     public String readLine() throws IOException {
-      byte[] buf = new byte[64]; // line length
+      byte[] buf = new byte[64];
       int cnt = 0, c;
       while ((c = read()) != -1) {
         if (c == '\n') break;

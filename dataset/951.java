@@ -155,7 +155,6 @@ public class Solution1 implements Runnable {
     return gcd(b % a, a);
   }
 
-  // method to return LCM of two numbers
   long lcm(long a, long b) {
     return (a * b) / gcd(a, b);
   }

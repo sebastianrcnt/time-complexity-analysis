@@ -11,7 +11,7 @@ public class D5 {
       if (can(mid, a, d, w)) lo = mid;
       else hi = mid;
     }
-    // System.out.println(lo);
+
     double t1 = lo / a;
     double gone = .5 * t1 * t1 * a;
     if (lo > w) {
@@ -19,7 +19,7 @@ public class D5 {
       t1 += (lo - w) / a;
     }
     t1 += (d - gone) / lo;
-    // System.out.println(t1);
+
     double v0 = Math.min(lo, w);
     double togo = l - d;
     double toAdd = (-v0 + Math.sqrt(v0 * v0 + 4 * togo * .5 * a)) / a;

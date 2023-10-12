@@ -1,10 +1,7 @@
-/* package whatever; // don't place package name! */
-
 import java.io.*;
 import java.math.*;
 import java.util.*;
 
-/* Name of the class has to be "Main" only if the class is public. */
 public class Main {
   public static void main(String[] args) throws java.lang.Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -45,7 +42,7 @@ public class Main {
       }
       tot2 += (int) memo.get(A[i]);
       tot2 = n - i - 1 - (tot2 - f[i]);
-      // res+=(long)(tot1-tot2)*(long)A[i];
+
       res = res.add(BigInteger.valueOf((long) (tot1 - tot2) * (long) A[i]));
     }
     System.out.println(res);

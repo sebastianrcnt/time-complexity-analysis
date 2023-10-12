@@ -1,11 +1,8 @@
 import java.util.Scanner;
 
-// import java.util.Scanner;
-
 public class SingleWildcard {
 
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
 
     Scanner input = new Scanner(System.in);
     int a = input.nextInt();
@@ -44,7 +41,7 @@ public class SingleWildcard {
         j--;
         k--;
       }
-      // System.out.println(i);
+
       if (i == k && i >= 0 && i < s1.length && s1[i] == '*') {
         System.out.println("YES");
         return;

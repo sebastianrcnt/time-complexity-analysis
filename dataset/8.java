@@ -1,34 +1,16 @@
-// JAVA implementation of left rotation
-// of an array K number of times
 import java.io.*;
 import java.util.*;
 
 class arr_rot {
 
-  // Function to leftRotate array multiple
-
-  // times
-
   static void leftRotate(int arr[], int n, int k) {
 
-    /*
-     * To get the starting point of
-     *
-     * rotated array
-     */
-
     int mod = k % n;
-
-    // Prints the rotated array from
-
-    // start position
 
     for (int i = 0; i < n; ++i) System.out.print(arr[(i + mod) % n] + " ");
 
     System.out.println();
   }
-
-  // Driver program
 
   public static void main(String[] args) {
 
@@ -49,5 +31,3 @@ class arr_rot {
     leftRotate(arr, n, k);
   }
 }
-
-// This code is contributed by Sanjal

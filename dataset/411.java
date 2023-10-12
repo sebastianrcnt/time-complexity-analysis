@@ -1,6 +1,3 @@
-// Java program to find maximum number to be removed
-// to convert a tree into forest containg trees of
-// even number of nodes
 import java.util.*;
 
 class GFG {
@@ -9,37 +6,17 @@ class GFG {
 
   static Vector<Vector<Integer>> tree = new Vector<Vector<Integer>>();
 
-  // Return the number of nodes of subtree having
-
-  // node as a root.
-
   static int dfs(int visit[], int node) {
 
     int num = 0, temp = 0;
 
-    // Mark node as visited.
-
     visit[node] = 1;
-
-    // Traverse the adjacency list to find non-
-
-    // visited node.
 
     for (int i = 0; i < tree.get(node).size(); i++) {
 
       if (visit[tree.get(node).get(i)] == 0) {
 
-        // Finding number of nodes of the subtree
-
-        // of a subtree.
-
         temp = dfs(visit, tree.get(node).get(i));
-
-        // If nodes are even, increment number of
-
-        // edges to removed.
-
-        // Else leave the node as child of subtree.
 
         if (temp % 2 != 0) num += temp;
         else ans++;
@@ -48,10 +25,6 @@ class GFG {
 
     return num + 1;
   }
-
-  // Return the maxium number of edge to remove
-
-  // to make forest.
 
   static int minEdge(int n) {
 
@@ -64,13 +37,9 @@ class GFG {
     return ans;
   }
 
-  // Driven Program
-
   public static void main(String args[]) {
 
     int n = 10;
-
-    // set the size of vector
 
     for (int i = 0; i < n + 2; i++) tree.add(new Vector<Integer>());
 
@@ -113,5 +82,3 @@ class GFG {
     System.out.println(minEdge(n));
   }
 }
-
-// This code is contributed by Arnab Kundu

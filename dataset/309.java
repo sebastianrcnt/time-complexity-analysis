@@ -1,13 +1,8 @@
-// JAVA Code for Newman-Conway Sequence
 import java.util.*;
 
 class GFG {
 
-  // Function to find the n-th element
-
   static int sequence(int n) {
-
-    // Declare array to store sequence
 
     int f[] = new int[n + 1];
 
@@ -24,8 +19,6 @@ class GFG {
     return f[n];
   }
 
-  /* Driver program to test above function */
-
   public static void main(String[] args) {
 
     int n = 10;
@@ -33,5 +26,3 @@ class GFG {
     System.out.println(sequence(n));
   }
 }
-
-// This code is contributed by Arnav Kr. Mandal.

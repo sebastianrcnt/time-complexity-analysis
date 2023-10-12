@@ -1,6 +1,3 @@
-// Java program to Find longest subsequence where
-// every character appears at-least k times
-
 class GFG {
 
   static final int MAX_CHARS = 26;
@@ -9,20 +6,12 @@ class GFG {
 
     int n = str.length();
 
-    // Count frequencies of all characters
-
     int freq[] = new int[MAX_CHARS];
 
     for (int i = 0; i < n; i++) {
 
       freq[str.charAt(i) - 'a']++;
     }
-
-    // Traverse given string again and print
-
-    // all those characters whose frequency
-
-    // is more than or equal to k.
 
     for (int i = 0; i < n; i++) {
 
@@ -33,8 +22,6 @@ class GFG {
     }
   }
 
-  // Driver code
-
   public static void main(String[] args) {
 
     String str = "geeksforgeeks";
@@ -44,5 +31,3 @@ class GFG {
     longestSubseqWithK(str, k);
   }
 }
-
-// This code is contributed by Rajput-Ji

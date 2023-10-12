@@ -17,7 +17,7 @@ public class Main {
     long c1 = 0, c2 = 0;
     long f = Math.max(xb, yb);
     long h = Math.max(xw, yw);
-    // System.out.println(h+" "+f+" "+(h-f));
+
     if (h <= f) System.out.println("White");
     else System.out.println("Black");
   }

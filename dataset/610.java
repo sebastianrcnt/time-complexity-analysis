@@ -20,7 +20,7 @@ public class stacks {
     }
 
     Arrays.sort(heights);
-    // System.out.println(Arrays.toString(heights));
+
     long keep = 0;
     for (int i = n; i > 0; i--) {
       if (heights[i - 1] >= heights[i]) {
@@ -28,15 +28,12 @@ public class stacks {
       }
       keep += heights[i] - heights[i - 1];
     }
-    // System.out.println(Arrays.toString(heights));
 
     pw.println(remove - keep);
     pw.close();
   }
 
   static class FastIO {
-
-    // Is your Fast I/O being bad?
 
     InputStream dis;
     byte[] buffer = new byte[1 << 17];

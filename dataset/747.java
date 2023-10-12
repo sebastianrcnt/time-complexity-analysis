@@ -23,8 +23,7 @@ public class vasyaarray {
       arr2[i] = in.nextInt();
       pre2[i] = pre2[i - 1] + arr2[i];
     }
-    // System.out.println(Arrays.toString(pre1));
-    // System.out.println(Arrays.toString(pre2));
+
     if (pre1[n - 1] != pre2[m - 1]) System.out.println("-1");
     else {
       long s1 = 0, s2 = 0;
@@ -35,19 +34,18 @@ public class vasyaarray {
           if (s1 == 0) {
             s1 = arr1[i++];
             s2 = arr2[j++];
-            // System.out.println(s1+" "+s2+" "+i+" "+j);
+
           } else {
             k++;
             s1 = s2 = 0;
-            // System.out.println(k+" "+i+" "+j);
+
             if (i == n && j == m) break;
           }
         } else if (s1 > s2) {
           s2 += arr2[j++];
-          // System.out.println("1"+" "+s1+" "+s2+" "+i+" "+j);
+
         } else {
           s1 += arr1[i++];
-          // System.out.println("2 "+s1+" "+s2+" "+i+" "+j);
         }
       }
       System.out.println(k);

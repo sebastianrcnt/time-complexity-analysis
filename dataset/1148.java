@@ -7,13 +7,6 @@ public class bhaa {
   InputStream is;
   PrintWriter o;
 
-  /////////////////// CODED++ BY++ ++ ++ ++ BHAVYA++ ARORA++ ++ ++ ++ FROM++ JAYPEE++ INSTITUTE++
-  // OF++ INFORMATION++ TECHNOLOGY++ ////////////////
-
-  ///////////////////////// Make it work, make it right, make it fast. Make it work, make it right,
-  // make it fast. Make it work, make it right, make it fast. Make it work, make it right, make it
-  // fast. /////////////////
-
   boolean chpr(int n) {
     if (n == 1) {
       return true;
@@ -52,8 +45,6 @@ public class bhaa {
     int br = 8 * n;
     o.println((long) (Math.ceil(rr * 1.0 / k) + Math.ceil(gr * 1.0 / k) + Math.ceil(br * 1.0 / k)));
   }
-
-  // ---------- I/O Template ----------
 
   public static void main(String[] args) {
     new bhaa().run();
@@ -132,7 +123,7 @@ public class bhaa {
     }
     if (b == -1) {
       return -1;
-    } // no input
+    }
     while (b >= '0' && b <= '9') {
       n = n * 10 + (b - '0');
       b = readByte();
@@ -246,7 +237,4 @@ public class bhaa {
       o.println();
     }
   }
-
-  //////////////////////////////////// template finished //////////////////////////////////////
-
 }

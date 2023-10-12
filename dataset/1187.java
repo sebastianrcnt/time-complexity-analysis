@@ -10,9 +10,6 @@ public class e {
     BufferedReader br;
     StringTokenizer st;
 
-    // it reads the data about the specified point and divide the data about it ,it is quite fast
-    // than using direct
-
     public FastReader() {
       br = new BufferedReader(new InputStreamReader(System.in));
     }
@@ -29,7 +26,7 @@ public class e {
     }
 
     int nextInt() {
-      return Integer.parseInt(next()); // converts string to integer
+      return Integer.parseInt(next());
     }
 
     double nextDouble() {
@@ -88,7 +85,6 @@ public class e {
   public static PrintWriter out = new PrintWriter(new BufferedOutputStream(System.out));
 
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
 
     FastReader in = new FastReader();
     HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();

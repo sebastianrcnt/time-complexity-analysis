@@ -20,7 +20,7 @@ public class CF_1029E_Tree_with_Small_Distances {
     visitParent = new boolean[n + 1];
     for (int i = 0; i <= n; i++) adj[i] = new ArrayList<Integer>();
     int max = 0;
-    // first contribution
+
     for (int i = 1; i < n; i++) {
       int u = sc.nextInt(), v = sc.nextInt();
       adj[u].add(v);
@@ -32,7 +32,7 @@ public class CF_1029E_Tree_with_Small_Distances {
   }
 
   private static void dfs(int i, int j) {
-    // TODO Auto-generated method stub
+
     boolean f = false;
     for (int k = 0; k < adj[i].size(); k++) {
       int x = adj[i].get(k);
@@ -42,7 +42,7 @@ public class CF_1029E_Tree_with_Small_Distances {
         if (visitParent[x]) f = true;
       }
     }
-    // System.out.println(Arrays.toString(dist));
+
     if (dist[i] > 2 && !visitParent[j] && !f && !visitParent[i]) {
       visitParent[j] = true;
       ans++;

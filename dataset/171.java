@@ -1,7 +1,4 @@
-// Java Code to find the last man Standing
 public class GFG {
-
-  // Node class to store data
 
   static class Node {
 
@@ -15,17 +12,7 @@ public class GFG {
     }
   }
 
-  /* Function to find the only person left
-
-  after one in every m-th node is killed
-
-  in a circle of n nodes */
-
   static void getJosephusPosition(int m, int n) {
-
-    // Create a circular linked list of
-
-    // size N.
 
     Node head = new Node(1);
 
@@ -38,19 +25,11 @@ public class GFG {
       prev = prev.next;
     }
 
-    // Connect last node to first
-
     prev.next = head;
-
-    /* while only one node is left in the
-
-    linked list*/
 
     Node ptr1 = head, ptr2 = head;
 
     while (ptr1.next != ptr1) {
-
-      // Find m-th node
 
       int count = 1;
 
@@ -63,8 +42,6 @@ public class GFG {
         count++;
       }
 
-      /* Remove the m-th node */
-
       ptr2.next = ptr1.next;
 
       ptr1 = ptr2.next;
@@ -72,8 +49,6 @@ public class GFG {
 
     System.out.println("Last person left standing " + "(Josephus Position) is " + ptr1.data);
   }
-
-  /* Driver program to test above functions */
 
   public static void main(String args[]) {
 

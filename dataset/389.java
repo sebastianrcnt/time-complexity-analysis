@@ -1,11 +1,6 @@
-// Java program for special level order traversal
-
 import java.util.LinkedList;
 import java.util.Queue;
 
-/* Class containing left and right child of current
-
-node and key value*/
 class Node {
 
   int data;
@@ -24,29 +19,15 @@ class BinaryTree {
 
   Node root;
 
-  /* Given a perfect binary tree, print its nodes in specific
-
-  level order */
-
   void printSpecificLevelOrder(Node node) {
 
     if (node == null) return;
 
-    // Let us print root and next level first
-
     System.out.print(node.data);
-
-    // Since it is perfect Binary Tree, right is not checked
 
     if (node.left != null) System.out.print(" " + node.left.data + " " + node.right.data);
 
-    // Do anything more if there are nodes at next level in
-
-    // given perfect Binary Tree
-
     if (node.left.left == null) return;
-
-    // Create a queue and enqueue left and right children of root
 
     Queue<Node> q = new LinkedList<Node>();
 
@@ -54,17 +35,9 @@ class BinaryTree {
 
     q.add(node.right);
 
-    // We process two nodes at a time, so we need two variables
-
-    // to store two front items of queue
-
     Node first = null, second = null;
 
-    // traversal loop
-
     while (!q.isEmpty()) {
-
-      // Pop two items from queue
 
       first = q.peek();
 
@@ -74,15 +47,9 @@ class BinaryTree {
 
       q.remove();
 
-      // Print children of first and second in reverse order
-
       System.out.print(" " + first.left.data + " " + second.right.data);
 
       System.out.print(" " + first.right.data + " " + second.left.data);
-
-      // If first and second have grandchildren, enqueue them
-
-      // in reverse order
 
       if (first.left.left != null) {
 
@@ -96,8 +63,6 @@ class BinaryTree {
       }
     }
   }
-
-  // Driver program to test for above functions
 
   public static void main(String args[]) {
 
@@ -170,5 +135,3 @@ class BinaryTree {
     tree.printSpecificLevelOrder(tree.root);
   }
 }
-
-// This code has been contributed by Mayank Jaiswal

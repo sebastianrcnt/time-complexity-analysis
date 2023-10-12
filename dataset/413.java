@@ -1,10 +1,7 @@
-/* Java program to flip a binary tree */
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class FlipTree {
-
-  // method to flip the binary tree
 
   public static Node flipBinaryTree(Node root) {
 
@@ -12,13 +9,7 @@ public class FlipTree {
 
     if (root.left == null && root.right == null) return root;
 
-    // recursively call the same method
-
     Node flippedRoot = flipBinaryTree(root.left);
-
-    // rearranging main root Node after returning
-
-    // from recursive call
 
     root.left.left = root.right;
 
@@ -29,37 +20,19 @@ public class FlipTree {
     return flippedRoot;
   }
 
-  // Iterative method to do level order traversal
-
-  // line by line
-
   public static void printLevelOrder(Node root) {
-
-    // Base Case
 
     if (root == null) return;
 
-    // Create an empty queue for level order traversal
-
     Queue<Node> q = new LinkedList<>();
-
-    // Enqueue Root and initialize height
 
     q.add(root);
 
     while (true) {
 
-      // nodeCount (queue size) indicates number
-
-      // of nodes at current lelvel.
-
       int nodeCount = q.size();
 
       if (nodeCount == 0) break;
-
-      // Dequeue all nodes of current level and
-
-      // Enqueue all nodes of next level
 
       while (nodeCount > 0) {
 
@@ -102,7 +75,6 @@ public class FlipTree {
   }
 }
 
-/* A binary tree node structure */
 class Node {
 
   int data;
@@ -115,5 +87,3 @@ class Node {
   }
 }
 ;
-
-// This code is contributed by Gaurav Tiwari

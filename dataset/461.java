@@ -1,36 +1,14 @@
-// Java program to find efficient
-// solution for the network
 import java.util.*;
 
 class GFG {
 
-  // number of houses and number
-
-  // of pipes
-
   static int n, p;
-
-  // Array rd stores the
-
-  // ending vertex of pipe
 
   static int rd[] = new int[1100];
 
-  // Array wd stores the value
-
-  // of diameters between two pipes
-
   static int wt[] = new int[1100];
 
-  // Array cd stores the
-
-  // starting end of pipe
-
   static int cd[] = new int[1100];
-
-  // arraylist a, b, c are used
-
-  // to store the final output
 
   static List<Integer> a = new ArrayList<Integer>();
 
@@ -48,8 +26,6 @@ class GFG {
 
     return dfs(cd[w]);
   }
-
-  // Function to perform calculations.
 
   static void solve(int arr[][]) {
 
@@ -79,26 +55,11 @@ class GFG {
     c = new ArrayList<Integer>();
 
     for (int j = 1; j <= n; ++j)
-
-      /*If a pipe has no ending vertex
-
-      but has starting vertex i.e is
-
-      an outgoing pipe then we need
-
-      to start DFS with this vertex.*/
-
       if (rd[j] == 0 && cd[j] > 0) {
 
         ans = 1000000000;
 
         int w = dfs(j);
-
-        // We put the details of
-
-        // component in final output
-
-        // array
 
         a.add(j);
 
@@ -113,17 +74,11 @@ class GFG {
       System.out.println(a.get(j) + " " + b.get(j) + " " + c.get(j));
   }
 
-  // main function
-
   public static void main(String args[]) {
 
     n = 9;
 
     p = 6;
-
-    // set the value of the araray
-
-    // to zero
 
     for (int i = 0; i < 1100; i++) rd[i] = cd[i] = wt[i] = 0;
 
@@ -132,5 +87,3 @@ class GFG {
     solve(arr);
   }
 }
-
-// This code is contributed by Arnab Kundu

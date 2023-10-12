@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class TestClass {
-  // function for finding size of set
+
   public static int set_size(int[] a, int N) {
     HashSet<Integer> newset = new HashSet<Integer>();
     int i = 0;

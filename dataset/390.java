@@ -1,5 +1,3 @@
-// Java program to reverse alternate levels of perfect binary tree
-// A binary tree node
 class Node {
 
   char data;
@@ -14,7 +12,6 @@ class Node {
   }
 }
 
-// class to access index value by reference
 class Index {
 
   int index;
@@ -26,22 +23,14 @@ class BinaryTree {
 
   Index index_obj = new Index();
 
-  // function to store alternate levels in a tree
-
   void storeAlternate(Node node, char arr[], Index index, int l) {
-
-    // base case
 
     if (node == null) {
 
       return;
     }
 
-    // store elements of left subtree
-
     storeAlternate(node.left, arr, index, l + 1);
-
-    // store this node only if level is odd
 
     if (l % 2 != 0) {
 
@@ -53,24 +42,14 @@ class BinaryTree {
     storeAlternate(node.right, arr, index, l + 1);
   }
 
-  // Function to modify Binary Tree (All odd level nodes are
-
-  // updated by taking elements from array in inorder fashion)
-
   void modifyTree(Node node, char arr[], Index index, int l) {
-
-    // Base case
 
     if (node == null) {
 
       return;
     }
 
-    // Update nodes in left subtree
-
     modifyTree(node.left, arr, index, l + 1);
-
-    // Update this node only if this is an odd level node
 
     if (l % 2 != 0) {
 
@@ -79,14 +58,8 @@ class BinaryTree {
       (index.index)++;
     }
 
-    // Update nodes in right subtree
-
     modifyTree(node.right, arr, index, l + 1);
   }
-
-  // A utility function to reverse an array from index
-
-  // 0 to n-1
 
   void reverse(char arr[], int n) {
 
@@ -111,25 +84,13 @@ class BinaryTree {
     reverseAlternate(root);
   }
 
-  // The main function to reverse alternate nodes of a binary tree
-
   void reverseAlternate(Node node) {
-
-    // Create an auxiliary array to store nodes of alternate levels
 
     char[] arr = new char[100];
 
-    // First store nodes of alternate levels
-
     storeAlternate(node, arr, index_obj, 0);
 
-    // index_obj.index = 0;
-
-    // Reverse the array
-
     reverse(arr, index_obj.index);
-
-    // Update tree by taking elements from array
 
     index_obj.index = 0;
 
@@ -140,10 +101,6 @@ class BinaryTree {
 
     printInorder(root);
   }
-
-  // A utility function to print indorder traversal of a
-
-  // binary tree
 
   void printInorder(Node node) {
 
@@ -158,8 +115,6 @@ class BinaryTree {
 
     printInorder(node.right);
   }
-
-  // Driver program to test the above functions
 
   public static void main(String args[]) {
 
@@ -210,5 +165,3 @@ class BinaryTree {
     tree.printInorder();
   }
 }
-
-// This code has been contributed by Mayank Jaiswal

@@ -109,25 +109,5 @@ public class Main {
     public int nextInt() {
       return Integer.parseInt(next());
     }
-
-    /* public double nextDouble() {
-        return Double.parseDouble(next());
-    }
-
-    public int[] nextIntArray(int n) {
-        int[] a = new int[n];
-        for (int i = 0; i < n; ++i) {
-            a[i] = nextInt();
-        }
-        return a;
-    }
-
-    public long[] nextLongArray(int n) {
-        long[] a = new long[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = nextLong();
-        }
-        return a;
-    }*/
   }
 }

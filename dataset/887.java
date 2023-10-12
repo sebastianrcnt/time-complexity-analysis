@@ -21,7 +21,7 @@ public class abc {
 
     Scanner sc = new Scanner(System.in);
     int n = sc.nextInt();
-    // sc= new Scanner(System.in);
+
     String s = sc.next();
     StringBuilder sb = new StringBuilder("");
     sb.append(s);

@@ -9,11 +9,6 @@ import java.util.InputMismatchException;
 import java.util.NavigableSet;
 import java.util.TreeSet;
 
-/**
- * Built using CHelper plug-in Actual solution is at the top
- *
- * @author Niyaz Nigmatullin
- */
 public class Main {
   public static void main(String[] args) {
     InputStream inputStream = System.in;
@@ -86,10 +81,7 @@ public class Main {
     public int read() {
       try {
         int ret = super.read();
-        //            if (isEOF && ret < 0) {
-        //                throw new InputMismatchException();
-        //            }
-        //            isEOF = ret == -1;
+
         return ret;
       } catch (IOException e) {
         throw new InputMismatchException();

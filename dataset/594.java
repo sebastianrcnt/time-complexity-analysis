@@ -1,4 +1,3 @@
-// package contese_476;
 import java.util.*;
 
 public class q1 {
@@ -39,14 +38,14 @@ public class q1 {
     Scanner sc = new Scanner(System.in);
     int n = sc.nextInt();
     HashMap<Integer, Integer> h = new HashMap();
-    // HashMap<Integer,Integer> h1=new HashMap();
+
     int[] a = new int[n];
     int x = sc.nextInt();
     for (int i = 0; i < n; i++) {
       a[i] = sc.nextInt();
       if (h.get(a[i]) == null) {
         h.put(a[i], 1);
-        // h1.put(a[i],i);
+
       } else {
         System.out.print(0);
         System.exit(0);

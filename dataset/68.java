@@ -1,5 +1,3 @@
-// Java Program to Find the minimum
-// distance between two numbers
 class MinimumDistance {
 
   int minDist(int arr[], int n, int x, int y) {

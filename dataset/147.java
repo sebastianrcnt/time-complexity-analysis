@@ -1,29 +1,12 @@
-// Java program to print a given matrix in spiral form
 import java.io.*;
 
 class GFG {
-
-  // Function print matrix in spiral form
 
   static void spiralPrint(int m, int n, int a[][]) {
 
     int i, k = 0, l = 0;
 
-    /* k - starting row index
-
-    m - ending row index
-
-    l - starting column index
-
-    n - ending column index
-
-    i - iterator
-
-    */
-
     while (k < m && l < n) {
-
-      // Print the first row from the remaining rows
 
       for (i = l; i < n; ++i) {
 
@@ -32,16 +15,12 @@ class GFG {
 
       k++;
 
-      // Print the last column from the remaining columns
-
       for (i = k; i < m; ++i) {
 
         System.out.print(a[i][n - 1] + " ");
       }
 
       n--;
-
-      // Print the last row from the remaining rows */
 
       if (k < m) {
 
@@ -52,8 +31,6 @@ class GFG {
 
         m--;
       }
-
-      // Print the first column from the remaining columns */
 
       if (l < n) {
 
@@ -67,8 +44,6 @@ class GFG {
     }
   }
 
-  // driver program
-
   public static void main(String[] args) {
 
     int R = 3;
@@ -80,5 +55,3 @@ class GFG {
     spiralPrint(R, C, a);
   }
 }
-
-// Contributed by Pramod Kumar

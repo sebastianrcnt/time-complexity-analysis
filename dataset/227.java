@@ -1,8 +1,3 @@
-// Java program for recursive level order traversal in spiral form
-
-/* A binary tree node has data, pointer to left child
-
-and a pointer to right child */
 class Node {
 
   int data;
@@ -21,17 +16,11 @@ class BinaryTree {
 
   Node root;
 
-  // Function to print the spiral traversal of tree
-
   void printSpiral(Node node) {
 
     int h = height(node);
 
     int i;
-
-    /* ltr -> left to right. If this variable is set then the
-
-    given label is traversed from left to right */
 
     boolean ltr = false;
 
@@ -39,37 +28,23 @@ class BinaryTree {
 
       printGivenLevel(node, i, ltr);
 
-      /*Revert ltr to traverse next level in opposite order*/
-
       ltr = !ltr;
     }
   }
-
-  /* Compute the "height" of a tree -- the number of
-
-  nodes along the longest path from the root node
-
-  down to the farthest leaf node.*/
 
   int height(Node node) {
 
     if (node == null) return 0;
     else {
 
-      /* compute the height of each subtree */
-
       int lheight = height(node.left);
 
       int rheight = height(node.right);
-
-      /* use the larger one */
 
       if (lheight > rheight) return (lheight + 1);
       else return (rheight + 1);
     }
   }
-
-  /* Print nodes at a given level */
 
   void printGivenLevel(Node node, int level, boolean ltr) {
 
@@ -92,8 +67,6 @@ class BinaryTree {
       }
     }
   }
-
-  /* Driver program to test the above functions */
 
   public static void main(String[] args) {
 
@@ -118,5 +91,3 @@ class BinaryTree {
     tree.printSpiral(tree.root);
   }
 }
-
-// This code has been contributed by Mayank Jaiswal(mayank_24)

@@ -5,7 +5,7 @@ import java.util.*;
 public class C {
   public static void main(String[] args) throws Exception {
     BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-    // Scanner scan = new Scanner(System.in);
+
     PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
     int n = Integer.parseInt(bf.readLine());
     int counter = 0;

@@ -1,9 +1,5 @@
-// Java implementation of an O(n) approach of level order
-// traversal in spiral form
-
 import java.util.*;
 
-// A Binary Tree node
 class Node {
 
   int data;
@@ -26,29 +22,13 @@ class BinaryTree {
 
     if (node == null) return;
 
-    // NULL check
-
-    // Create two stacks to store alternate levels
-
-    // For levels to be printed from right to left
-
     Stack<Node> s1 = new Stack<Node>();
-
-    // For levels to be printed from left to right
 
     Stack<Node> s2 = new Stack<Node>();
 
-    // Push first level to first stack 's1'
-
     s1.push(node);
 
-    // Keep printing while any of the stacks has some nodes
-
     while (!s1.empty() || !s2.empty()) {
-
-      // Print nodes of current level from s1 and push nodes of
-
-      // next level to s2
 
       while (!s1.empty()) {
 
@@ -58,16 +38,10 @@ class BinaryTree {
 
         System.out.print(temp.data + " ");
 
-        // Note that is right is pushed before left
-
         if (temp.right != null) s2.push(temp.right);
 
         if (temp.left != null) s2.push(temp.left);
       }
-
-      // Print nodes of current level from s2 and push nodes of
-
-      // next level to s1
 
       while (!s2.empty()) {
 
@@ -76,8 +50,6 @@ class BinaryTree {
         s2.pop();
 
         System.out.print(temp.data + " ");
-
-        // Note that is left is pushed before right
 
         if (temp.left != null) s1.push(temp.left);
 
@@ -109,5 +81,3 @@ class BinaryTree {
     tree.printSpiral(root);
   }
 }
-
-// This code has been contributed by Mayank Jaiswal(mayank_24)

@@ -1,7 +1,6 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
-/** CodeForces Round 5D. Follow Traffic Rules Created by Darren on 14-9-14. */
 public class Main {
   Reader in = new Reader(System.in);
   PrintWriter out = new PrintWriter(System.out);
@@ -29,7 +28,7 @@ public class Main {
           totalTime += (-2 * x + Math.sqrt(4 * x * x + 8 * a * (l - d))) / (2 * a);
         else totalTime += (v - x) / (1.0 * a) + (l - d - (v * v - x * x) / (2.0 * a)) / v;
       } else {
-        //                totalTime = (-2*w+Math.sqrt(4*w*w+8*a*(l-d))) / (2*a);
+
         if (2 * v * v - w * w <= 2 * a * d) {
           totalTime =
               v / (1.0 * a) + (v - w) / (1.0 * a) + (d - (2 * v * v - w * w) / (2.0 * a)) / v;
@@ -61,10 +60,9 @@ public class Main {
       tokenizer = new StringTokenizer("");
     }
 
-    /** get next word */
     String nextToken() throws IOException {
       while (!tokenizer.hasMoreTokens()) {
-        // TODO add check for eof if necessary
+
         tokenizer = new StringTokenizer(reader.readLine());
       }
       return tokenizer.nextToken();

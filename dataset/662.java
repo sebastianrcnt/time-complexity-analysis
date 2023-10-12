@@ -1,7 +1,5 @@
 import java.util.*;
 
-// 201920181
-
 public class Polycarp {
 
   public static void main(String args[]) {

@@ -1,10 +1,8 @@
-// http://www.geeksforgeeks.org/count-1s-sorted-binary-array/
 class CountOne {
 
   public static void main(String[] args) {
     int[] arr = {0, 0, 0, 0, 0, 0, 0};
-    // int[] arr={1, 1, 1, 1, 1, 1, 1};
-    // int[] arr = {1, 1, 1, 0, 0, 0, 0};
+
     countOne(arr);
   }
 

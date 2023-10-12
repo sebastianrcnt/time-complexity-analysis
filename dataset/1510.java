@@ -1,14 +1,5 @@
 package com.interview.binarysearch;
 
-/**
- * Date 07/31/2016
- *
- * @author Tushar Roy
- *     <p>Given a sorted array of integers, find the starting and ending position of a given target
- *     value.
- *     <p>Time complexity O(logn) Space complexity O(1)
- *     <p>https://leetcode.com/problems/search-for-a-range/
- */
 public class SearchForRange {
   public int[] searchRange(int[] nums, int target) {
     int first = firstOccurence(nums, target);

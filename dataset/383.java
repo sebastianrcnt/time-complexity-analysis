@@ -1,12 +1,6 @@
-// Java program to find n-th node of
-// Postorder Traversal of Binary Tree
 public class NthNodePostOrder {
 
   static int flag = 0;
-
-  // function to find the N-th node in the postorder
-
-  // traversal of a given binary tree
 
   public static void NthPostordernode(Node root, int N) {
 
@@ -14,17 +8,11 @@ public class NthNodePostOrder {
 
     if (flag <= N) {
 
-      // left recursion
-
       NthPostordernode(root.left, N);
-
-      // right recursion
 
       NthPostordernode(root.right, N);
 
       flag++;
-
-      // prints the n-th node of preorder traversal
 
       if (flag == N) System.out.print(root.data);
     }
@@ -48,13 +36,10 @@ public class NthNodePostOrder {
 
     int N = 6;
 
-    // prints n-th node found
-
     NthPostordernode(root, N);
   }
 }
 
-/* A binary tree node structure */
 class Node {
 
   int data;
@@ -67,5 +52,3 @@ class Node {
   }
 }
 ;
-
-// This code is contributed by Gaurav Tiwari

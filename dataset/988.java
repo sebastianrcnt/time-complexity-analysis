@@ -4,7 +4,6 @@ import java.util.*;
 public class CodeForces {
   public static void main(String[] args) throws IOException {
     Scanner sc = new Scanner(System.in);
-    // Scanner sc=new Scanner(new File("ip.txt"));
 
     int t, i, j, n, k, x, y, z, min1, min2, min3, arr1[], arr2[], arr3[];
     String s;

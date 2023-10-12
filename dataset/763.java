@@ -1,9 +1,3 @@
-/*
-Roses are red
-Memes are neat
-All my test cases time out
-Lmao yeet
-*/
 import java.io.*;
 import java.util.*;
 

@@ -1,13 +1,4 @@
-// Java program to find union of
-// two sorted arrays
-
 class FindUnion {
-
-  /* Function prints union of arr1[] and arr2[]
-
-  m is the number of elements in arr1[]
-
-  n is the number of elements in arr2[] */
 
   static int printUnion(int arr1[], int arr2[], int m, int n) {
 
@@ -24,10 +15,6 @@ class FindUnion {
         i++;
       }
     }
-
-    /* Print remaining elements of
-
-    the larger array */
 
     while (i < m) System.out.print(arr1[i++] + " ");
 

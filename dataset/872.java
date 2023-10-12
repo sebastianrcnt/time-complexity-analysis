@@ -7,11 +7,6 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-/**
- * Built using CHelper plug-in Actual solution is at the top
- *
- * @author math2do
- */
 public class Main {
   public static void main(String[] args) {
     InputStream inputStream = System.in;

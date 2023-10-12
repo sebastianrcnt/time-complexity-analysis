@@ -60,7 +60,7 @@ public class main {
   static long mod = 1000000007;
 
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
+
     FastReader in = new FastReader();
     long intervals = in.nextInt();
     long x = in.nextInt();
@@ -82,7 +82,6 @@ public class main {
                 cur1.end = cur2.end;
 
                 ints[j] = null;
-                //	i--;
               }
             } else break;
           }
@@ -93,14 +92,6 @@ public class main {
       }
     }
 
-    //		for(int i = 0;i<ints.length;i++) {
-    //			if(ints[i]!=null) {
-    //			Interval cur = ints[i];
-    //			count = (count + x) % mod;
-    //			count += (y*(cur.end-cur.start)%mod);
-    //			count%=mod;
-    //			}
-    //		}
     System.out.println(count);
   }
 }

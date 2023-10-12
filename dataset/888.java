@@ -38,7 +38,7 @@ public class JavaApplication7 {
           h = k - 1;
         }
       }
-      // System.out.println(k);
+
       if (ds[k] < le[i]) {
         k++;
       }

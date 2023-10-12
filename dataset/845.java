@@ -117,7 +117,6 @@ public class Problem {
     public int compareTo(Pair o) {
       if (this.x != o.x) return -Integer.compare(this.x, o.y);
       return -Integer.compare(this.y, o.y);
-      // return 0;
     }
 
     public boolean equals(Object o) {
@@ -132,12 +131,6 @@ public class Problem {
     public String toString() {
       return x + " " + y + " " + i;
     }
-
-    /*public int hashCode()
-    {
-        return new Long(x).hashCode() * 31 + new Long(y).hashCode();
-    }*/
-
   }
 
   static long add(long a, long b) {

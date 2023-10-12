@@ -5,7 +5,7 @@ import java.util.*;
 public class Main {
   public static void main(String[] args) throws IOException {
     PrintWriter out = new PrintWriter(System.out);
-    // Scanner sc = new Scanner();
+
     Reader in = new Reader();
     Main solver = new Main();
     solver.solve(out, in);
@@ -84,8 +84,6 @@ public class Main {
     for (int i = itr; i < n; i++) out.print(" " + ans);
     out.println();
   }
-
-  // <>
 
   static class Node implements Comparable<Node> {
     int dist, idx;

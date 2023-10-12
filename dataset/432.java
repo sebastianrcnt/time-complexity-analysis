@@ -1,29 +1,11 @@
-// Java program to see if there is a root to leaf path
-// with given sequence.
 public class CheckForPath {
 
-  // function to check given sequence of root to leaf path exist
-
-  // in tree or not.
-
-  // index represents current element in sequence of rooth to
-
-  // leaf path
-
   public static boolean existPath(Node root, int arr[], int index) {
-
-    // If root is NULL, then there must not be any element
-
-    // in array.
 
     if (root == null) {
 
       return arr.length == 0;
     }
-
-    // If this node is a leaf and matches with last entry
-
-    // of array.
 
     if ((root.left == null && root.right == null)
         && (root.data == arr[index] && root.data == arr[arr.length - 1])) {
@@ -31,22 +13,12 @@ public class CheckForPath {
       return true;
     }
 
-    // If current node is equal to arr[index] this means
-
-    // that till this level path has been matched and
-
-    // remaining path can be either in left subtree or
-
-    // right subtree.
-
     return (index < arr.length
         && (root.data == arr[index]
             && (existPath(root.left, arr, index + 1) || existPath(root.right, arr, index + 1))));
   }
 
   public static void main(String args[]) {
-
-    // arr[] is sequence of root to leaf path
 
     int arr[] = {5, 8, 6, 7};
 
@@ -77,8 +49,6 @@ public class CheckForPath {
   }
 }
 
-/* A binary tree node has data, pointer to left child
-and a pointer to right child */
 class Node {
 
   int data;
@@ -93,6 +63,3 @@ class Node {
   }
 }
 ;
-
-
-// This code is contributed by Gaurav Tiwari

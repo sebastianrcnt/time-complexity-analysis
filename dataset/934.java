@@ -88,8 +88,6 @@ public class WCS {
       vectors.add(v);
     }
     while (vectors.size() > 2) {
-      // System.out.println(vectors);
-      // stop(500);
 
       TreeSet<Vector> support = new TreeSet<>();
 
@@ -99,8 +97,6 @@ public class WCS {
         Vector next2 = vectors.lower(curr.negate());
         Vector next3 = vectors.higher(curr.negate());
         Vector next4 = vectors.lower(curr);
-
-        // System.out.println("CURR: " + curr + "\n" + next1 + "\n" + next2);
 
         if (next1 != null) {
           if (ok(curr, next1)) {
@@ -173,8 +169,6 @@ public class WCS {
       if (sub.euclideanNorm() <= add.euclideanNorm()) vectors.add(sub);
       else vectors.add(add);
     }
-
-    // System.out.println(vectors.first().euclideanNorm());
 
     StringBuilder buffer = new StringBuilder();
     int[] ans = new int[n];

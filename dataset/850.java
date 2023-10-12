@@ -42,22 +42,6 @@ public class codeforces {
     pw.close();
   }
 
-  /*	public static void DFS(int sourse)
-  {
-  	int count = 0;
-  	visited[sourse] = true;
-
-  	for(int u : adj[sourse])
-  	{
-  		if(!visited[u])
-  		{
-  			DFS(u);
-  		}
-  	}
-
-
-  }*/
-
   public static ArrayList Divisors(long n) {
     ArrayList<Long> div = new ArrayList<>();
 

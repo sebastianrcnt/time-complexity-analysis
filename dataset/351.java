@@ -1,9 +1,6 @@
-// Java program to find the maximum stolen value
 import java.io.*;
 
 class GFG {
-
-  // Function to calculate the maximum stolen value
 
   static int maxLoot(int hval[], int n) {
 
@@ -17,11 +14,7 @@ class GFG {
 
     if (n == 2) return value2;
 
-    // contains maximum stolen value at the end
-
     int max_val = 0;
-
-    // Fill remaining positions
 
     for (int i = 2; i < n; i++) {
 
@@ -35,8 +28,6 @@ class GFG {
     return max_val;
   }
 
-  // driver program
-
   public static void main(String[] args) {
 
     int hval[] = {6, 7, 1, 3, 8, 2, 4};
@@ -46,5 +37,3 @@ class GFG {
     System.out.println("Maximum loot value : " + maxLoot(hval, n));
   }
 }
-
-// Contributed by Pramod kumar

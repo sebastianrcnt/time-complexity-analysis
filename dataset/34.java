@@ -1,37 +1,17 @@
-// A simple JAVA program to rearrange
-// contents of arr[] such that arr[j]
-// becomes j if arr[i] is j
-
 class GFG {
-
-  // A simple method to rearrange
-
-  // 'arr[0..n-1]' so that 'arr[j]'
-
-  // becomes 'i' if 'arr[i]' is 'j'
 
   static void rearrange(int arr[], int n) {
 
     for (int i = 0; i < n; i++) {
-
-      // retrieving old value and
-
-      // storing with the new one
 
       arr[arr[i] % n] += i * n;
     }
 
     for (int i = 0; i < n; i++) {
 
-      // retrieving new value
-
       arr[i] /= n;
     }
   }
-
-  // A utility function to print
-
-  // contents of arr[0..n-1]
 
   static void printArray(int arr[], int n) {
 
@@ -42,8 +22,6 @@ class GFG {
 
     System.out.println();
   }
-
-  // Drive code
 
   public static void main(String[] args) {
 
@@ -62,5 +40,3 @@ class GFG {
     printArray(arr, n);
   }
 }
-
-// This code has been contributed by 29AjayKumar

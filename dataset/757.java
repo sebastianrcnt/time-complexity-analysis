@@ -1,10 +1,9 @@
-
 import java.io.*;
 import java.util.*;
 
 public class main {
   public static void main(String[] args) throws IOException {
-    init(); // "prizes.in", "prizes.out");
+    init();
     int x = nextInt();
     int y = nextInt();
     int z = nextInt();

@@ -18,8 +18,8 @@ public class CF1009E {
     }
     int d = 0;
     long ans = 0;
-    for (int i = n - 1; i >= 0; i--) { // rest at i
-      d = (d * 2 % MD + aa[n - 1 - i]) % MD; // rest again before n
+    for (int i = n - 1; i >= 0; i--) {
+      d = (d * 2 % MD + aa[n - 1 - i]) % MD;
       ans = (ans + (long) (d + aa[n - i]) * pp[i]) % MD;
     }
     System.out.println(ans);

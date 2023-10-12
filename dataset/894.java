@@ -8,11 +8,6 @@ import java.io.Writer;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 
-/**
- * Built using CHelper plug-in Actual solution is at the top
- *
- * @author gaidash
- */
 public class Main {
   public static void main(String[] args) {
     InputStream inputStream = System.in;
@@ -73,10 +68,6 @@ public class Main {
         }
         exists[a[i]] = true;
       }
-      //        for (int p : a) {
-      //            System.out.println("Segment for pixel " + p + " = " + "(" + left[p] + " , " +
-      // right[p] + ")");
-      //        }
 
       out.print(ret);
     }

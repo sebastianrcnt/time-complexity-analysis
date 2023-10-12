@@ -1,11 +1,6 @@
-// Java program to construct binary tree from
-// given array in level order fashion
-
 public class Tree {
 
   Node root;
-
-  // Tree Node
 
   static class Node {
 
@@ -23,11 +18,7 @@ public class Tree {
     }
   }
 
-  // Function to insert nodes in level order
-
   public Node insertLevelOrder(int[] arr, Node root, int i) {
-
-    // Base case for recursion
 
     if (i < arr.length) {
 
@@ -35,19 +26,13 @@ public class Tree {
 
       root = temp;
 
-      // insert left child
-
       root.left = insertLevelOrder(arr, root.left, 2 * i + 1);
-
-      // insert right child
 
       root.right = insertLevelOrder(arr, root.right, 2 * i + 2);
     }
 
     return root;
   }
-
-  // Function to print tree nodes in InOrder fashion
 
   public void inOrder(Node root) {
 
@@ -60,8 +45,6 @@ public class Tree {
       inOrder(root.right);
     }
   }
-
-  // Driver program to test above function
 
   public static void main(String args[]) {
 

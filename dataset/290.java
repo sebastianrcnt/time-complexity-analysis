@@ -1,21 +1,12 @@
 class GFG {
 
-  // A dynamic programming based function to find nth
-  // Catalan number
-
   static int catalanDP(int n) {
 
-    // Table to store results of subproblems
-
     int catalan[] = new int[n + 2];
-
-    // Initialize first two values in table
 
     catalan[0] = 1;
 
     catalan[1] = 1;
-
-    // Fill entries in catalan[] using recursive formula
 
     for (int i = 2; i <= n; i++) {
 
@@ -27,12 +18,8 @@ class GFG {
       }
     }
 
-    // Return last entry
-
     return catalan[n];
   }
-
-  // Driver code
 
   public static void main(String[] args) {
 
@@ -42,4 +29,3 @@ class GFG {
     }
   }
 }
-// This code contributed by Rajput-Ji

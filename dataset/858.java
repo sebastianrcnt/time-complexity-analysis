@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-  // kai
+
   public static void main(String[] args) {
     Scanner kai = new Scanner(System.in);
     while (kai.hasNext()) {

@@ -45,7 +45,6 @@ public class Main {
 
       list.clear();
       list.add(new Pair(i, arr[i], 0));
-      // out.println("---- "+arr[i]);
 
       for (int j = 0; j < k; j++) {
         tmpList.clear();
@@ -61,14 +60,11 @@ public class Main {
           }
         }
 
-        // out.println(list.toString());
         if (tmpList.size() == 0) {
           break;
         } else {
           list.addAll(tmpList);
         }
-
-        // out.println(list.toString());
       }
     }
 

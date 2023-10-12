@@ -4,11 +4,6 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.InputMismatchException;
 
-/**
- * Built using CHelper plug-in Actual solution is at the top
- *
- * @author Priya
- */
 public class Main {
   public static void main(String[] args) {
     InputStream inputStream = System.in;
@@ -54,7 +49,7 @@ public class Main {
         }
 
       } else {
-        // out.println("got in");
+
         if (copya > copyb) {
           while (change <= x - 1) {
             if (change % 2 == 0) {
@@ -69,9 +64,9 @@ public class Main {
           }
 
         } else if (copyb >= copya) {
-          // out.println("got in in ");
+
           while (change <= x - 1) {
-            // out.println(change+" hmm");
+
             if (change % 2 == 0) {
               s += '1';
               change++;
@@ -85,7 +80,7 @@ public class Main {
         }
 
         char z = s.charAt(s.length() - 1);
-        // out.println(z+" hm");
+
         if (z == '0') {
           while (a > 0) {
             s += '0';

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class BigInteger7 {
   public static void main(String[] args) {
-    // https://codeforces.com/contest/1011/problem/A
+
     Scanner scanner = new Scanner(System.in);
     BigInteger n = scanner.nextBigInteger();
     BigInteger k = scanner.nextBigInteger();

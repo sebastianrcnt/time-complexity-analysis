@@ -23,7 +23,6 @@ public class TaskB implements Runnable {
         prefix[i][1] = prefix[i - 1][1];
       }
       prefix[i][b[i] - '0']++;
-      // w.println(prefix[i][0]+" "+prefix[i][1]);
     }
 
     long res = 0;

@@ -20,7 +20,7 @@ public class Kello {
         max = inp;
       } else c[i] = inp;
     }
-    // display(a,b);
+
     for (i = 0; i < q; i++) {
       in_q = sc.nextLong();
       if (in_q < n) System.out.println(a[(int) in_q - 1] + " " + b[(int) in_q - 1]);

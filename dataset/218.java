@@ -1,14 +1,8 @@
-// Java program to reverse the number
-// using a stack
 import java.util.Stack;
 
 public class GFG {
 
-  // Stack to maintain order of digits
-
   static Stack<Integer> st = new Stack<>();
-
-  // Function to push digits into stack
 
   static void push_digits(int number) {
 
@@ -20,23 +14,13 @@ public class GFG {
     }
   }
 
-  // Function to reverse the number
-
   static int reverse_number(int number) {
-
-    // Function call to push number's
-
-    // digits to stack
 
     push_digits(number);
 
     int reverse = 0;
 
     int i = 1;
-
-    // Popping the digits and forming
-
-    // the reversed number
 
     while (!st.isEmpty()) {
 
@@ -47,12 +31,8 @@ public class GFG {
       i = i * 10;
     }
 
-    // Return the reversed number formed
-
     return reverse;
   }
-
-  // Driver program to test above function
 
   public static void main(String[] args) {
 
@@ -61,4 +41,3 @@ public class GFG {
     System.out.println(reverse_number(number));
   }
 }
-// This code is contributed by Sumit Ghosh

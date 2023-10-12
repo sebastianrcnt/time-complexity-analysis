@@ -26,14 +26,14 @@ public class Fly {
       double mid = max + min;
       mid /= 2;
       boolean v = isValid(a, b, m, n, mid);
-      // System.out.println("For fuel:" + mid + " isValid: " + v + ", max:" + max + ", min:" + min);
+
       if (v) {
         max = mid;
       } else {
         min = mid;
       }
       if (max - min <= ERROR && v) {
-        // System.out.println("max: " + max + " , min:" + min);
+
         found = true;
         break;
       }
@@ -41,7 +41,7 @@ public class Fly {
         break;
       }
     }
-    // System.out.println(found);
+
     if (found) {
       System.out.println(max);
     } else System.out.println(-1);

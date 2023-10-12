@@ -15,7 +15,6 @@ public class FUck {
         if (t.charAt(j) != t.charAt((n - i) + j)) {
 
           gd = 0;
-          // i think i can break here
         }
       }
       if (gd == 1) {

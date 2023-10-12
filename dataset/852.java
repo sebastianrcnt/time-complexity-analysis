@@ -1,13 +1,7 @@
-/*
- * Created on 17.05.2019
- */
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * @author Wolfgang Weck
- */
 public class A01Easy {
   private static interface Matrix {
     boolean get(int i, int j);

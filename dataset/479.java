@@ -1,11 +1,6 @@
-// Java program to minimize the
-// cost of array minimization
 import java.util.Arrays;
 
 public class GFG {
-
-  // Returns minimum possible
-  // sum in array B[]
 
   static int minSum(int[] A, int n) {
 
@@ -13,8 +8,6 @@ public class GFG {
 
     return (min_val * (n - 1));
   }
-
-  // Driver Code
 
   public static void main(String[] args) {
 
@@ -25,4 +18,3 @@ public class GFG {
     System.out.println((minSum(A, n)));
   }
 }
-// This code is contributed by Rajput-Ji

@@ -31,7 +31,7 @@ public class codeforces {
     for (int i = 0; i < x; i++) arr[i].y = sc.nextInt();
     Arrays.sort(arr);
     PriorityQueue<Integer> qq = new PriorityQueue<>();
-    // pw.println(Arrays.toString(arr));
+
     Long[] list = new Long[x];
     long sum = 0;
     for (int i = 0; i < x; i++) {
@@ -53,7 +53,6 @@ public class codeforces {
           sum -= w.y;
         }
       } else list[w.i] = (long) w.y;
-      // pw.println(qq);
     }
     for (Long w : list) pw.print(w + " ");
     pw.flush();

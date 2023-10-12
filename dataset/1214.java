@@ -71,30 +71,16 @@ public class Codechef {
     }
   }
 
-  /// MAIN METHOD
-
   static long mod = Long.MAX_VALUE;
 
   public static void main(String[] args) throws java.lang.Exception {
     int i, j;
     HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
-    /*  if(hm.containsKey(z))
-           hm.put(z,hm.get(z)+1);
-       else
-           hm.put(z,1);
-    */
+
     ArrayList<Integer> arr = new ArrayList<Integer>();
     HashSet<Integer> set = new HashSet<Integer>();
     PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
-    /*  int n = in.ni();
-          int m = in.ni();
-          String s=in.ns();
-          int a[]=in.nia(n);
-          int b[][]=in.im(n,m);
-          pia(a);
-    pimat(b);
-          sort(a,0,a.length-1);
-      */
+
     long n = in.nl();
     long v = in.nl();
     long temp = n - 1;

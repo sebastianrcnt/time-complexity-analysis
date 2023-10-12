@@ -1,12 +1,4 @@
-// Java program to find the all full nodes in
-// a given binary tree
 public class FullNodes {
-
-  // Traverses given tree in Inorder fashion and
-
-  // prints all nodes that have both children as
-
-  // non-empty.
 
   public static void findFullNode(Node root) {
 
@@ -44,7 +36,6 @@ public class FullNodes {
   }
 }
 
-/* A binary tree node */
 class Node {
 
   int data;
@@ -59,5 +50,3 @@ class Node {
   }
 }
 ;
-
-// This code is contributed by Gaurav Tiwari

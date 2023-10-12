@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-/** Built using CHelper plug-in Actual solution is at the top */
 public class Main {
   public static void main(String[] args) {
     InputStream inputStream = System.in;

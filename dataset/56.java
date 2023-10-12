@@ -8,14 +8,10 @@ class SmallestMissing {
 
     int mid = (start + end) / 2;
 
-    // Left half has all elements from 0 to mid
-
     if (array[mid] == mid) return findFirstMissing(array, mid + 1, end);
 
     return findFirstMissing(array, start, mid);
   }
-
-  // Driver program to test the above function
 
   public static void main(String[] args) {
 

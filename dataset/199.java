@@ -1,13 +1,7 @@
-// Java program to sort an
-// array using stack
 import java.io.*;
 import java.util.*;
 
 class GFG {
-
-  // This function return
-
-  // the sorted stack
 
   static Stack<Integer> sortStack(Stack<Integer> input) {
 
@@ -15,36 +9,16 @@ class GFG {
 
     while (!input.empty()) {
 
-      // pop out the
-
-      // first element
-
       int tmp = input.peek();
 
       input.pop();
 
-      // while temporary stack is
-
-      // not empty and top of stack
-
-      // is smaller than temp
-
       while (!tmpStack.empty() && tmpStack.peek() < tmp) {
-
-        // pop from temporary
-
-        // stack and push it
-
-        // to the input stack
 
         input.push(tmpStack.peek());
 
         tmpStack.pop();
       }
-
-      // push temp in
-
-      // tempory of stack
 
       tmpStack.push(tmp);
     }
@@ -54,21 +28,11 @@ class GFG {
 
   static void sortArrayUsingStacks(int[] arr, int n) {
 
-    // push array elements
-
-    // to stack
-
     Stack<Integer> input = new Stack<Integer>();
 
     for (int i = 0; i < n; i++) input.push(arr[i]);
 
-    // Sort the temporary stack
-
     Stack<Integer> tmpStack = sortStack(input);
-
-    // Put stack elements
-
-    // in arrp[]
 
     for (int i = 0; i < n; i++) {
 
@@ -77,8 +41,6 @@ class GFG {
       tmpStack.pop();
     }
   }
-
-  // Driver Code
 
   public static void main(String args[]) {
 
@@ -91,6 +53,3 @@ class GFG {
     for (int i = 0; i < n; i++) System.out.print(arr[i] + " ");
   }
 }
-
-// This code is contributed by
-// Manish Shaw(manishshaw1)

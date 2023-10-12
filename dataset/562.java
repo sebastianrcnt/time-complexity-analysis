@@ -21,17 +21,7 @@ public class Main {
     Arrays.sort(arrB);
     Arrays.sort(arrG);
     long ans = 0;
-    //        for (int i = 0; i < n; i++) ans += arrB[i] * m;
-    //        for (int i = 0; i < m - 1; i++) ans += arrG[i] - arrB[0];
-    //        if (arrB[m - 1] != arrB[0]) {
-    //            if (arrB.length == 1) {
-    //                ans=-1;
-    //            }
-    //            else ans += arrG[m - 1] - arrB[1];
-    //        }
-    //        if (arrG[m-1] < arrB[0]) {
-    //            ans=-1;
-    //        }
+
     for (int i = 0; i < n; i++) {
       ans += arrB[i] * (long) m;
     }
@@ -42,7 +32,7 @@ public class Main {
       if (n == 1) {
         ans = -1;
       } else {
-        // smallest g goes to second to last
+
         ans += arrG[0] - arrB[n - 2];
       }
     }

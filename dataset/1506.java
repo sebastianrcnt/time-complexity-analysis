@@ -1,6 +1,5 @@
 package com.interview.binarysearch;
 
-/** Regular binary search */
 public class BinarySearch {
 
   public int search(final int input[], int search) {

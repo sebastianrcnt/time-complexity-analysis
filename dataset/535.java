@@ -1,11 +1,4 @@
-// java program to find maximum
-// element
-
 class Main {
-
-  // function to find the
-
-  // maximum element
 
   static int findMaximum(int arr[], int low, int high) {
 
@@ -20,8 +13,6 @@ class Main {
 
     return max;
   }
-
-  // main function
 
   public static void main(String[] args) {
 

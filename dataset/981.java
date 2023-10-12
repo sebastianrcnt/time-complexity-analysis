@@ -24,8 +24,6 @@ public class ChainReaction {
         else dp[i] = 1 + dp[index];
       }
       max = Math.max(max, dp[i]);
-      // if (i<11)
-      // System.out.println(i +" is "+dp[i]);
     }
 
     System.out.println(num - max);

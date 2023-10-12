@@ -2,8 +2,6 @@ import java.io.*;
 import java.math.*;
 import java.util.*;
 
-/* spar5h */
-
 public class cf1 implements Runnable {
 
   public void run() {

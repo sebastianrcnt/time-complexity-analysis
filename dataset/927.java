@@ -14,7 +14,6 @@ public class NastyaWardrobe {
     long clothes = Long.parseLong(s1[0]);
     long months = Long.parseLong(s1[1]);
 
-    // formula 2^k(2x-1)+1;
     calc(clothes, months);
     System.out.print(ans);
   }
@@ -50,7 +49,6 @@ public class NastyaWardrobe {
 
       long b = clothes;
 
-      // System.out.println(b);
       b = (2 * b - 1) % modulo;
       ans = (a * b) % modulo;
       ans = (ans + 1) % modulo;

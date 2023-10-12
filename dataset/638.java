@@ -6,16 +6,6 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
-744444444747477777774
-44444447474747777777
- */
-
-/**
- * @author Andy Phan
- */
 public class b {
   public static void main(String[] args) {
     FS in = new FS(System.in);

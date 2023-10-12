@@ -1,13 +1,4 @@
-// Java program for calculating LISS
-// using dynamic programming
-
 public class LisTree {
-
-  /* A binary tree node has data, pointer
-
-  to left child and a pointer to right
-
-  child */
 
   static class node {
 
@@ -22,12 +13,6 @@ public class LisTree {
     }
   }
 
-  // A memoization function returns size
-
-  // of the largest independent set in
-
-  // a given binary tree
-
   static int liss(node root) {
 
     if (root == null) return 0;
@@ -36,15 +21,7 @@ public class LisTree {
 
     if (root.left == null && root.right == null) return root.liss = 1;
 
-    // Calculate size excluding the
-
-    // current node
-
     int liss_excl = liss(root.left) + liss(root.right);
-
-    // Calculate size including the
-
-    // current node
 
     int liss_incl = 1;
 
@@ -58,18 +35,10 @@ public class LisTree {
       liss_incl += (liss(root.right.left) + liss(root.right.right));
     }
 
-    // Maximum of two sizes is LISS,
-
-    // store it for future uses.
-
     return root.liss = Math.max(liss_excl, liss_incl);
   }
 
   public static void main(String[] args) {
-
-    // Let us construct the tree given
-
-    // in the above diagram
 
     node root = new node(20);
 
@@ -90,5 +59,3 @@ public class LisTree {
     System.out.println("Size of the Largest Independent Set is " + liss(root));
   }
 }
-
-// This code is contributed by Rishabh Mahrsee

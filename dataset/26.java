@@ -1,20 +1,10 @@
-// Java program to split array and move first
-// part to end.
 import java.util.*;
 
 class GFG {
 
-  // Function to spilt array and
-
-  // move first part to end
-
   public static void SplitAndAdd(int[] A, int length, int rotation) {
 
-    // make a temporary array with double the size
-
     int[] tmp = new int[length * 2];
-
-    // copy array element in to new array twice
 
     System.arraycopy(A, 0, tmp, 0, length);
 
@@ -22,8 +12,6 @@ class GFG {
 
     for (int i = rotation; i < rotation + length; i++) A[i - rotation] = tmp[i];
   }
-
-  // Driver code
 
   public static void main(String[] args) {
 

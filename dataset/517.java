@@ -1,8 +1,4 @@
-// Java program to find missing Number
-
 class Main {
-
-  // Function to ind missing number
 
   static int getMissingNo(int a[], int n) {
 
@@ -14,8 +10,6 @@ class Main {
 
     return total;
   }
-
-  /* program to test above function */
 
   public static void main(String args[]) {
 

@@ -1,4 +1,3 @@
-/** Created by Baelish on 8/28/2018. */
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -164,7 +163,7 @@ public class F_DSU {
     public String next() {
       int b = skip();
       StringBuilder sb = new StringBuilder();
-      while (!(isSpaceChar(b))) { // when nextLine, (isSpaceChar(b) && b != ' ')
+      while (!(isSpaceChar(b))) {
         sb.appendCodePoint(b);
         b = readByte();
       }
@@ -216,10 +215,6 @@ public class F_DSU {
       return Double.parseDouble(next());
     }
 
-    /* public char nextChar() {
-        return (char)skip();
-    }*/
-
     public char[] next(int n) {
       char[] buf = new char[n];
       int b = skip(), p = 0;
@@ -229,15 +224,5 @@ public class F_DSU {
       }
       return n == p ? buf : Arrays.copyOf(buf, p);
     }
-
-    /*private char buff[] = new char[1005];
-    public char[] nextCharArray(){
-        int b = skip(), p = 0;
-        while(!(isSpaceChar(b))){
-            buff[p++] = (char)b;
-            b = readByte();
-        }
-        return Arrays.copyOf(buff, p);
-    }*/
   }
 }

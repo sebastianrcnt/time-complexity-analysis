@@ -4,20 +4,15 @@ public class Main {
   static long m = 1000000007;
 
   static long powmod(long x, long y, long p) {
-    // Initialize result
+
     long res = 1;
 
-    // Update x if it is more
-    // than or equal to p
     x = x % p;
 
     while (y > 0) {
-      // If y is odd, multiply x
-      // with result
+
       if ((y & 1) == 1) res = (res * x) % p;
 
-      // y must be even now
-      // y = y / 2
       y = y >> 1;
       x = (x * x) % p;
     }
@@ -28,17 +23,14 @@ public class Main {
     long res = 0;
     a = a % mod;
     while (b > 0) {
-      // If b is odd, add 'a' to result
+
       if (b % 2 == 1) res = (res + a) % mod;
 
-      // Multiply 'a' with 2
       a = (a * 2) % mod;
 
-      // Divide b by 2
       b /= 2;
     }
 
-    // Return result
     return res % mod;
   }
 

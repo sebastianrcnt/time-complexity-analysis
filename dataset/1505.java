@@ -1,10 +1,5 @@
 package geek.livingstone.problems.arrays;
 
-/**
- * Full problem at http://www.geeksforgeeks.org/search-floor-and-ceil-in-a-sorted-array/
- *
- * @author emmanuel
- */
 public class FloorInSortedArray {
   public static int floor(int[] A, int val) throws Exception {
     if (val < A[0]) throw new Exception("All elements are greater than val");
@@ -29,7 +24,7 @@ public class FloorInSortedArray {
 
   public static void main(String[] args) throws Exception {
     int[] A = new int[] {1, 3, 4, 7, 8, 12, 32, 45, 78, 98};
-    // System.out.println(floor(A, -45));
+
     System.out.println(floor(A, 11));
     System.out.println(floor(A, 32));
     System.out.println(floor(A, 70));

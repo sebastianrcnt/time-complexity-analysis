@@ -1,20 +1,12 @@
-// Java program to find triplets in a given
-// array whose sum is zero
 import java.util.*;
 
 class GFG {
-
-  // function to print triplets with 0 sum
 
   static void findTriplets(int arr[], int n) {
 
     boolean found = false;
 
     for (int i = 0; i < n - 1; i++) {
-
-      // Find all pairs with sum equals to
-
-      // "-arr[i]"
 
       HashSet<Integer> s = new HashSet<Integer>();
 
@@ -41,8 +33,6 @@ class GFG {
     }
   }
 
-  // Driver code
-
   public static void main(String[] args) {
 
     int arr[] = {
@@ -56,5 +46,3 @@ class GFG {
     findTriplets(arr, n);
   }
 }
-
-// This code contributed by Rajput-Ji

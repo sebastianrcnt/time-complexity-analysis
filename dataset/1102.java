@@ -1,11 +1,6 @@
-/** Author: Ridam Nagar Date: 27 February 2019 Time: 01:17:36 */
-/*
-package codechef; // don't place package name! */
-
 import java.io.*;
 import java.util.*;
 
-/* Name of the class has to be "Main" only if the class is public. */
 public class Codechef {
   static String reverse(String s) {
     String reverse = "";

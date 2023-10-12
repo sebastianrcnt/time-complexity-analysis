@@ -73,20 +73,18 @@ public class Main {
   }
 
   static void prepareIO(boolean isFileIO) {
-    // long t1 = System.currentTimeMillis();
+
     Task solver = new Task();
-    // Standard IO
+
     if (!isFileIO) {
       InputStream inputStream = System.in;
       OutputStream outputStream = System.out;
       InputReader in = new InputReader(inputStream);
       PrintWriter out = new PrintWriter(outputStream);
       solver.solve(in, out);
-      // out.println("time(s): " + (1.0*(System.currentTimeMillis()-t1))/1000.0);
+
       out.close();
-    }
-    // File IO
-    else {
+    } else {
       String IPfilePath = System.getProperty("user.home") + "/Downloads/ip.in";
       String OPfilePath = System.getProperty("user.home") + "/Downloads/op.out";
       InputReader fin = new InputReader(IPfilePath);
@@ -97,7 +95,7 @@ public class Main {
         e.printStackTrace();
       }
       solver.solve(fin, fout);
-      // fout.println("time(s): " + (1.0*(System.currentTimeMillis()-t1))/1000.0);
+
       fout.close();
     }
   }
@@ -120,7 +118,7 @@ public class Main {
       try {
         reader = new BufferedReader(new FileReader(file));
       } catch (FileNotFoundException e) {
-        // TODO Auto-generated catch block
+
         e.printStackTrace();
       }
       tokenizer = null;
@@ -131,7 +129,7 @@ public class Main {
       try {
         str = reader.readLine();
       } catch (IOException e) {
-        // TODO Auto-generated catch block
+
         e.printStackTrace();
       }
       return str;

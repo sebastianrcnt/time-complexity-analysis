@@ -1,4 +1,3 @@
-// discussed with rainboy
 import java.io.*;
 import java.util.*;
 

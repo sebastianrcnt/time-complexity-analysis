@@ -1,15 +1,6 @@
 import java.math.BigInteger;
 import java.util.Scanner;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * @author Andy Phan
- */
 public class p1096f {
   static long MOD = 998244353;
 
@@ -60,7 +51,6 @@ public class p1096f {
     System.out.println(res);
   }
 
-  // @
   static class BIT {
     int n;
     int[] tree;
@@ -85,13 +75,8 @@ public class p1096f {
         i += i & -i;
       }
     }
-    // $
   }
 
-  // @
-  // Computes the modular inverse of x
-  // Returns 0 if the GCD of x and mod is not 1
-  // O(log n)  :  Can be converted to use BigIntegers
   static long modInv(long x, long mod) {
     return (BigInteger.valueOf(x).modInverse(BigInteger.valueOf(mod))).longValue();
   }
@@ -101,7 +86,6 @@ public class p1096f {
     return b == 0 ? y2 : modInv(b, a % b, y1, y2, q1, a / b);
   }
 
-  // @
   static long gcd(long a, long b) {
     return b == 0 ? a : gcd(b, a % b);
   }

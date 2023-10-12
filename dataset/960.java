@@ -19,7 +19,6 @@ public class Main {
       ans = Math.max(ans, curRes);
       Map.Entry<Integer, Integer> upper = tm.ceilingEntry(x - w);
       if (upper == null || upper.getValue() < curRes) tm.put(x - w, curRes);
-      // Integer key = tm.
     }
     System.out.println(ans);
   }

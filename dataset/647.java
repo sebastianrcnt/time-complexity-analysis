@@ -20,30 +20,6 @@ public class Main {
     }
   }
 
-  /*public static void main(String[] args) throws IOException {
-  	int n=sc.nextInt();
-
-  	int zero=n;
-  	int one=n+1;
-  	int two=n+2;
-  	char z=returnLetter(zero);
-  	char o=returnLetter(one);
-  	char t=returnLetter(two);
-
-  	if(z<o && z<t)
-  	{
-  		System.out.println("0 " + z);
-  	}
-  	else if(o<z && o<t)
-  	{
-  		System.out.println("1 " + o);
-  	}
-  	else if(t<z && o>t)
-  	{
-  		System.out.println("2 " + t);
-  	}
-  }*/
-
   public static void main(String[] args) throws IOException {
     String[] a = new String[3];
 

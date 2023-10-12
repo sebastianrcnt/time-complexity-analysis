@@ -39,7 +39,6 @@ public class B {
     } else if (diff2) out.println("cslnb");
     else if (sum % 2 == 0) out.println("cslnb");
     else out.println("sjfnb");
-    // int n = Integer.parseInt(st.nextToken());
 
     out.close();
     System.exit(0);

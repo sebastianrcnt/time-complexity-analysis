@@ -1,6 +1,5 @@
 package com.interview.binarysearch;
 
-/** http://www.geeksforgeeks.org/check-for-majority-element-in-a-sorted-array/ */
 public class FirstOccurrenceOfNumberInSortedArray {
 
   public int firstOccurrence(int input[], int x) {

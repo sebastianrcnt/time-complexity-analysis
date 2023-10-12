@@ -1,5 +1,3 @@
-// Java program to check if binary tree
-// is subtree of another binary tree
 class Node {
 
   char data;
@@ -74,10 +72,6 @@ class BinaryTree {
     return null;
   }
 
-  // A utility function to store inorder traversal of tree rooted
-
-  // with root in an array arr[]. Note that i is passed as reference
-
   void storeInorder(Node node, char arr[], Passing i) {
 
     if (node == null) {
@@ -93,10 +87,6 @@ class BinaryTree {
 
     storeInorder(node.right, arr, i);
   }
-
-  // A utility function to store preorder traversal of tree rooted
-
-  // with root in an array arr[]. Note that i is passed as reference
 
   void storePreOrder(Node node, char arr[], Passing i) {
 
@@ -114,11 +104,7 @@ class BinaryTree {
     storePreOrder(node.right, arr, i);
   }
 
-  /* This function returns true if S is a subtree of T, otherwise false */
-
   boolean isSubtree(Node T, Node S) {
-
-    /* base cases */
 
     if (S == null) {
 
@@ -129,10 +115,6 @@ class BinaryTree {
 
       return false;
     }
-
-    // Store Inorder traversals of T and S in inT[0..m-1]
-
-    // and inS[0..n-1] respectively
 
     char inT[] = new char[100];
 
@@ -150,16 +132,10 @@ class BinaryTree {
 
     inS[p.m] = '\0';
 
-    // If inS[] is not a substring of preS[], return false
-
     if (strstr(op1, op2) != null) {
 
       return false;
     }
-
-    // Store Preorder traversals of T and S in inT[0..m-1]
-
-    // and inS[0..n-1] respectively
 
     p.m = 0;
 
@@ -181,14 +157,8 @@ class BinaryTree {
 
     preS[p.n] = '\0';
 
-    // If inS[] is not a substring of preS[], return false
-
-    // Else return true
-
     return (strstr(op3, op4) != null);
   }
-
-  // Driver program to test above functions
 
   public static void main(String args[]) {
 
@@ -222,5 +192,3 @@ class BinaryTree {
     }
   }
 }
-
-// This code is contributed by Mayank Jaiswal

@@ -1,32 +1,20 @@
-// JAVA Code for Maximum size square
-// sub-matrix with all 1s
 public class GFG {
-
-  // method for Maximum size square sub-matrix with all 1s
 
   static void printMaxSubSquare(int M[][]) {
 
     int i, j;
 
     int R = M.length;
-    // no of rows in M[][]
 
     int C = M[0].length;
-    // no of columns in M[][]
 
     int S[][] = new int[R][C];
 
     int max_of_s, max_i, max_j;
 
-    /* Set first column of S[][]*/
-
     for (i = 0; i < R; i++) S[i][0] = M[i][0];
 
-    /* Set first row of S[][]*/
-
     for (j = 0; j < C; j++) S[0][j] = M[0][j];
-
-    /* Construct other entries of S[][]*/
 
     for (i = 1; i < R; i++) {
 
@@ -37,10 +25,6 @@ public class GFG {
         else S[i][j] = 0;
       }
     }
-
-    /* Find the maximum entry, and indexes of maximum entry
-
-    in S[][] */
 
     max_of_s = S[0][0];
     max_i = 0;
@@ -73,8 +57,6 @@ public class GFG {
       System.out.println();
     }
   }
-
-  // Driver program
 
   public static void main(String[] args) {
 

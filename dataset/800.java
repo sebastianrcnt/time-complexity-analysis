@@ -18,7 +18,6 @@ public class D527A2 {
     System.out.println(stack.size() <= 1 ? "YES" : "NO");
   }
 
-  /** Source: Matt Fontaine */
   static class FastScanner {
     private InputStream stream;
     private byte[] buf = new byte[1024];
@@ -86,29 +85,3 @@ public class D527A2 {
     }
   }
 }
-/*
-5
-2 1 1 2 5
-outputCopy
-YES
-inputCopy
-3
-4 5 3
-outputCopy
-YES
-inputCopy
-2
-10 10
-outputCopy
-YES
-inputCopy
-3
-1 2 3
-outputCopy
-NO
-
-5
-2 3 2 2 3
-
-YES
-*/

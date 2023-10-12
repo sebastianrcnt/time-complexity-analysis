@@ -41,6 +41,5 @@ public class n5D {
     }
     t = t1 + t2 + t3 + t4 + t5;
     System.out.println(t);
-    // System.out.println(t1 + " " + t2 + " " + t3 + " " + t4 + " " + t5);
   }
 }

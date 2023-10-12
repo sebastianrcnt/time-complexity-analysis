@@ -36,7 +36,7 @@ public class A {
 
     max = c[n - 1];
     if (b[n - 1] == 0) max += m - a[n - 1];
-    // System.out.println(max);
+
     for (int i = n - 1; i >= 0; i--) {
       int u = a[i] - 1;
       int v = a[i] + 1;

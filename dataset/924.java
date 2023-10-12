@@ -59,18 +59,6 @@ public class gr1 {
     }
   }
 
-  /*static class descend implements Comparator<pair>
-  {
-  public int compare(pair o1,pair o2)
-  {
-  if(o1.a!=o2.a){
-  return (o1.a-o2.a)*-1;
-  } else {
-  return (o1.b-o2.b);
-  }
-  }
-  }*/
-
   static class extra {
 
     static void shuffle(long a[]) {
@@ -154,7 +142,7 @@ public class gr1 {
       }
       Arrays.sort(a);
       int k = (int) Math.round(4.5 * n) - sum;
-      // System.out.println((int)Math.round(4.5*n)+" "+k+" "+sum);
+
       if (k <= 0) {
         System.out.println(0);
       } else {

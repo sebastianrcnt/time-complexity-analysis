@@ -8,11 +8,6 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-/**
- * Built using CHelper plug-in Actual solution is at the top
- *
- * @author El-Bishoy
- */
 public class Main {
   public static void main(String[] args) {
     InputStream inputStream = System.in;

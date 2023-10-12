@@ -1,5 +1,3 @@
-// package com.krakn.CF.B1159;
-
 import java.util.Scanner;
 
 public class Main {
@@ -20,7 +18,6 @@ public class Main {
     for (int i = 0; i < n; i++) {
       temp = arr[i] / Math.max(i, n - 1 - i);
       if (temp < min) min = temp;
-      //            System.out.println(i + " " + temp);
     }
 
     System.out.println(min);

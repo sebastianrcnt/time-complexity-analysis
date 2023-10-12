@@ -20,7 +20,7 @@ public class A {
     out = new PrintWriter(System.out);
     int testCases = 1;
     for (int i = 1; i <= testCases; i++) {
-      //			out.print("Case #" + i + ": ");
+
       solver.solve();
     }
     out.close();
@@ -34,8 +34,6 @@ public class A {
       else out.println(b / a + Math.min(1, b % a));
     }
   }
-
-  // Sathvik's Template Stuff BELOW!!!!!!!!!!!!!!!!!!!!!!
 
   static class DSU {
     int[] root, size;

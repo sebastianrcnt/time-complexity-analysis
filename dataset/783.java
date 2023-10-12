@@ -4,9 +4,6 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-/**
- * @author Don Li
- */
 public class OlyaAndMagicalSquare {
   void solve() {
     long[] dp = new long[32];

@@ -1,7 +1,3 @@
-/*
-Keep solving problems.
-*/
-
 import java.io.*;
 import java.util.*;
 
@@ -38,7 +34,7 @@ public class CFA {
 
     long res = 0;
     for (int l = 0; l < m; l++) {
-      // [l, r]
+
       long[] hash = new long[n];
       long[] mask = new long[n];
       for (int r = l; r < m; r++) {
@@ -90,13 +86,10 @@ public class CFA {
         p[i] = Math.min(right - i, p[mirror]);
       }
 
-      // attempt to expand palindrome centered at i
       while (t[i + (1 + p[i])] == t[i - (1 + p[i])]) {
         p[i]++;
       }
 
-      // if palindrome centered at i expands past right,
-      // adjust center based on expanded palindrome.
       if (i + p[i] > right) {
         center = i;
         right = i + p[i];

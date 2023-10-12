@@ -7,19 +7,18 @@ public class Practice {
     int n = sc.nextInt();
     sc.nextLine();
     String s = sc.nextLine();
-    // System.out.println(s);
+
     char c[] = s.toCharArray();
     ArrayList a = new ArrayList();
 
     for (int i = 0; i < c.length; i++) {
-      // System.out.println(c[i]);
+
       a.add(c[i]);
     }
 
     int x = Collections.frequency(a, '0');
     int y = Collections.frequency(a, '1');
 
-    // System.out.println(x+ "  "+y );
     if (y == 0 || y == 1) {
       System.out.println(s);
     } else {

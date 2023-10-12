@@ -1,16 +1,10 @@
-// Java prorgam for finding max path in matrix
-
 import static java.lang.Math.max;
 
 class GFG {
 
   public static int N = 4, M = 6;
 
-  // Function to calculate max path in matrix
-
   static int findMaxPath(int mat[][]) {
-
-    // To find max val in first row
 
     int res = -1;
 
@@ -22,20 +16,10 @@ class GFG {
 
       for (int j = 0; j < M; j++) {
 
-        // When all paths are possible
-
         if (j > 0 && j < M - 1)
           mat[i][j] += max(mat[i - 1][j], max(mat[i - 1][j - 1], mat[i - 1][j + 1]));
-
-        // When diagonal right is not possible
-
         else if (j > 0) mat[i][j] += max(mat[i - 1][j], mat[i - 1][j - 1]);
-
-        // When diagonal left is not possible
-
         else if (j < M - 1) mat[i][j] += max(mat[i - 1][j], mat[i - 1][j + 1]);
-
-        // Store max path sum
 
         res = max(mat[i][j], res);
       }
@@ -43,8 +27,6 @@ class GFG {
 
     return res;
   }
-
-  // driver program
 
   public static void main(String[] args) {
 
@@ -55,5 +37,3 @@ class GFG {
     System.out.println(findMaxPath(mat));
   }
 }
-
-// Contributed by Pramod Kumar

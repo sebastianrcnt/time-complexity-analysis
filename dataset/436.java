@@ -1,4 +1,3 @@
-// Iterative Java program to print odd level nodes
 import java.util.*;
 
 class GfG {
@@ -10,20 +9,11 @@ class GfG {
     Node left, right;
   }
 
-  // Iterative method to do level order traversal line by line
   static void printOddNodes(Node root) {
-
-    // Base Case
 
     if (root == null) return;
 
-    // Create an empty queue for level
-
-    // order tarversal
-
     Queue<Node> q = new LinkedList<Node>();
-
-    // Enqueue root and initialize level as odd
 
     q.add(root);
 
@@ -31,17 +21,9 @@ class GfG {
 
     while (true) {
 
-      // nodeCount (queue size) indicates
-
-      // number of nodes at current level.
-
       int nodeCount = q.size();
 
       if (nodeCount == 0) break;
-
-      // Dequeue all nodes of current level
-
-      // and Enqueue all nodes of next level
 
       while (nodeCount > 0) {
 
@@ -62,7 +44,6 @@ class GfG {
     }
   }
 
-  // Utility method to create a node
   static Node newNode(int data) {
 
     Node node = new Node();
@@ -76,7 +57,6 @@ class GfG {
     return (node);
   }
 
-  // Driver code
   public static void main(String[] args) {
 
     Node root = newNode(1);

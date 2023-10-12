@@ -145,17 +145,14 @@ public class Main {
     }
   }
 
-  // nCk % mod
   public static long comb(int n, int k) {
     return fac[n] * finv[k] % mod * finv[n - k] % mod;
   }
 
-  // n! % mod
   public static long fact(int n) {
     return fac[n];
   }
 
-  // (n!)^-1 with % mod
   public static long finv(int n) {
     return finv[n];
   }
@@ -202,7 +199,7 @@ public class Main {
     int high = array.length;
     int mid;
     while (low < high) {
-      mid = ((high - low) >>> 1) + low; // (high + low) / 2
+      mid = ((high - low) >>> 1) + low;
       if (array[mid] <= value) {
         low = mid + 1;
       } else {

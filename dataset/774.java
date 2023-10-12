@@ -10,11 +10,6 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.stream.Stream;
 
-/**
- * Built using CHelper plug-in Actual solution is at the top
- *
- * @author lewin
- */
 public class Main {
   public static void main(String[] args) {
     InputStream inputStream = System.in;

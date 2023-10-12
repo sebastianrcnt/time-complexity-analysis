@@ -1,8 +1,5 @@
 import java.util.Scanner;
 
-/**
- * @author User
- */
 public class Code {
 
   static int[] reverse(int a[]) {

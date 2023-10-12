@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-/** Built using CHelper plug-in Actual solution is at the top */
 public class Main {
   public static void main(String[] args) {
     InputStream inputStream = System.in;
@@ -74,7 +73,7 @@ public class Main {
             child.dfs(this);
             subtreeSize += child.subtreeSize;
           }
-        int mult = 2; // p2[n - subtreeSize];
+        int mult = 2;
         for (Vertex child : adj)
           if (child != parent) {
             int[] c = child.res;

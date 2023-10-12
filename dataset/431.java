@@ -1,6 +1,3 @@
-// Java program to see if two trees are identical
-
-// A binary tree node
 class Node {
 
   int data;
@@ -19,29 +16,17 @@ class BinaryTree {
 
   Node root1, root2;
 
-  /* Given two trees, return true if they are
-
-  structurally identical */
-
   boolean identicalTrees(Node a, Node b) {
 
-    /*1. both empty */
-
     if (a == null && b == null) return true;
-
-    /* 2. both non-empty -> compare them */
 
     if (a != null && b != null)
       return (a.data == b.data
           && identicalTrees(a.left, b.left)
           && identicalTrees(a.right, b.right));
 
-    /* 3. one empty, one not -> false */
-
     return false;
   }
-
-  /* Driver program to test identicalTrees() function */
 
   public static void main(String[] args) {
 

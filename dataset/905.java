@@ -1,9 +1,6 @@
 import java.io.*;
 import java.util.*;
 
-// Mann Shah [ DAIICT ].
-// fast io
-
 public class Main {
   static int mod = (int) (1e9 + 7);
   static InputReader in;
@@ -200,49 +197,15 @@ public class Main {
   }
 }
 
-// For Pair sorting
-
-// Arrays.sort(arr,new Comparator<Pair>() {
-//		@Override public int compare(Pair p1, Pair p2)
-// {
-//    return p1.x - p2.x;
-// }
-// });
-
-// Pair arr[] = new Pair[n];
-// arr[0] = new Pair(10, 20);
 class Pair {
   int x;
   int y;
 
-  // Constructor
   public Pair(int x, int y) {
     this.x = x;
     this.y = y;
   }
 }
-
-// class Compare {
-//	  //void return by default.
-//     public  Pair[] compare(Pair arr[], int n)
-//    {
-//        // Comparator to sort the pair according to first element.
-//        Arrays.sort(arr, new Comparator<Pair>() {
-//            @Override public int compare(Pair p1, Pair p2)
-//            {
-//                return p1.x - p2.x;
-//            }
-//        });
-//
-//
-//        return arr;
-//       /* for (int i = 0; i < n; i++) {
-//            System.out.print(arr[i].x + " " + arr[i].y + " ");
-//        }
-//        System.out.println(); */
-//    }
-// }
-//
 
 class couple implements Comparable<couple> {
   int x, y;

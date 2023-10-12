@@ -66,7 +66,7 @@ public class CF111111 {
       int top = max;
       for (; ; ) {
         done++;
-        //  System.out.println(done + " " + lindex + " " + rindex);
+
         if (lindex < 0) {
           if (nums[rindex] > top) {
             no();

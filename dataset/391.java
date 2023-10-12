@@ -1,4 +1,3 @@
-// Java program to reverse alternate levels of a tree
 class Sol {
 
   static class Node {
@@ -11,11 +10,7 @@ class Sol {
 
   static void preorder(Node root1, Node root2, int lvl) {
 
-    // Base cases
-
     if (root1 == null || root2 == null) return;
-
-    // Swap subtrees if level is even
 
     if (lvl % 2 == 0) {
 
@@ -26,26 +21,16 @@ class Sol {
       root2.key = t;
     }
 
-    // Recur for left and right subtrees (Note : left of root1
-
-    // is passed and right of root2 in first call and opposite
-
-    // in second call.
-
     preorder(root1.left, root2.right, lvl + 1);
 
     preorder(root1.right, root2.left, lvl + 1);
   }
 
-  // This function calls preorder() for left and right children
-  // of root
   static void reverseAlternate(Node root) {
 
     preorder(root.left, root.right, 0);
   }
 
-  // Inorder traversal (used to print initial and
-  // modified trees)
   static void printInorder(Node root) {
 
     if (root == null) return;
@@ -57,7 +42,6 @@ class Sol {
     printInorder(root.right);
   }
 
-  // A utility function to create a new node
   static Node newNode(int key) {
 
     Node temp = new Node();
@@ -69,7 +53,6 @@ class Sol {
     return temp;
   }
 
-  // Driver program to test above functions
   public static void main(String args[]) {
 
     Node root = newNode('a');
@@ -113,5 +96,3 @@ class Sol {
     printInorder(root);
   }
 }
-
-// This code is contributed by Arnab Kundu

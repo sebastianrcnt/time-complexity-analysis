@@ -1,5 +1,3 @@
-// Java program to count number of substrings
-// of a string
 import java.io.*;
 
 public class GFG {
@@ -11,8 +9,6 @@ public class GFG {
     return n * (n + 1) / 2;
   }
 
-  // Driver code
-
   public static void main(String args[]) {
 
     String s = "abcde";
@@ -20,6 +16,3 @@ public class GFG {
     System.out.println(countNonEmptySubstr(s));
   }
 }
-
-// This code is contributed
-// by Manish Shaw (manishshaw1)

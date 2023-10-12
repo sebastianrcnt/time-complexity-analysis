@@ -25,18 +25,16 @@ public class P1196D2 {
       dp[2] += s[i] == c[(i + 2) % 3] ? 0 : 1;
     }
     min = Math.min(Math.min(Math.min(dp[0], dp[1]), dp[2]), min);
-    //        System.out.println(Arrays.toString(dp));
+
     for (int i = k; i < n; i++) {
       dp[0] += (s[i] == c[(i + 0) % 3] ? 0 : 1) - (s[i - k] == c[(i - k + 0) % 3] ? 0 : 1);
       dp[1] += (s[i] == c[(i + 1) % 3] ? 0 : 1) - (s[i - k] == c[(i - k + 1) % 3] ? 0 : 1);
       dp[2] += (s[i] == c[(i + 2) % 3] ? 0 : 1) - (s[i - k] == c[(i - k + 2) % 3] ? 0 : 1);
       min = Math.min(Math.min(Math.min(dp[0], dp[1]), dp[2]), min);
-      //            System.out.println(Arrays.toString(dp));
     }
     System.out.println(min);
   }
 
-  /* -----: Template :----- */
   static InputReader in = new InputReader(System.in);
 
   public static void main(String[] args) {

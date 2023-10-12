@@ -2,7 +2,6 @@ import java.io.*;
 import java.math.*;
 import java.util.*;
 
-// author @mdazmat9
 public class codeforces {
   public static void main(String[] args) throws IOException {
     Scanner sc = new Scanner(System.in);

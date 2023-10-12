@@ -1,17 +1,7 @@
-// Java program to implement sorting a
-// queue data structure
 import java.util.LinkedList;
 import java.util.Queue;
 
 class GFG {
-
-  // Queue elements after sortIndex are
-
-  // already sorted. This function returns
-
-  // index of minimum element from front to
-
-  // sortIndex
 
   public static int minIndex(Queue<Integer> list, int sortIndex) {
 
@@ -25,17 +15,7 @@ class GFG {
 
       int current = list.peek();
 
-      // This is dequeue() in Java STL
-
       list.poll();
-
-      // we add the condition i <= sortIndex
-
-      // because we don't want to traverse
-
-      // on the sorted part of the queue,
-
-      // which is the right part.
 
       if (current <= min_value && i <= sortIndex) {
 
@@ -49,10 +29,6 @@ class GFG {
 
     return min_index;
   }
-
-  // Moves given minimum element
-
-  // to rear of queue
 
   public static void insertMinToRear(Queue<Integer> list, int min_index) {
 
@@ -83,8 +59,6 @@ class GFG {
     }
   }
 
-  // Driver function
-
   public static void main(String[] args) {
 
     Queue<Integer> list = new LinkedList<Integer>();
@@ -97,11 +71,7 @@ class GFG {
 
     list.add(4);
 
-    // Sort Queue
-
     sortQueue(list);
-
-    // print sorted Queue
 
     while (list.isEmpty() == false) {
 
@@ -111,5 +81,3 @@ class GFG {
     }
   }
 }
-
-// This code is contributed by akash1295

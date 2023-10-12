@@ -1,6 +1,5 @@
 package com.interview.binarysearch;
 
-/** http://www.geeksforgeeks.org/search-floor-and-ceil-in-a-sorted-array/ */
 public class FloorAndCeilingSortedArray {
 
   public int floor(int input[], int x) {

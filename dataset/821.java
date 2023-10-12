@@ -13,8 +13,7 @@ public class New_Year_and_Curling {
 
     for (int i = 0; i < n; i++) {
       arr[i] = sc.nextInt();
-      double top =
-          r; // if we make it 0 and subtract from the result will get WA (do not know why!!!)
+      double top = r;
       int x = arr[i];
       for (int j = 0; j < i; j++) {
         if (Math.abs(arr[j] - x) <= 2 * r) {

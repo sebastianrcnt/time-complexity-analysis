@@ -44,8 +44,8 @@ public class LectureSleep {
   static PrintWriter pw = new PrintWriter(System.out);
 
   public static void main(String[] args) {
-    int n = r.nextInt(); // duration of lecture
-    int k = r.nextInt(); // number of minutes keep mishka awake
+    int n = r.nextInt();
+    int k = r.nextInt();
     int[] theorems = new int[n + 1];
     for (int i = 1; i <= n; i++) {
       theorems[i] = r.nextInt();

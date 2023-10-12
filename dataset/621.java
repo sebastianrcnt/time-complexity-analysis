@@ -26,14 +26,9 @@ public class Solution {
       else break;
     }
 
-    // j=1;
-
     for (; i < n + m; i++) {
 
       int coor = loca[i];
-
-      /*if(coor>q&&j!=0)
-      j++;*/
 
       if (j == m - 1) break;
 
@@ -50,9 +45,6 @@ public class Solution {
       }
       if (d1 <= d2) res[j]++;
       else res[j + 1]++;
-
-      // add check for j+1<m
-      // handle cases for j==0 && j==m-1
     }
 
     for (; i < m + n; i++) {

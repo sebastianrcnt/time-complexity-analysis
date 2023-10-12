@@ -5,11 +5,6 @@ import java.io.PrintWriter;
 import java.util.InputMismatchException;
 import java.util.TreeMap;
 
-/**
- * Built using CHelper plug-in Actual solution is at the top
- *
- * @author Ribhav
- */
 public class Main {
   public static void main(String[] args) {
     InputStream inputStream = System.in;

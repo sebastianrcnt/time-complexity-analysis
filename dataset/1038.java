@@ -183,14 +183,13 @@ public class Main {
     }
 
     public void printDivisors(long n, ArrayList<Long> al) {
-      // Note that this loop runs till square root
+
       for (long i = 1; i <= Math.sqrt(n); i++) {
         if (n % i == 0) {
-          // If divisors are equal, print only one
+
           if (n / i == i) {
             al.add(i);
-          } else // Otherwise print both
-          {
+          } else {
             al.add(i);
             al.add(n / i);
           }
@@ -262,7 +261,7 @@ public class Main {
       }
 
       if (ans1 == -1 || ans2 == -1 || ans2 < ans1) {
-        // System.out.println("min1 "+min);
+
         min = a;
         return a;
 
@@ -270,12 +269,12 @@ public class Main {
         min = b * (end - start + 1) * (ans2 - ans1 + 1);
       }
       if (start == end) {
-        // System.out.println("min "+min);
+
         return min;
       }
       long mid = (end + start) / 2;
       min = Long.min(min, recursion(start, mid, cnt, a, b) + recursion(mid + 1, end, cnt, a, b));
-      // System.out.println("min "+min);
+
       return min;
     }
 

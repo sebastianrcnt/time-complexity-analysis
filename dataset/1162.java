@@ -4,11 +4,6 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.InputMismatchException;
 
-/**
- * Built using CHelper plug-in Actual solution is at the top
- *
- * @author Pradyumn
- */
 public class Main {
   public static void main(String[] args) {
     InputStream inputStream = System.in;

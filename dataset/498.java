@@ -1,6 +1,3 @@
-// Java program to find minimum
-// difference between groups of
-// highest and lowest sums.
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Vector;
@@ -9,13 +6,9 @@ class GFG {
 
   static long calculate(long a[], int n) {
 
-    // Sorting the whole array.
-
     Arrays.sort(a);
 
     int i, j;
-
-    // Generating sum groups.
 
     Vector<Long> s = new Vector<>();
 
@@ -28,7 +21,6 @@ class GFG {
     return Math.abs(maxi - mini);
   }
 
-  // Driver code
   public static void main(String[] args) {
 
     long a[] = {2, 6, 4, 3};
@@ -38,4 +30,3 @@ class GFG {
     System.out.println(calculate(a, n));
   }
 }
-// This code is contributed by 29AjayKumar

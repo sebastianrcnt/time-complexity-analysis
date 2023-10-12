@@ -1,12 +1,6 @@
-// java program to find maximum
-// equilibrium sum.
 import java.io.*;
 
 class GFG {
-
-  // Function to find maximum
-
-  // equilibrium sum.
 
   static int findMaxSum(int[] arr, int n) {
 
@@ -28,8 +22,6 @@ class GFG {
     return res;
   }
 
-  // Driver Code
-
   public static void main(String[] args) {
 
     int arr[] = {-2, 5, 3, 1, 2, 6, -4, 2};
@@ -39,5 +31,3 @@ class GFG {
     System.out.println(findMaxSum(arr, n));
   }
 }
-
-// This code is contributed by anuj_67.

@@ -1,13 +1,8 @@
-// Java program to check fixed point
-// in an array using binary search
-
 class Main {
 
   static int binarySearch(int arr[], int low, int high) {
 
     if (high >= low) {
-
-      /* low + (high - low)/2; */
 
       int mid = (low + high) / 2;
 
@@ -17,14 +12,8 @@ class Main {
       else return binarySearch(arr, low, (mid - 1));
     }
 
-    /* Return -1 if there is
-
-    no Fixed Point */
-
     return -1;
   }
-
-  // main function
 
   public static void main(String args[]) {
 

@@ -55,13 +55,6 @@ public class Codeforces913F {
       dp2[i][i] = (mod + 1 - val) % mod;
     }
 
-    /*for (int i = 2; i <= n; i++) {
-    	for (int j = 1; j <= i; j++) {
-    		System.out.print(dp2[i][j] + " ");
-    	}
-    	System.out.println();
-    }*/
-
     int[] EV = new int[n + 1];
     EV[1] = 0;
     EV[2] = 1;

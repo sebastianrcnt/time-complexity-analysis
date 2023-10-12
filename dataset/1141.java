@@ -25,7 +25,7 @@ public class A {
       try {
         br = new BufferedReader(new FileReader(s));
       } catch (FileNotFoundException e) {
-        // TODO Auto-generated catch block
+
         e.printStackTrace();
       }
     }
@@ -39,7 +39,7 @@ public class A {
         try {
           st = new StringTokenizer(br.readLine());
         } catch (IOException e) {
-          // TODO Auto-generated catch block
+
           e.printStackTrace();
         }
       }

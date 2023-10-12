@@ -1,5 +1,3 @@
-// package com.krakn.CF.D1159;
-
 import java.util.Scanner;
 
 public class Main {

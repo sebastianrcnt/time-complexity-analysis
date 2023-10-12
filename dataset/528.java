@@ -1,9 +1,4 @@
-// Java program to count occurrences
-// of an element
-
 class Main {
-
-  // Returns number of times x occurs in arr[0..n-1]
 
   static int countOccurrences(int arr[], int n, int x) {
 

@@ -8,7 +8,6 @@ public class Practice {
     String s = sc.nextLine();
     int n = 0;
     int m = 0;
-    // System.out.println(5%0);
 
     for (int i = 0; i < s.length(); i++) {
       if (s.charAt(i) == '-') {

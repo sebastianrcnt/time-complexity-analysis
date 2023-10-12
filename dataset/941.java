@@ -22,16 +22,16 @@ public class D999 {
     int x = 0, y = 0;
     List<Integer> idx = new ArrayList<>();
     for (int i = 0; i < 2 * m; i++) {
-      // System.out.println(i+" "+size[i%m]);
+
       if (size[i % m] > req) {
         for (int j = 0; j < size[i % m] - req; j++) {
           idx.add(list[i % m].get(j));
           y++;
         }
         size[i % m] = req;
-        // System.out.println(i+" "+x+" "+y);
+
       } else if (size[i % m] < req) {
-        // System.out.println(idx+" "+i);
+
         while (x != y && size[i % m] < req) {
           int num = arr[idx.get(x)];
           int gg = i - num % m;

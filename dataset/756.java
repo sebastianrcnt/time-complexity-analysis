@@ -1,4 +1,3 @@
-// LM10: The next Ballon d'or
 import java.io.*;
 import java.math.*;
 import java.util.*;
@@ -124,18 +123,7 @@ public class Main {
   }
 
   public static void main(String[] args) throws IOException {
-    /*
-    inputCopy
-    4
-    2 1 2 1
-    outputCopy
-    4
-    inputCopy
-    5
-    0 -1 -1 -1 -1
-    outputCopy
-    4
-    */
+
     PrintWriter pw = new PrintWriter(System.out);
     FastReader fr = new FastReader();
     int n = fr.i();

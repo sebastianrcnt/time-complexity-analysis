@@ -3,9 +3,6 @@ import static java.lang.Math.*;
 import java.io.*;
 import java.util.*;
 
-// _ h _ r _ t r _
-// _ t _ t _ s t _
-
 public class TaskA implements Runnable {
   long m = (int) 1e9 + 7;
   PrintWriter w;

@@ -22,7 +22,7 @@ public class Test {
     for (int i = x.length - 1; i >= 0; i--) {
       if (x[i] <= m) {
         temp = x[i];
-        /// break ;
+
         return m - temp;
       }
     }
@@ -35,7 +35,7 @@ public class Test {
     for (int i = x.length - 1; i >= 0; i--) {
       if (x[i] <= m) {
         temp = x[i];
-        /// break ;
+
         return x[i];
       }
     }

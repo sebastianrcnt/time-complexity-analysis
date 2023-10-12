@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-/** Solution */
 public class Solution {
 
   public static void main(String[] args) {

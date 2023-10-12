@@ -3,31 +3,10 @@ import java.util.*;
 
 public class Solution {
   public static void main(String[] args) throws IOException {
-    PrintWriter pw = new PrintWriter(System.out); // use pw.println() not pw.write();
+    PrintWriter pw = new PrintWriter(System.out);
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     StringTokenizer st = new StringTokenizer(br.readLine());
-    /*
-            inputCopy
-    5 3
-    xyabd
-    outputCopy
-    29
-    inputCopy
-    7 4
-    problem
-    outputCopy
-    34
-    inputCopy
-    2 2
-    ab
-    outputCopy
-    -1
-    inputCopy
-    12 1
-    abaabbaaabbb
-    outputCopy
-    1
-            */
+
     int n = Integer.parseInt(st.nextToken());
     int k = Integer.parseInt(st.nextToken());
     st = new StringTokenizer(br.readLine());
@@ -48,6 +27,6 @@ public class Solution {
     }
     if (included == k) pw.println(weight);
     else pw.println(-1);
-    pw.close(); // Do not forget to write it after every program return statement !!
+    pw.close();
   }
 }

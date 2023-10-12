@@ -1,21 +1,12 @@
-// Java program to implement merge sort in singly linked list
-
-// Linked List Class
 class LinkedList {
 
   static Node head;
-
-  // head of list
-
-  /* Node Class */
 
   static class Node {
 
     int data;
 
     Node next, prev;
-
-    // Constructor to create a new node
 
     Node(int d) {
 
@@ -50,10 +41,6 @@ class LinkedList {
     }
   }
 
-  // Split a doubly linked list (DLL) into 2 DLLs of
-
-  // half sizes
-
   Node split(Node head) {
 
     Node fast = head, slow = head;
@@ -81,36 +68,24 @@ class LinkedList {
 
     Node second = split(node);
 
-    // Recur for left and right halves
-
     node = mergeSort(node);
 
     second = mergeSort(second);
 
-    // Merge the two sorted halves
-
     return merge(node, second);
   }
 
-  // Function to merge two linked lists
-
   Node merge(Node first, Node second) {
-
-    // If first linked list is empty
 
     if (first == null) {
 
       return second;
     }
 
-    // If second linked list is empty
-
     if (second == null) {
 
       return first;
     }
-
-    // Pick the smaller value
 
     if (first.data < second.data) {
 
@@ -133,8 +108,6 @@ class LinkedList {
       return second;
     }
   }
-
-  // Driver program to test above functions
 
   public static void main(String[] args) {
 
@@ -161,5 +134,3 @@ class LinkedList {
     list.print(node);
   }
 }
-
-// This code has been contributed by Mayank Jaiswal

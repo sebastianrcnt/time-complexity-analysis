@@ -26,7 +26,6 @@ public class Param {
 
   public static PrintWriter out;
 
-  // -----------MyScanner class for faster input----------
   public static class MyScanner {
     BufferedReader br;
     StringTokenizer st;

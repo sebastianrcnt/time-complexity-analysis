@@ -28,9 +28,8 @@ public class tr {
         }
         s.pop();
       }
-      //	System.out.println(s+" "+max);
     }
-    // System.out.println(f+" "+max);
+
     if (f && s.size() == 0) out.println("YES");
     else if (f && s.size() == 1 && s.peek() == max) out.println("YES");
     else out.println("NO");

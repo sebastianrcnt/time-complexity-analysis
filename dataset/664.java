@@ -1,4 +1,3 @@
-// package fourninetysixDiv3;
 import java.util.HashMap;
 import java.util.Scanner;
 

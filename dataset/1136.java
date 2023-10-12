@@ -12,7 +12,6 @@ public class FunctionHeight {
     System.out.println(ans);
   }
 
-  /////////// TEMPLATE FROM HERE /////////////////
   private static class MyScanner {
     BufferedReader br;
     StringTokenizer st;

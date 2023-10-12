@@ -1,8 +1,4 @@
-// Java Program to find the maximum for each and every contiguous subarray of size k.
-
 public class GFG {
-
-  // Method to find the maximum for each and every contiguous subarray of size k.
 
   static void printKMax(int arr[], int n, int k) {
 
@@ -21,8 +17,6 @@ public class GFG {
     }
   }
 
-  // Driver method
-
   public static void main(String args[]) {
 
     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -32,5 +26,3 @@ public class GFG {
     printKMax(arr, arr.length, k);
   }
 }
-
-// This code is contributed by Sumit Ghosh

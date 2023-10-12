@@ -19,7 +19,7 @@ public class Main {
     }
     int[] power = new int[31];
     for (int i = 0; i < 31; i++) {
-      power[i] = 1 << i; // 0 100=4 1000=8 10000=16
+      power[i] = 1 << i;
     }
     int c = 0;
     for (int i = 0; i < n; i++) {

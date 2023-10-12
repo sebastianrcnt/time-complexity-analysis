@@ -8,16 +8,12 @@ class Main {
 
     int l, r, min_sum, sum, min_l, min_r;
 
-    /* Array should have at least two elements*/
-
     if (arr_size < 2) {
 
       System.out.println("Invalid Input");
 
       return;
     }
-
-    /* Initialization of values */
 
     min_l = 0;
 
@@ -45,8 +41,6 @@ class Main {
     System.out.println(
         " The two elements whose " + "sum is minimum are " + arr[min_l] + " and " + arr[min_r]);
   }
-
-  // main function
 
   public static void main(String[] args) {
 

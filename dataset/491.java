@@ -1,11 +1,7 @@
-// Java program to solve fractional Knapsack Problem
 import java.util.Arrays;
 import java.util.Comparator;
 
-// Greedy approach
 public class FractionalKnapSack {
-
-  // Time complexity O(n log n)
 
   public static void main(String[] args) {
 
@@ -20,8 +16,6 @@ public class FractionalKnapSack {
     System.out.println("Maximum value we can obtain = " + maxValue);
   }
 
-  // function to get maximum value
-
   private static double getMaxValue(int[] wt, int[] val, int capacity) {
 
     ItemValue[] iVal = new ItemValue[wt.length];
@@ -30,8 +24,6 @@ public class FractionalKnapSack {
 
       iVal[i] = new ItemValue(wt[i], val[i], i);
     }
-
-    // sorting items by value;
 
     Arrays.sort(
         iVal,
@@ -54,15 +46,11 @@ public class FractionalKnapSack {
 
       if (capacity - curWt >= 0) {
 
-        // this weight can be picked while
-
         capacity = capacity - curWt;
 
         totalValue += curVal;
 
       } else {
-
-        // item cant be picked whole
 
         double fraction = ((double) capacity / (double) curWt);
 
@@ -77,15 +65,11 @@ public class FractionalKnapSack {
     return totalValue;
   }
 
-  // item value class
-
   static class ItemValue {
 
     Double cost;
 
     double wt, val, ind;
-
-    // item value function
 
     public ItemValue(int wt, int val, int ind) {
 

@@ -1,9 +1,6 @@
-// A java program for iterative postorder traversal using stack
-
 import java.util.ArrayList;
 import java.util.Stack;
 
-// A binary tree node
 class Node {
 
   int data;
@@ -24,15 +21,9 @@ class BinaryTree {
 
   ArrayList<Integer> list = new ArrayList<Integer>();
 
-  // An iterative function to do postorder traversal
-
-  // of a given binary tree
-
   ArrayList<Integer> postOrderIterative(Node node) {
 
     Stack<Node> S = new Stack<Node>();
-
-    // Check for empty tree
 
     if (node == null) return list;
 
@@ -43,10 +34,6 @@ class BinaryTree {
     while (!S.isEmpty()) {
 
       Node current = S.peek();
-
-      /* go down the tree in search of a leaf an if so process it
-
-      and pop stack otherwise move down */
 
       if (prev == null || prev.left == current || prev.right == current) {
 
@@ -59,12 +46,6 @@ class BinaryTree {
           list.add(current.data);
         }
 
-        /* go up the tree from left node, if the child is right
-
-        push it onto stack otherwise process parent and pop
-
-        stack */
-
       } else if (current.left == prev) {
 
         if (current.right != null) S.push(current.right);
@@ -74,10 +55,6 @@ class BinaryTree {
 
           list.add(current.data);
         }
-
-        /* go up the tree from right node and after coming back
-
-        from right node process parent and pop stack */
 
       } else if (current.right == prev) {
 
@@ -92,13 +69,9 @@ class BinaryTree {
     return list;
   }
 
-  // Driver program to test above functions
-
   public static void main(String args[]) {
 
     BinaryTree tree = new BinaryTree();
-
-    // Let us create trees shown in above diagram
 
     tree.root = new Node(1);
 
@@ -121,5 +94,3 @@ class BinaryTree {
     System.out.println(mylist);
   }
 }
-
-// This code has been contributed by Mayank Jaiswal

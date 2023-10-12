@@ -1,5 +1,3 @@
-// Author: Patel Rag
-// Java version "1.8.0_211"
 import java.io.*;
 import java.util.*;
 
@@ -54,8 +52,7 @@ public class Main {
     }
   }
 
-  static long modExp(long x, long n, long mod) // binary Modular exponentiation
-      {
+  static long modExp(long x, long n, long mod) {
     long result = 1;
     while (n > 0) {
       if (n % 2 == 1) result = (result % mod * x % mod) % mod;
@@ -82,10 +79,9 @@ public class Main {
   }
 }
 
-class Pair<U, V> // Pair class
-{
-  public final U first; // first field of a Pair
-  public final V second; // second field of a Pair
+class Pair<U, V> {
+  public final U first;
+  public final V second;
 
   private Pair(U first, V second) {
     this.first = first;
@@ -122,8 +118,7 @@ class myComp implements Comparator<Pair> {
   }
 }
 
-class BIT // Binary Indexed Tree aka Fenwick Tree
- {
+class BIT {
   public long[] m_array;
 
   public BIT(long[] dat) {

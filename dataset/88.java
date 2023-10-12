@@ -1,21 +1,11 @@
-// Java program to sort an array according absolute
-// difference with x.
 import java.io.*;
 import java.util.*;
 
 class GFG {
 
-  // Function to sort an array according absolute
-
-  // difference with x.
-
   static void rearrange(int[] arr, int n, int x) {
 
     TreeMap<Integer, ArrayList<Integer>> m = new TreeMap<>();
-
-    // Store values in a map with the difference
-
-    // with X as key
 
     for (int i = 0; i < n; i++) {
 
@@ -39,8 +29,6 @@ class GFG {
       }
     }
 
-    // Update the values of array
-
     int index = 0;
 
     for (Map.Entry entry : m.entrySet()) {
@@ -51,14 +39,10 @@ class GFG {
     }
   }
 
-  // Function to print the array
-
   static void printArray(int[] arr, int n) {
 
     for (int i = 0; i < n; i++) System.out.print(arr[i] + " ");
   }
-
-  // Driver code
 
   public static void main(String args[]) {
 
@@ -73,5 +57,3 @@ class GFG {
     printArray(arr, n);
   }
 }
-
-// This code is contributed by rachana soma

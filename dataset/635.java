@@ -59,11 +59,9 @@ public final class CF_573_D1_A {
     }
   }
 
-  // static long mod=1000000007;
   static long mod = 998244353;
   static int CX = 64;
 
-  // Global vars
   static BufferedWriter out;
   static InputReader reader;
 
@@ -82,17 +80,16 @@ public final class CF_573_D1_A {
 
     int pid = -1;
     int rem = m;
-    int win = 0; // current window
-    long mx = k - 1; // max value of window
+    int win = 0;
+    long mx = k - 1;
     int res = 0;
     int idx = 0;
 
     while (rem > 0) {
-      // log("======");
+
       while (p[idx] > mx) {
         mx += k;
         if (mx >= n - 1) mx = n - 1;
-        // log("mx:"+mx);
       }
 
       int nxt = idx;
@@ -156,7 +153,7 @@ public final class CF_573_D1_A {
         c = read();
       }
       char d = (char) c;
-      // log("d:"+d);
+
       if (d == '-') {
         neg = true;
         c = read();
@@ -167,7 +164,7 @@ public final class CF_573_D1_A {
         res += c - '0';
         c = read();
       } while (!isSpaceChar(c));
-      // log("res:"+res);
+
       if (neg) return -res;
       return res;
     }
@@ -179,7 +176,7 @@ public final class CF_573_D1_A {
         c = read();
       }
       char d = (char) c;
-      // log("d:"+d);
+
       if (d == '-') {
         neg = true;
         c = read();
@@ -190,7 +187,7 @@ public final class CF_573_D1_A {
         res += c - '0';
         c = read();
       } while (!isSpaceChar(c));
-      // log("res:"+res);
+
       if (neg) return -res;
       return res;
     }

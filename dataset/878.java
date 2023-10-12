@@ -14,12 +14,6 @@ public class Codechef {
       } else {
         arr[j + 1] = arr[j + 1] + 1;
       }
-      // if(arr[j+1]%2==0){
-      // 	sum=sum+arr[j+1];
-      // 	if(sum>=max){
-      // 	max=sum;
-      // }
-      // }
 
       x--;
       j++;

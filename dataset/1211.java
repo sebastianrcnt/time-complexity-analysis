@@ -16,7 +16,6 @@ public class Main_1100C {
     pr.printf("%.7f%n", ans);
   }
 
-  // ---------------------------------------------------
   public static void main(String[] args) {
     sc = new Scanner(System.in);
     pr = new Printer(System.out);
@@ -73,7 +72,7 @@ public class Main_1100C {
 
     int nextInt() {
       try {
-        // parseInt from Integer.parseInt()
+
         boolean negative = false;
         int res = 0;
         int limit = -Integer.MAX_VALUE;
@@ -116,7 +115,7 @@ public class Main_1100C {
 
     long nextLong() {
       try {
-        // parseLong from Long.parseLong()
+
         boolean negative = false;
         long res = 0;
         long limit = -Long.MAX_VALUE;
@@ -208,7 +207,7 @@ public class Main_1100C {
       try {
         br.close();
       } catch (IOException e) {
-        //				throw new NoSuchElementException();
+
       }
     }
   }

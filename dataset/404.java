@@ -1,6 +1,3 @@
-// Java program to convert BTT to DLL using
-// simple inorder traversal
-
 public class BinaryTreeToDLL {
 
   static class node {
@@ -17,16 +14,6 @@ public class BinaryTreeToDLL {
 
   static node prev;
 
-  // Changes left pointers to work as previous
-
-  // pointers in converted DLL The function
-
-  // simply does inorder traversal of Binary
-
-  // Tree and updates left pointer using
-
-  // previously visited node
-
   static void fixPrevptr(node root) {
 
     if (root == null) return;
@@ -40,23 +27,9 @@ public class BinaryTreeToDLL {
     fixPrevptr(root.right);
   }
 
-  // Changes right pointers to work
-
-  // as next pointers in converted DLL
-
   static node fixNextptr(node root) {
 
-    // Find the right most node in
-
-    // BT or last node in DLL
-
     while (root.right != null) root = root.right;
-
-    // Start from the rightmost node, traverse
-
-    // back using left pointers. While traversing,
-
-    // change right pointer of nodes
 
     while (root != null && root.left != null) {
 
@@ -67,8 +40,6 @@ public class BinaryTreeToDLL {
       root = root.left;
     }
 
-    // The leftmost node is head of linked list, return it
-
     return root;
   }
 
@@ -76,16 +47,10 @@ public class BinaryTreeToDLL {
 
     prev = null;
 
-    // Set the previous pointer
-
     fixPrevptr(root);
-
-    // Set the next pointer and return head of DLL
 
     return fixNextptr(root);
   }
-
-  // Traverses the DLL from left tor right
 
   static void printlist(node root) {
 
@@ -96,8 +61,6 @@ public class BinaryTreeToDLL {
       root = root.right;
     }
   }
-
-  // Standard Inorder traversal of tree
 
   static void inorder(node root) {
 
@@ -111,8 +74,6 @@ public class BinaryTreeToDLL {
   }
 
   public static void main(String[] args) {
-
-    // Let us create the tree shown in above diagram
 
     node root = new node(10);
 
@@ -137,5 +98,3 @@ public class BinaryTreeToDLL {
     printlist(head);
   }
 }
-
-// This code is contributed by Rishabh Mahrsee

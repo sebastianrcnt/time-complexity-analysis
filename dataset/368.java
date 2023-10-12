@@ -1,28 +1,12 @@
-// Java code to Count Palindromic Subsequence
-// in a given String
 public class GFG {
-
-  // Function return the total palindromic
-
-  // subsequence
 
   static int countPS(String str) {
 
     int N = str.length();
 
-    // create a 2D array to store the count
-
-    // of palindromic subsequence
-
     int[][] cps = new int[N + 1][N + 1];
 
-    // palindromic subsequence of length 1
-
     for (int i = 0; i < N; i++) cps[i][i] = 1;
-
-    // check subsequence of length L is
-
-    // palindrome or not
 
     for (int L = 2; L <= N; L++) {
 
@@ -38,12 +22,8 @@ public class GFG {
       }
     }
 
-    // return total palindromic subsequence
-
     return cps[0][N - 1];
   }
-
-  // Driver program
 
   public static void main(String args[]) {
 
@@ -52,4 +32,3 @@ public class GFG {
     System.out.println("Total palindromic " + "subsequence are : " + countPS(str));
   }
 }
-// This code is contributed by Sumit Ghosh

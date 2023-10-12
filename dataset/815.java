@@ -54,7 +54,6 @@ public class Main {
     while (u > 0) {
       an.add(arr[u][2]);
       u = dp[u][1];
-      // System.out.println(u);
     }
     for (int i = an.size() - 1; i >= 0; i--) System.out.print(an.get(i) + " ");
   }

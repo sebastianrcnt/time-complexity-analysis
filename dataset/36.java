@@ -1,29 +1,12 @@
-// Java program to rearrange an
-// array in minimum maximum form
-
 public class Main {
 
-  // Prints max at first position, min at second
-
-  // position second max at third position, second
-
-  // min at fourth position and so on.
-
   public static void rearrange(int arr[], int n) {
-
-    // initialize index of first minimum and first
-
-    // maximum element
 
     int max_ele = arr[n - 1];
 
     int min_ele = arr[0];
 
-    // traverse array elements
-
     for (int i = 0; i < n; i++) {
-
-      // at even index : we have to put maximum element
 
       if (i % 2 == 0) {
 
@@ -31,11 +14,7 @@ public class Main {
 
         max_ele -= 1;
 
-      }
-
-      // at odd index : we have to put minimum element
-
-      else {
+      } else {
 
         arr[i] = min_ele;
 
@@ -43,8 +22,6 @@ public class Main {
       }
     }
   }
-
-  // Driver code
 
   public static void main(String args[]) {
 

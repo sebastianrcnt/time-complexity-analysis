@@ -18,7 +18,6 @@ public class PlayingPiano {
       as2[i] = a;
     }
 
-    // System.out.println(solve(as));
     System.out.println(solve2(as2));
 
     scanner.close();
@@ -48,23 +47,21 @@ public class PlayingPiano {
 
   private static List<Integer> assign(
       List<Integer> as, List<Integer> fingers, List<Integer> allFingers) {
-    // if fingers is empty return null
+
     if (fingers.isEmpty()) {
       return null;
     }
 
-    // if as size is one then return first element in fingers
     if (as.size() == 1) {
       List<Integer> ret = new LinkedList<>();
       ret.add(fingers.get(0));
       return ret;
     }
 
-    // get sublist
     List<Integer> subList = as.subList(1, as.size());
 
     for (int i = 0; i < fingers.size(); i++) {
-      // recursively call with sublist and limited list of fingers
+
       List<Integer> subFingers = new LinkedList<>();
       final int j = i;
       if (as.get(0) < as.get(1)) {
@@ -85,8 +82,6 @@ public class PlayingPiano {
         solution.addAll(ret);
         return solution;
       }
-
-      // if return is null, then return null, else return an array
     }
     return null;
   }

@@ -29,7 +29,7 @@ public class kingrace {
       } else {
         System.out.println("White");
       }
-    // System.out.prlongln(c +" "+d);
+
     input.close();
   }
 }

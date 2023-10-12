@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.util.*;
 
@@ -51,10 +50,8 @@ public class Main {
     return hasLose;
   }
 
-  // -----------PrintWriter for faster output---------------------------------
   public static PrintWriter out;
 
-  // -----------MyScanner class for faster input----------
   public static class MyScanner {
     BufferedReader br;
     StringTokenizer st;
@@ -96,6 +93,4 @@ public class Main {
       return str;
     }
   }
-  // --------------------------------------------------------
-
 }

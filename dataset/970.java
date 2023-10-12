@@ -27,7 +27,6 @@ public class Main {
     out.println(ans);
   }
 
-  //////////////////////////////
   PrintWriter out = new PrintWriter(System.out, false);
   BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
   StringTokenizer stok = null;
@@ -45,8 +44,6 @@ public class Main {
       setOut(new PrintStream(args[0] + ".out"));
     }
     Main solver = new Main();
-    solver.out
-        .flush(); //  could be replace with a method, but nah, this is just competitive programming
-                  // :p
+    solver.out.flush();
   }
 }

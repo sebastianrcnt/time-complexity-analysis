@@ -4,11 +4,6 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.InputMismatchException;
 
-/**
- * Built using CHelper plug-in Actual solution is at the top
- *
- * @author pandusonu
- */
 public class Main {
   public static void main(String[] args) {
     InputStream inputStream = System.in;
@@ -22,7 +17,7 @@ public class Main {
 
   static class TaskD {
     public void solve(int testNumber, InputReader in, PrintWriter out) {
-      // out.print("Case #" + testNumber + ": ");
+
       int n = in.readInt();
       int[] a = in.readIntArray(n);
       int[][] sol = new int[n][n];

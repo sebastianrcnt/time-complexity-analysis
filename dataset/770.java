@@ -4,11 +4,6 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.InputMismatchException;
 
-/**
- * Built using CHelper plug-in Actual solution is at the top
- *
- * @author MaxHeap
- */
 public class Main {
 
   public static void main(String[] args) {
@@ -41,11 +36,7 @@ public class Main {
         acc[i] = s[i - 1] == '0' ? 0 : 1;
         acc[i] += acc[i - 1];
       }
-      // 0 0 1 1 | 1: 1 1 2| 2: 2 3| 4: 5| 9
-      // 0 1 1 1| 1: 1 2 2| 2: 3 3| 5: 6| 11
-      // 0 1 1 wwqwq| 1: 1 2 2| 3: 5 3| 8: 8| 16
-      // 0 0 1 1| 1: 1 1 2| 3: 3 3| 6: 6| 12
-      // 0 0 0 1| 1: 1 1 1| 2: 2 2| 4: 4| 8
+
       while (q-- > 0) {
         int f = in.nextInt();
         int t = in.nextInt();

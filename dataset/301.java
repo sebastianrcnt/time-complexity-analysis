@@ -1,9 +1,5 @@
 class GFG {
 
-  // Returns count of ways n people
-
-  // can remain single or paired up.
-
   static int countFriendsPairings(int n) {
 
     int a = 1, b = 2, c = 0;
@@ -25,8 +21,6 @@ class GFG {
     return c;
   }
 
-  // Driver code
-
   public static void main(String[] args) {
 
     int n = 4;
@@ -34,5 +28,3 @@ class GFG {
     System.out.println(countFriendsPairings(n));
   }
 }
-
-// This code is contributed by Ravi Kasha.

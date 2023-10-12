@@ -25,7 +25,7 @@ public class _1036_B_DiagonalWalkingV2 {
   static PrintWriter pr = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
 
   public static String readLine() throws IOException {
-    byte[] buf = new byte[64]; // line length
+    byte[] buf = new byte[64];
     int cnt = 0, c;
     while ((c = Read()) != -1) {
       if (c == '\n') break;

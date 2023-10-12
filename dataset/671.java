@@ -15,7 +15,7 @@ public class Main {
       if (str.charAt(i) == '0') {
         System.out.print("0");
       } else if (str.charAt(i) == '2') {
-        while (cnt-- > 0) { //
+        while (cnt-- > 0) {
           System.out.print("1");
         }
         System.out.print("2");

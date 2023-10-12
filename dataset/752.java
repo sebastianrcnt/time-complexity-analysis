@@ -1,4 +1,3 @@
-/** BaZ :D */
 import static java.lang.Math.*;
 
 import java.io.*;
@@ -48,8 +47,7 @@ public class Main {
       else right[i] = stack[top] - 1;
       stack[++top] = i;
     }
-    // pa("left", left);
-    // pa("right", right);
+
     dp = new long[n + 1];
     for (int i = 0; i <= n; ++i) {
       if (i < k) continue;

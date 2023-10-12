@@ -79,7 +79,6 @@ public class Main {
       time += floor - arr[i].a;
       floor = arr[i].a;
       time = Math.max(time, arr[i].b);
-      // pw.println("time: " + time);
     }
 
     time += arr[n - 1].a;

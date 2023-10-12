@@ -40,13 +40,13 @@ public class Main {
 
     void myfunc() {
       if (start.data > start.next.data) {
-        // System.out.println("me ni hu");
+
         node t = new node(start.next.data);
         start.next = start.next.next;
         end.next = t;
         end = end.next;
       } else {
-        // System.out.println("me hu");
+
         int t = start.data;
         start = start.next;
         add(t);

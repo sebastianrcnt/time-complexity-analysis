@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class codef8 {
 
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
+
     Scanner sc = new Scanner(System.in);
     int num = sc.nextInt();
     int beacon[] = new int[1000001];

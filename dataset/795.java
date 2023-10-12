@@ -5,9 +5,6 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-/**
- * @author Don Li
- */
 public class EhabAndAComponentChoosingProblem {
 
   long INF = (long) 1e18;

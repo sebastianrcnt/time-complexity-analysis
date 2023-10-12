@@ -10,7 +10,7 @@ public class Main {
   static PrintStream cerr = System.err;
 
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
+
     Readin();
     stlr[0][0] = bell[0] = 1;
     for (int i = 1; i <= m; i++)
@@ -40,7 +40,7 @@ public class Main {
       try {
         cin = new Scanner(new File("input.txt"));
       } catch (FileNotFoundException e) {
-        // TODO Auto-generated catch block
+
         if (DEBUG) cerr.println("Not Fount input.txt");
         return;
       }

@@ -11,7 +11,7 @@ public class A1180 {
     for (int i = 1; i < layers + 1; i++) {
       counter += i;
     }
-    // System.out.println(counter);
+
     System.out.println(1 + counter * 4);
   }
 }

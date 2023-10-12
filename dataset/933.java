@@ -1,4 +1,3 @@
-
 import java.awt.*;
 import java.io.*;
 import java.math.*;
@@ -19,15 +18,6 @@ public class Newbie {
     }
     out.close();
   }
-
-  /* static class descend implements Comparator<pair1> {
-      public int compare(pair1 o1, pair1 o2) {
-          if (o1.pop != o2.pop)
-              return (int) (o1.pop - o2.pop);
-          else
-              return o1.in - o2.in;
-      }
-  }*/
 
   static class InputReader {
     public BufferedReader br;

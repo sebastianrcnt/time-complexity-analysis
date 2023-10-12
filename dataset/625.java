@@ -35,7 +35,7 @@ public class TaxistsnLyft {
           }
           b++;
         }
-        // System.out.println(">>"+b+">>"+c);
+
         if (c == -1 && b >= 0) {
           taxcount[b]++;
         } else if (b == -1 && c >= 0) {

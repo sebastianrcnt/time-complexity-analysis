@@ -158,10 +158,6 @@ public class Main implements Runnable {
     }
     Arrays.sort(arr);
 
-    /*for(i=0;i<n;i++)
-    {
-                      w.println(arr[i]);
-    }*/
     long count = 0;
     if (arr[n / 2] == s) {
 

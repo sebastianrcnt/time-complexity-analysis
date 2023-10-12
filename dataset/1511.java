@@ -1,11 +1,5 @@
 package com.interview.binarysearch;
 
-/**
- * @author Tushar Roy Date 01/17/2107 A peak element is an element that is greater than its
- *     neighbors. Find index of peak element in the array.
- *     <p>Space complexity is O(1) Time complexity is O(n)
- *     <p>https://leetcode.com/problems/find-peak-element/
- */
 public class PeakElement {
 
   public int findPeakElement(int[] nums) {

@@ -6,7 +6,6 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-/** Built using CHelper plug-in Actual solution is at the top */
 public class Practice {
 
   public static void main(String[] args) {

@@ -1,5 +1,3 @@
-// package contest1196;
-
 import java.io.*;
 import java.util.*;
 

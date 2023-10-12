@@ -13,7 +13,7 @@ public class codef {
     for (int i = 0; i < n; i++) {
       if (i != 0 && a[i] > a[max]) max = i;
     }
-    // System.out.println(a[max]);
+
     int maxi = max;
     int i = max - 1;
     while (i >= 0) {

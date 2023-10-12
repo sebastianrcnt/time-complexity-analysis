@@ -1,4 +1,3 @@
-/** Created by Aminul on 3/14/2019. */
 import static java.lang.Math.max;
 
 import java.io.IOException;

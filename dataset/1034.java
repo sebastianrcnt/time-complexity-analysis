@@ -2,16 +2,10 @@ import java.io.*;
 import java.math.*;
 import java.util.*;
 
-// BigInteger A;
-// A= BigInteger.valueOf(54);
-// ArrayList<Integer> a=new ArrayList<>();
-// TreeSet<Integer> ts=new TreeSet<>();
-// HashMap<Integer,Integer> hm=new HashMap<>();
 public final class Cf {
   public static void main(String[] args) {
     FastReader ob = new FastReader();
-    // int t=ob.nextInt();
-    // while(t-->0)
+
     {
       int n = ob.nextInt();
       int k = ob.nextInt();

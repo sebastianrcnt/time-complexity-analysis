@@ -16,7 +16,7 @@ public class Main {
     a1[j] = a[a.length - 1] / 2;
     a2[j] = a[a.length - 1] - a[a.length - 1] / 2;
     for (int i = (n - 1) / 2 - 1; i >= 0; i--) {
-      //    a1[j]=a[i]/2;a2[j++]=a[i]-a[i]/2;
+
       long n1 = a1[j];
       if ((a[i] - n1) < a2[j]) {
         a2[j + 1] = a2[j++];
@@ -26,7 +26,7 @@ public class Main {
         a2[j] = a[i] - n1;
       }
     }
-    int k = 0; // int[] ans=new int[2*n];
+    int k = 0;
     for (int i = (n - 1) / 2; i >= 0; i--) sb.append(a1[i] + " ");
     for (int i = 0; i < n / 2; i++) sb.append(a2[i] + " ");
     System.out.println(sb.toString());

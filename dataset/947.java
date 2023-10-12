@@ -32,7 +32,7 @@ public class ErrorCorrectSystem {
     }
     for (int i = 0; i < n; i++) {
       if (a.charAt(i) != b.charAt(i)) {
-        // try a gets b's letter
+
         if (pair[0][b.charAt(i) - 'a'] > -1) {
           System.out.println(hd - 1);
           System.out.println((i + 1) + " " + (pair[0][b.charAt(i) - 'a'] + 1));

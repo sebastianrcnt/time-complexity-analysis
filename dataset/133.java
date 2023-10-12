@@ -1,20 +1,12 @@
 class SubarraySum {
 
-  /* Returns true if the there is a subarray of arr[] with a sum equal to
-
-  'sum' otherwise returns false. Also, prints the result */
-
   int subArraySum(int arr[], int n, int sum) {
 
     int curr_sum, i, j;
 
-    // Pick a starting point
-
     for (i = 0; i < n; i++) {
 
       curr_sum = arr[i];
-
-      // try all subarrays starting with 'i'
 
       for (j = i + 1; j <= n; j++) {
 
@@ -51,5 +43,3 @@ class SubarraySum {
     arraysum.subArraySum(arr, n, sum);
   }
 }
-
-// This code has been contributed by Mayank Jaiswal(mayank_24)

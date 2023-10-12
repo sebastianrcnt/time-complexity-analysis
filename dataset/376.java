@@ -1,6 +1,3 @@
-// Java program to print Postorder traversal from given Inorder
-// and Preorder traversals.
-
 public class PrintPost {
 
   static int preIndex = 0;
@@ -9,21 +6,11 @@ public class PrintPost {
 
     if (inStrt > inEnd) return;
 
-    // Find index of next item in preorder traversal in
-
-    // inorder.
-
     int inIndex = search(in, inStrt, inEnd, pre[preIndex++]);
-
-    // traverse left tree
 
     printPost(in, pre, inStrt, inIndex - 1);
 
-    // traverse right tree
-
     printPost(in, pre, inIndex + 1, inEnd);
-
-    // print root node at the end of traversal
 
     System.out.print(in[inIndex] + " ");
   }
@@ -36,8 +23,6 @@ public class PrintPost {
 
     return i;
   }
-
-  // Driver code
 
   public static void main(String ars[]) {
 

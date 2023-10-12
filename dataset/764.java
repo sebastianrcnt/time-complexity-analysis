@@ -15,7 +15,7 @@ public class Solution {
     boolean[][] inp = new boolean[r + 1][c + 1];
     for (int i = 0; i < r; i++) {
       String s = in.next();
-      // System.out.println(m[i]);
+
       for (int j = 0; j < s.length(); j++) {
         if (s.charAt(j) == '#') {
           m[i][j] = true;
@@ -28,7 +28,6 @@ public class Solution {
       for (int j = 0; j < c; j++) {
         if (canPress(i, j, r, c, inp)) {
 
-          // make press
           for (int k = 0; k < 8; k++) {
             int xi = i + dx[k];
             int yi = j + dy[k];

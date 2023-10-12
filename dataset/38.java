@@ -1,8 +1,3 @@
-// Java code to rearrange an array such
-// that even index elements are smaller
-// and odd index elements are greater
-// than their next.
-
 class GFG {
 
   static void rearrange(int arr[], int n) {
@@ -31,20 +26,12 @@ class GFG {
     }
   }
 
-  /*
-   * Utility that prints out an array in
-   *
-   * a line
-   */
-
   static void printArray(int arr[], int size) {
 
     for (int i = 0; i < size; i++) System.out.print(arr[i] + " ");
 
     System.out.println();
   }
-
-  // Driver code
 
   public static void main(String[] args) {
 
@@ -63,5 +50,3 @@ class GFG {
     printArray(arr, n);
   }
 }
-
-// This code is contributed by Anant Agarwal.

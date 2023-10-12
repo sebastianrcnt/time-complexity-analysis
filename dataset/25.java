@@ -1,6 +1,3 @@
-// Java program to split array and move first
-// part to end.
-
 import java.util.*;
 
 class GFG {
@@ -9,8 +6,6 @@ class GFG {
 
     for (int i = 0; i < k; i++) {
 
-      // Rotate array by 1.
-
       int x = arr[0];
 
       for (int j = 0; j < n - 1; ++j) arr[j] = arr[j + 1];
@@ -18,8 +13,6 @@ class GFG {
       arr[n - 1] = x;
     }
   }
-
-  // Driver code
 
   public static void main(String[] args) {
 
@@ -34,5 +27,3 @@ class GFG {
     for (int i = 0; i < n; ++i) System.out.print(arr[i] + " ");
   }
 }
-
-// Code Contributed by Mohit Gupta_OMG <(0_o)>

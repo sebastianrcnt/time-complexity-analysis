@@ -42,7 +42,7 @@ public class Solution {
     for (int i = 0; i < arr.length; ++i) {
       if (set.contains(i)) {
         K--;
-        // System.out.println(i);
+
         if (K == 0) ls.add(arr.length - last - 1);
         else ls.add(i - last);
         last = i;

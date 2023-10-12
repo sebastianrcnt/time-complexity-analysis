@@ -1,13 +1,4 @@
-// Java program to find intersection of
-// two sorted arrays
-
 class FindIntersection {
-
-  /* Function prints Intersection of arr1[] and arr2[]
-
-  m is the number of elements in arr1[]
-
-  n is the number of elements in arr2[] */
 
   static void printIntersection(int arr1[], int arr2[], int m, int n) {
 

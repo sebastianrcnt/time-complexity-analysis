@@ -1,6 +1,3 @@
-// Java program to remove duplicates from unsorted
-// linked list
-
 class LinkedList {
 
   static Node head;
@@ -19,33 +16,19 @@ class LinkedList {
     }
   }
 
-  /* Function to remove duplicates from an
-
-  unsorted linked list */
-
   void remove_duplicates() {
 
     Node ptr1 = null, ptr2 = null, dup = null;
 
     ptr1 = head;
 
-    /* Pick elements one by one */
-
     while (ptr1 != null && ptr1.next != null) {
 
       ptr2 = ptr1;
 
-      /* Compare the picked element with rest
-
-      of the elements */
-
       while (ptr2.next != null) {
 
-        /* If duplicate then delete it */
-
         if (ptr1.data == ptr2.next.data) {
-
-          /* sequence of steps is important here */
 
           dup = ptr2.next;
 
@@ -53,9 +36,7 @@ class LinkedList {
 
           System.gc();
 
-        } else
-        /* This is tricky */
-        {
+        } else {
 
           ptr2 = ptr2.next;
         }
@@ -106,4 +87,3 @@ class LinkedList {
     list.printList(head);
   }
 }
-// This code has been contributed by Mayank Jaiswal

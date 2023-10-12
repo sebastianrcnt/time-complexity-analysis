@@ -1,23 +1,14 @@
-// Java program to find maximum sum increasing
-// subsequence tiint i-th index and including
-// k-th index.
 class GFG {
 
   static int pre_compute(int a[], int n, int index, int k) {
 
     int dp[][] = new int[n][n];
 
-    // Initializing the first row of
-
-    // the dp[][].
-
     for (int i = 0; i < n; i++) {
 
       if (a[i] > a[0]) dp[0][i] = a[i] + a[0];
       else dp[0][i] = a[i];
     }
-
-    // Creating the dp[][] matrix.
 
     for (int i = 1; i < n; i++) {
 
@@ -32,12 +23,8 @@ class GFG {
       }
     }
 
-    // To calculate for i=4 and k=6.
-
     return dp[index][k];
   }
-
-  // Driver code
 
   public static void main(String[] args) {
 
@@ -50,5 +37,3 @@ class GFG {
     System.out.println(pre_compute(a, n, index, k));
   }
 }
-
-// This code is contributed by Smitha.

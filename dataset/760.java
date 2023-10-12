@@ -47,7 +47,7 @@ public class p7 {
 
   public static void main(String[] args) {
     FastReader sc = new FastReader();
-    // PrintWriter out = new PrintWriter(System.out);
+
     int n = sc.nextInt();
     int k = sc.nextInt();
     long one = (long) Math.pow(2, k) - 1;

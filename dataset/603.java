@@ -13,7 +13,7 @@ public class TaskA {
 
     long i = sc.nextInt();
     long goal = sc.nextLong();
-    //	long goal=sum;
+
     if (i > goal) {
       i = goal;
     }

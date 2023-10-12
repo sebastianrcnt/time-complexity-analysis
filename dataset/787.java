@@ -193,8 +193,6 @@ public class Div1_526C {
     return false;
   }
 
-  // good for depth of up to 1_048_576 = 2^20
-
   static void preprocess() {
     anc[root][0] = root;
     fParent(root);
@@ -245,7 +243,7 @@ public class Div1_526C {
   static Comparator<Integer> BY_DEPTH =
       new Comparator<Integer>() {
         public int compare(Integer o1, Integer o2) {
-          return -Integer.compare(depth[o1], depth[o2]); // greatest depth first
+          return -Integer.compare(depth[o1], depth[o2]);
         }
       };
 }

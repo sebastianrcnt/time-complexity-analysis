@@ -1,16 +1,7 @@
 package com.interview.binarysearch;
 
-/**
- * @author Tushar Roy Date 01/22/17
- *     <p>Search in sorted and rotated array. In one version duplicate is not allowed and in another
- *     version duplicate is allowed.
- *     <p>Time complexity with no duplicate - O(logn) Time complexity with duplicates - O(n)
- *     <p>https://leetcode.com/problems/search-in-rotated-sorted-array/
- *     https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
- */
 public class SortedAndRotatedArraySearch {
 
-  /** Duplicates are not allowed in arr. */
   public int search(int arr[], int search) {
     int low = 0;
     int high = arr.length - 1;
@@ -37,7 +28,6 @@ public class SortedAndRotatedArraySearch {
     return -1;
   }
 
-  /** Duplicates are allowed in arr. */
   public boolean searchWithDuplicates(int[] arr, int search) {
     int low = 0;
     int high = arr.length - 1;
@@ -46,10 +36,10 @@ public class SortedAndRotatedArraySearch {
       if (arr[mid] == search) {
         return true;
       }
-      // if low is same as mid then increment low.
+
       if (arr[mid] == arr[low]) {
         low++;
-      } else if (arr[mid] == arr[high]) { // if high is same as mid then decrement high.
+      } else if (arr[mid] == arr[high]) {
         high--;
       } else if (arr[mid] < arr[high]) {
         if (arr[mid] < search && search <= arr[high]) {
