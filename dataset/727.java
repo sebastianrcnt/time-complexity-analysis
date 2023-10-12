@@ -29,7 +29,6 @@ public class Main {
   }
 
   static int[] solve(int N, int[] A) {
-    // a/b が1に近いものを探す
     shuffle(A);
     Arrays.sort(A);
     int cur = A[0];

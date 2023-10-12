@@ -19,6 +19,6 @@ public class GennadyAndACardGame {
       s = "NO";
       bufw.flush();
     }
-    bufw.close(); // 关闭
+    bufw.close();
   }
 }

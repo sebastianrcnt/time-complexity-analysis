@@ -52,7 +52,7 @@ public class D {
         try {
           ans = fast(i, j);
         } catch (Exception e) {
-          out.println("ошибка");
+          out.println("aaaaaa");
           out.print(i + " " + j);
           return;
         }
@@ -68,7 +68,7 @@ public class D {
           for (int q = 0; q < j; q++) {
             if (!check[c][q]) {
               out.println(i + " " + j);
-              out.println("точки");
+              out.println("xxxxxx");
               for (int w = 0; w < ans[0].length; w++) {
                 out.println(ans[0][w] + " " + ans[1][w]);
               }
@@ -86,7 +86,7 @@ public class D {
 
         if (set.size() < i * j - 1) {
           out.println(i + " " + j);
-          out.println("вектора");
+          out.println("bbbbb");
           for (int w = 0; w < ans[0].length; w++) {
             out.println(ans[0][w] + " " + ans[1][w]);
           }

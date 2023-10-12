@@ -14,7 +14,7 @@ elif torch.cuda.is_available():
     print(f"cuda is available. using cuda...")
     type_ = 'cuda'
 else:
-    print("mps is not available")
+    print("mps is not available. fallback to cpu")
 
 device = torch.device(type_)
 tokenizer = BertTokenizer.from_pretrained("bert-base-cased")

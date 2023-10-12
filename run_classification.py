@@ -42,6 +42,7 @@ def classify(model: Literal["bert", "codebert"], embeddings: Tuple[torch.Tensor]
                 .squeeze(0)
                 .reshape(-1)
                 .detach()
+                .cpu()
                 .numpy()
             for emb in embeddings
         ]
@@ -65,7 +66,7 @@ def classify(model: Literal["bert", "codebert"], embeddings: Tuple[torch.Tensor]
     print(f"Random Forest Accuracy ({model}): {accuracy * 100:.2f}%")
 
     # SVC classifier test
-    clf = SVC(verbose=True)
+    clf = SVC()
     clf.fit(X_train, y_train)
 
     # Predict on the test set

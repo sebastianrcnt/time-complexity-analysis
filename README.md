@@ -1,9 +1,3 @@
-### 파이썬 가상 환경 활성화
-```sh
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
 ### Embeddings 생성
 ```sh
 # bert 임베딩 생성
