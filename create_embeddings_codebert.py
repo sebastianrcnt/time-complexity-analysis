@@ -10,6 +10,9 @@ type_ = 'cpu'
 if torch.backends.mps.is_available():
     print(f"mps is available. using mps...")
     type_ = 'mps'
+elif torch.cuda.is_available():
+    print(f"cuda is available. using cuda...")
+    type_ = 'cuda'
 else:
     print("mps is not available")
 
