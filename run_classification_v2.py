@@ -53,7 +53,7 @@ def classify_svm(labels: List[str], embeddings: List[np.array]) -> None:
     """
 
     rows_count = len(labels)
-    training_rows_count = int(rows_count * 0.8)
+    training_rows_count = int(rows_count * 0.7)
 
     X_train = embeddings[:training_rows_count]
     y_train = labels[:training_rows_count]
@@ -79,7 +79,6 @@ def classify_svm(labels: List[str], embeddings: List[np.array]) -> None:
 def classify_random_forest(labels: List[str], embeddings: List[np.array]):
     rows_count = len(labels)
     training_rows_count = int(rows_count * 0.8)
-    testing_rows_count = rows_count - training_rows_count
 
     X_train = embeddings[:training_rows_count]
     y_train = labels[:training_rows_count]
@@ -105,7 +104,19 @@ if __name__ == "__main__":
 
     # shuffle df
     shuffled_df = df.sample(frac=1)
+    shuffled_df = shuffled_df.reset_index(drop=True)
+    shuffled_df_len = len(shuffled_df)
+    training_rows_count = int(shuffled_df_len * 0.7)
+
+    # set the first 70% rows to train, the rest to test
+    shuffled_df["train_or_test"] = [None] * shuffled_df_len
+    for i in range(shuffled_df_len):
+        if i < training_rows_count:
+            shuffled_df.loc[i, "train_or_test"] = "train"
+        else:
+            shuffled_df.loc[i, "train_or_test"] = "test"
     
+    shuffled_df.to_csv("./df.csv")
     # load complexities
     complexities = list(shuffled_df["complexity"])
     bert_embeddings = list(
