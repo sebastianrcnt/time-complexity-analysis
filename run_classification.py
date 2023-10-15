@@ -60,6 +60,11 @@ def classify(model: Literal["bert", "codebert"], embeddings: Tuple[torch.Tensor]
 
     # Predict on the test set
     y_pred = clf.predict(X_test)
+    y_pred_df = pd.DataFrame(y_pred)
+
+    # merge with df
+    y_pred_df = pd.concat([df, y_pred_df], axis=1)
+    y_pred_df.to_csv(f"./{model}-randomforest-pred.csv")
 
     # Calculate and print accuracy
     accuracy = accuracy_score(y_test, y_pred)
@@ -69,8 +74,11 @@ def classify(model: Literal["bert", "codebert"], embeddings: Tuple[torch.Tensor]
     clf = SVC()
     clf.fit(X_train, y_train)
 
-    # Predict on the test set
+    # Predict on the test set$INSTANCE_DIR
     y_pred = clf.predict(X_test)
+    y_pred_df = pd.DataFrame(y_pred)
+    y_pred_df = pd.concat([df, y_pred_df], axis=1)
+    y_pred_df.to_csv(f"./{model}-svc-pred.csv")
 
     # Calculate and print accuracy
     accuracy = accuracy_score(y_test, y_pred)
