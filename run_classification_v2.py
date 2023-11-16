@@ -1,4 +1,4 @@
-from typing import List, Literal, Tuple
+from typing import List
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
@@ -14,12 +14,17 @@ import os
 
 
 def load_metadata():
-    df = pd.read_csv("./metadata.csv")
+    df = pd.read_csv("./labels.csv")
+
     df = df[["file_name", "complexity"]]
+
     df["codebert_embeddings_path"] = df["file_name"].apply(
-        lambda x: f"./embeddings-codebert/{x}.pth"
+        lambda x: f"./embeddings-codebert/{x.replace('/', '__')}.pth"
     )
-    df["bert_embeddings_path"] = df["file_name"].apply(lambda x: f"./embeddings-bert/{x}.pth")
+
+    df["bert_embeddings_path"] = df["file_name"].apply(
+        lambda x: f"./embeddings-bert/{x.replace('/', '__')}.pth"
+    )
 
     # make sure that the matching embeddings file exists
     # for each items in df, if codebert_embeddings_path doesn't exist, delete it.
@@ -76,6 +81,7 @@ def classify_svm(labels: List[str], embeddings: List[np.array]) -> None:
 
     return train_accuracy, test_accuracy, predictions
 
+
 def classify_random_forest(labels: List[str], embeddings: List[np.array]):
     rows_count = len(labels)
     training_rows_count = int(rows_count * 0.8)
@@ -99,6 +105,7 @@ def classify_random_forest(labels: List[str], embeddings: List[np.array]):
 
     return train_accuracy, test_accuracy, predictions
 
+
 if __name__ == "__main__":
     df = load_metadata()
 
@@ -110,25 +117,35 @@ if __name__ == "__main__":
 
     # set the first 70% rows to train, the rest to test
     shuffled_df["train_or_test"] = [None] * shuffled_df_len
+
     for i in range(shuffled_df_len):
         if i < training_rows_count:
             shuffled_df.loc[i, "train_or_test"] = "train"
         else:
             shuffled_df.loc[i, "train_or_test"] = "test"
-    
-    shuffled_df.to_csv("./df.csv")
+
+    shuffled_df.to_csv("./shuffled_df.csv")
+
     # load complexities
     complexities = list(shuffled_df["complexity"])
+
     bert_embeddings = list(
-        shuffled_df["bert_embeddings_path"].apply(load_1d_np_arrary_embedding_from_path)
-    )
-    codebert_embeddings = list(
-        shuffled_df["codebert_embeddings_path"].apply(load_1d_np_arrary_embedding_from_path)
+        shuffled_df["bert_embeddings_path"].apply(
+            load_1d_np_arrary_embedding_from_path,
+        )
     )
 
-    bert_train_accuracy_svm, bert_test_accuracy_svm, bert_predictions_svm = classify_svm(
-        complexities, bert_embeddings
+    codebert_embeddings = list(
+        shuffled_df["codebert_embeddings_path"].apply(
+            load_1d_np_arrary_embedding_from_path,
+        )
     )
+
+    (
+        bert_train_accuracy_svm,
+        bert_test_accuracy_svm,
+        bert_predictions_svm,
+    ) = classify_svm(complexities, bert_embeddings)
 
     print(
         f"bert svm train accuracy: {bert_train_accuracy_svm}, test accuracy: {bert_test_accuracy_svm}"
@@ -138,19 +155,17 @@ if __name__ == "__main__":
         codebert_train_accuracy_svm,
         codebert_test_accuracy_svm,
         codebert_predictions_svm,
-    ) = classify_svm(
-        complexities,
-        codebert_embeddings
-    )
+    ) = classify_svm(complexities, codebert_embeddings)
 
     print(
         f"codebert svm train accuracy: {codebert_train_accuracy_svm}, test accuracy: {codebert_test_accuracy_svm}"
     )
 
-
-    bert_train_accuracy_rf, bert_test_accuracy_rf, bert_predictions_rf = classify_random_forest(
-        complexities, bert_embeddings
-    )
+    (
+        bert_train_accuracy_rf,
+        bert_test_accuracy_rf,
+        bert_predictions_rf,
+    ) = classify_random_forest(complexities, bert_embeddings)
 
     print(
         f"bert rf train accuracy: {bert_train_accuracy_rf}, test accuracy: {bert_test_accuracy_rf}"
@@ -160,19 +175,15 @@ if __name__ == "__main__":
         codebert_train_accuracy_rf,
         codebert_test_accuracy_rf,
         codebert_predictions_rf,
-    ) = classify_random_forest(
-        complexities,
-        codebert_embeddings
-    )
+    ) = classify_random_forest(complexities, codebert_embeddings)
 
     print(
         f"codebert rf train accuracy: {codebert_train_accuracy_rf}, test accuracy: {codebert_test_accuracy_rf}"
     )
 
-
-    shuffled_df['bert_predictions_svm'] = bert_predictions_svm
-    shuffled_df['codebert_predictions_svm'] = codebert_predictions_svm
-    shuffled_df['bert_predictions_rf'] = bert_predictions_rf
-    shuffled_df['codebert_predictions_rf'] = codebert_predictions_rf
+    shuffled_df["bert_predictions_svm"] = bert_predictions_svm
+    shuffled_df["codebert_predictions_svm"] = codebert_predictions_svm
+    shuffled_df["bert_predictions_rf"] = bert_predictions_rf
+    shuffled_df["codebert_predictions_rf"] = codebert_predictions_rf
 
     shuffled_df.to_csv("./svm_rf_predictions.csv")

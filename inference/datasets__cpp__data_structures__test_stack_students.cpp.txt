@@ -1,0 +1,73 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Given Code:
+    /*
+ * This program reads a data file consisting of students' GPAs
+ * followed by their names. The program then prints the highest
+ * GPA and the names of the students with the highest GPA.
+ * It uses stack to store the names of the students
+ * Run:
+ *     make all
+ *     ./main student.txt
+ ************************************************************
+ * */
+#include <cassert>
+#include <cmath>
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <string>
+
+#include "./stack.hpp"
+
+int main(int argc, char* argv[]) {
+    double GPA = NAN;
+    double highestGPA = NAN;
+    std::string name;
+
+    assert(argc == 2);
+    std::ifstream infile;
+    stack<std::string> stk;
+
+    infile.open(argv[1]);
+    std::cout << std::fixed << std::showpoint;
+    std::cout << std::setprecision(2);
+    infile >> GPA >> name;
+    highestGPA = GPA;
+
+    while (infile) {
+        if (GPA > highestGPA) {
+            stk.clear();
+            stk.push(name);
+            highestGPA = GPA;
+        } else if (GPA == highestGPA) {
+            stk.push(name);
+        }
+        infile >> GPA >> name;
+    }
+    std::cout << "Highest GPA: " << highestGPA << std::endl;
+    std::cout << "Students the highest GPA are: " << std::endl;
+    while (!stk.isEmptyStack()) {
+        std::cout << stk.top() << std::endl;
+        stk.pop();
+    }
+    std::cout << std::endl;
+    return 0;
+}
+
+
+[choice]3[/choice]
+
+The given program reads a file and performs operations on it, including reading values, checking for highest values and printing the final result. Therefore, the time complexity of the program would depend on the size of the input file. Assuming the input file has a size of n elements, the function `while (infile)` would be executed n times. The operation `std::ifstream << GPA >> name;` and `std::cout << std::fixed << std::showpoint;` would also be executed n times, assuming that the file contains n elements.
+
+Another factor that affects the time complexity would be the size of the stack used by the program, which could grow to n elements if all n elements in the input file have the highest GPA. However, since the program only adds a name to the stack when its GPA is the highest, the stack size is likely to be significantly smaller than n.
+
+Overall, the time complexity of the given program is O(n) which means it will take O(n) time to execute.</s>

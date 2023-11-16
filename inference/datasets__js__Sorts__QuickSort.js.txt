@@ -1,0 +1,44 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Given Code:
+    /**
+ * @function QuickSort
+ * @description Quick sort is a comparison sorting algorithm that uses a divide and conquer strategy.
+ * @param {Integer[]} items - Array of integers
+ * @return {Integer[]} - Sorted array.
+ * @see [QuickSort](https://en.wikipedia.org/wiki/Quicksort)
+ */
+function quickSort(items) {
+  const length = items.length
+
+  if (length <= 1) {
+    return items
+  }
+  const PIVOT = items[0]
+  const GREATER = []
+  const LESSER = []
+
+  for (let i = 1; i < length; i++) {
+    if (items[i] > PIVOT) {
+      GREATER.push(items[i])
+    } else {
+      LESSER.push(items[i])
+    }
+  }
+
+  const sorted = [...quickSort(LESSER), PIVOT, ...quickSort(GREATER)]
+  return sorted
+}
+
+export { quickSort }
+
+
+[choice]4[/choice]</s>

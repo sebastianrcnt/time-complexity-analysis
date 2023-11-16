@@ -1,0 +1,89 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Given Code:
+    /*
+  Breadth First Tree Traversal or level order traversal implementation in javascript
+  Author: @GerardUbuntu
+*/
+
+class Node {
+  constructor(data) {
+    this.data = data
+    this.left = null
+    this.right = null
+  }
+}
+
+class BinaryTree {
+  constructor() {
+    this.root = null
+  }
+
+  breadthFirstIterative() {
+    const traversal = []
+    if (this.root) {
+      traversal.push(this.root)
+    }
+    for (let i = 0; i < traversal.length; i++) {
+      const currentNode = traversal[i]
+      if (currentNode.left) {
+        traversal.push(currentNode.left)
+      }
+      if (currentNode.right) {
+        traversal.push(currentNode.right)
+      }
+      traversal[i] = currentNode.data
+    }
+    return traversal
+  }
+
+  breadthFirstRecursive() {
+    const traversal = []
+    const h = this.getHeight(this.root)
+    for (let i = 0; i !== h; i++) {
+      this.traverseLevel(this.root, i, traversal)
+    }
+    return traversal
+  }
+
+  // Computing the height of the tree
+  getHeight(node) {
+    if (node === null) {
+      return 0
+    }
+    const lheight = this.getHeight(node.left)
+    const rheight = this.getHeight(node.right)
+    return lheight > rheight ? lheight + 1 : rheight + 1
+  }
+
+  traverseLevel(node, levelRemaining, traversal) {
+    if (node === null) {
+      return
+    }
+    if (levelRemaining === 0) {
+      traversal.push(node.data)
+    } else {
+      this.traverseLevel(node.left, levelRemaining - 1, traversal)
+      this.traverseLevel(node.right, levelRemaining - 1, traversal)
+    }
+  }
+}
+
+export { BinaryTree, Node }
+
+
+[choice]3[/choice]
+
+The `breadthFirstIterative()` and `breadthFirstRecursive()` methods of the `BinaryTree` class both have a time complexity of O(n). This is because they are performing a complete traversal of the tree. The iterative version of the traversal uses a queue to store the nodes to be visited at each level, and visits each level one at a time. The recursive version uses a stack to implement the depth-first traversal, which visits each level twice, once for the left children and once for the right children.
+
+The `getHeight()` method of the `BinaryTree` class has a time complexity of O(n). It uses a recursive approach to compute the height of the tree, and visits every node of the tree only once, so the time complexity is linear. However, there is an extra space complexity to this method, as it needs to repeatedly compute the heights of subtrees.
+
+Overall, the time complexity of this code would be O(n) + O(n) = O(n), as it performs two traversals of the tree, each of which has a time complexity of O(n).</s>

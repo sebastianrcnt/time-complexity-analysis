@@ -1,0 +1,56 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Given Code:
+    /**
+ * Counting sort is an algorithm for sorting a collection
+ * of objects according to keys that are small integers.
+ *
+ * It is an integer sorting algorithm.
+ *
+ * Wikipedia: https://en.wikipedia.org/wiki/Counting_sort
+ * Animated Visual: https://www.cs.usfca.edu/~galles/visualization/CountingSort.html
+ */
+
+export const countingSort = (arr, min, max) => {
+  // Create an auxiliary resultant array
+  const res = []
+  // Create and initialize the frequency[count] array
+  const count = new Array(max - min + 1).fill(0)
+  // Populate the freq array
+  for (let i = 0; i < arr.length; i++) {
+    count[arr[i] - min]++
+  }
+  // Create a prefix sum array out of the frequency[count] array
+  count[0] -= 1
+  for (let i = 1; i < count.length; i++) {
+    count[i] += count[i - 1]
+  }
+  // Populate the result array using the prefix sum array
+  for (let i = arr.length - 1; i >= 0; i--) {
+    res[count[arr[i] - min]] = arr[i]
+    count[arr[i] - min]--
+  }
+  return res
+}
+
+/**
+ * Implementation of Counting Sort
+ */
+// const array = [3, 0, 2, 5, 4, 1]
+// countingSort(array, 0, 5)
+
+
+[choice]2[/choice]
+The time complexity of the given code is O(n).
+The algorithm has two main operations:
+1. Creating and initializing the frequency array
+2. Populating the result array using the prefix sum array
+Both operations take O(n) time, so the overall time complexity is O(n).</s>

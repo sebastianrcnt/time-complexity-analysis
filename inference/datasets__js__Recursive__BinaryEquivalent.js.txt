@@ -1,0 +1,35 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Given Code:
+    /*
+ * Problem Statement: Given a positive number `num`, find it's binary equivalent using recursion
+ *
+ * What is Binary Equivalent?
+ * - In binary number system, a number is represented in terms of 0s and 1s,
+ *   for example:
+ *    - Binary Of 2 = 10
+ *    - Binary of 3 = 11
+ *    - Binary of 4 = 100
+ *
+ * Reference on how to find Binary Equivalent
+ * - https://byjus.com/maths/decimal-to-binary/
+ *
+ */
+
+export const binaryEquivalent = (num) => {
+  if (num === 0 || num === 1) {
+    return String(num)
+  }
+  return binaryEquivalent(Math.floor(num / 2)) + String(num % 2)
+}
+
+
+[choice]4[/choice]</s>

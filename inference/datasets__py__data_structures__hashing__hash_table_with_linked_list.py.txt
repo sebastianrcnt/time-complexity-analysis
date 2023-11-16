@@ -1,0 +1,41 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Given Code:
+    from collections import deque
+
+from .hash_table import HashTable
+
+
+class HashTableWithLinkedList(HashTable):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def _set_value(self, key, data):
+        self.values[key] = deque([]) if self.values[key] is None else self.values[key]
+        self.values[key].appendleft(data)
+        self._keys[key] = self.values[key]
+
+    def balanced_factor(self):
+        return (
+            sum(self.charge_factor - len(slot) for slot in self.values)
+            / self.size_table
+            * self.charge_factor
+        )
+
+    def _collision_resolution(self, key, data=None):
+        if not (
+            len(self.values[key]) == self.charge_factor and self.values.count(None) == 0
+        ):
+            return key
+        return super()._collision_resolution(key, data)
+
+
+[choice]3[/choice]</s>
