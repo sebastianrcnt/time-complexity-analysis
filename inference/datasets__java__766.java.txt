@@ -1,0 +1,39 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+public class Main {
+  public static void main(String args[]) {
+    Scanner sc = new Scanner(System.in);
+
+    long n = sc.nextLong();
+    long s = sc.nextLong();
+
+    long ans = (s - 1) / n + 1;
+    System.out.print(ans);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice], which is O(n).
+
+Explanation:
+- We can use the formula for finding repeated characters in a string to understand the time complexity of given code.
+- We first read an input string of length 'n' and count the occurrences of the character 's' in the string.
+- If the character 's' is present only once in the string, then we print 1.
+- Otherwise, we start counting the characters from left to right in the string.
+- If we encounter the character 's', then we break the loop and print the character index (which is 'i + 1').
+- If we don't encounter the character 's' up to 'i', then we print 'i + 1' as the index of the character 's'.
+- If 'i' is greater than or equal to 'n', then we exit the loop and print the index of the last occurrence of the character 's' as 'i + 1'.
+- This process takes O(n) time, as we are traversing the entire string to find the leftmost occurrence of the character 's'.
+- Therefore, the time complexity of given code is O(n)</s>

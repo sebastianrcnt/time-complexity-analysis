@@ -1,0 +1,49 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class BinarySearch {
+
+  int binarySearch(int arr[], int l, int r, int x) {
+
+    if (r >= l) {
+
+      int mid = l + (r - l) / 2;
+
+      if (arr[mid] == x) return mid;
+
+      if (arr[mid] > x) return binarySearch(arr, l, mid - 1, x);
+
+      return binarySearch(arr, mid + 1, r, x);
+    }
+
+    return -1;
+  }
+
+  public static void main(String args[]) {
+
+    BinarySearch ob = new BinarySearch();
+
+    int arr[] = {2, 3, 4, 10, 40};
+
+    int n = arr.length;
+
+    int x = 10;
+
+    int result = ob.binarySearch(arr, 0, n - 1, x);
+
+    if (result == -1) System.out.println("Element not present");
+    else System.out.println("Element found at index " + result);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. The binary search algorithm has a constant time complexity of O(logn) on average, because it halves the search space at each recursive call.</s>

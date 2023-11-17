@@ -1,0 +1,51 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+#include <iostream>
+
+class Node {
+ public:
+    int val;
+    Node *next;
+
+    Node(int v, Node *n) : val(v), next(n) {}  // Default constructor for Node
+};
+
+int getSize(Node *root) {
+    if (root == NULL) {
+        return 0;
+    }
+    // Each node will return 1 so the total adds up to be the size
+    return 1 + getSize(root->next);
+}
+
+int main() {
+    Node *myList = new Node(0, NULL);  // Initializes the LinkedList
+    Node *temp = myList;
+    // Creates a linked lists of total size 10, numbered 1 - 10
+    for (int i = 1; i < 10; i++) {
+        temp->next = new Node(i, NULL);
+        temp = temp->next;
+    }
+    // Creating other lists for checking purposes
+    Node *secondList = new Node(0, NULL);  // List of size 1
+    Node *thirdList = NULL;                // List of size 0
+
+    std::cout << getSize(myList) << std::endl
+              << getSize(secondList) << std::endl
+              << getSize(thirdList) << std::endl;
+
+    return 0;
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. It takes O(n) time to traverse and calculate the size of a linked list.</s>

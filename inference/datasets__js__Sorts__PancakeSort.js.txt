@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /*
+/*
  * Unlike a traditional sorting algorithm, which attempts to sort with the fewest
  * comparisons possible, the goal of pancake sort is to sort the sequence in as few reversals as
  * possible. The idea is to do something similar to Selection Sort. We one by one place
@@ -92,4 +86,11 @@ export function pancakeSort(array) {
 }
 
 
-[choice]3[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice] because the number of comparisons needed for a particular pancake sort case is the number of sub-array merges (which are logarithmic), but there is no guarantee that the pancake sort will find an optimal solution.</s>

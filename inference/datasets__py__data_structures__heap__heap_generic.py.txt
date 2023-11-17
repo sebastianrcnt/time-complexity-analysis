@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    from collections.abc import Callable
+from collections.abc import Callable
 
 
 class Heap:
@@ -185,4 +179,11 @@ if __name__ == "__main__":
     doctest.testmod()
 
 
-[choice]3[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. The reasoning for this answer is that the given code uses the heapify_up and heapify_down methods which take O(logn) time complexity in the worst case. Additionally, the operation of searching for the parent node in the heap also has a time complexity of O(logn). Therefore, the overall time complexity of the code is O(logn).</s>

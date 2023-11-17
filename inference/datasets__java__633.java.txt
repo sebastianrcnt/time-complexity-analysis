@@ -1,0 +1,64 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Scanner;
+
+public class A1 {
+
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+
+    long size = scan.nextLong();
+    int numberOfSpecial = scan.nextInt();
+    long pageSize = scan.nextLong();
+
+    long[] specialItemsArray = new long[numberOfSpecial];
+    for (int i = 0; i < numberOfSpecial; i++) {
+      specialItemsArray[i] = scan.nextLong();
+    }
+
+    int totalRemoved = 0;
+    int step = 0;
+
+    long currentPageIndex =
+        BigDecimal.valueOf(specialItemsArray[0])
+            .divide(BigDecimal.valueOf(pageSize), 2, RoundingMode.UP)
+            .setScale(0, RoundingMode.CEILING)
+            .longValue();
+    int specialItemArrayIndex = 1;
+
+    while (specialItemArrayIndex < numberOfSpecial) {
+      long pageIndex =
+          BigDecimal.valueOf(specialItemsArray[specialItemArrayIndex] - totalRemoved)
+              .divide(BigDecimal.valueOf(pageSize), 2, RoundingMode.UP)
+              .setScale(0, RoundingMode.CEILING)
+              .longValue();
+      if (currentPageIndex != pageIndex) {
+        step++;
+        totalRemoved = specialItemArrayIndex;
+        currentPageIndex =
+            BigDecimal.valueOf(specialItemsArray[specialItemArrayIndex] - totalRemoved)
+                .divide(BigDecimal.valueOf(pageSize), 2, RoundingMode.UP)
+                .setScale(0, RoundingMode.CEILING)
+                .longValue();
+      }
+      specialItemArrayIndex++;
+    }
+
+    System.out.println(step + 1);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. The reasoning being that the time taken for finding the floor division by page size which is the number of pages from where to remove special item or  from where to remove special items if there is more than one special item in loop on each iteration is O(nlogn) Since the division operation can be considered O(logn).</s>

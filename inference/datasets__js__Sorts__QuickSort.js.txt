@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * @function QuickSort
  * @description Quick sort is a comparison sorting algorithm that uses a divide and conquer strategy.
  * @param {Integer[]} items - Array of integers
@@ -41,4 +35,14 @@ function quickSort(items) {
 export { quickSort }
 
 
-[choice]4[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].
+
+Explanation:
+The time complexity of the given code is O(n), where n is the number of items in the input array. This is because the algorithm performs n operations on the input array. Specifically, there are n comparisons performed on each element, which gives n operation performed on each element. And as there are n elements in total, hence the total number of operations is n * n = n.</s>

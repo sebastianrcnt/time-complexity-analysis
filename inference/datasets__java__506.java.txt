@@ -1,0 +1,41 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+
+class GFG {
+
+  static void digitsNum(int N) {
+
+    if (N == 0) System.out.println("0");
+
+    if (N % 9 != 0) System.out.print((N % 9));
+
+    for (int i = 1; i <= (N / 9); ++i) System.out.print("9");
+
+    for (int i = 1; i <= N; ++i) System.out.print("0");
+
+    System.out.print("");
+  }
+
+  public static void main(String[] args) {
+
+    int N = 5;
+
+    System.out.print("The number is : ");
+
+    digitsNum(N);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice].</s>

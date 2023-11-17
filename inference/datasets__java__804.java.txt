@@ -1,0 +1,29 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.Scanner;
+
+public class Main {
+  static Scanner scan = new Scanner(System.in);
+
+  public static void main(String[] args) {
+    int num = scan.nextInt();
+    for (int i = 0; i < num; i++) {
+      int a = scan.nextInt();
+      int b = scan.nextInt();
+      System.out.println(a + " " + 2 * a);
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice]. Please choose only one of the options.</s>

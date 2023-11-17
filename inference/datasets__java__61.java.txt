@@ -1,0 +1,59 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+
+class GFG {
+
+  static int answerQuery(int a[], int n, int l, int r) {
+
+    int count = 0;
+
+    l = l - 1;
+
+    for (int i = l; i < r; i++) {
+
+      int element = a[i];
+
+      int divisors = 0;
+
+      for (int j = l; j < r; j++) {
+
+        if (a[j] % a[i] == 0) divisors++;
+        else break;
+      }
+
+      if (divisors == (r - l)) count++;
+    }
+
+    return count;
+  }
+
+  public static void main(String[] args) {
+
+    int a[] = {1, 2, 3, 5};
+
+    int n = a.length;
+
+    int l = 1, r = 4;
+
+    System.out.println(answerQuery(a, n, l, r));
+
+    l = 2;
+    r = 4;
+
+    System.out.println(answerQuery(a, n, l, r));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. The given code has a time complexity of O(n).</s>

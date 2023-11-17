@@ -1,0 +1,35 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class GFG {
+
+  static int findMinDiff(int[] arr, int n) {
+
+    int diff = Integer.MAX_VALUE;
+
+    for (int i = 0; i < n - 1; i++)
+      for (int j = i + 1; j < n; j++)
+        if (Math.abs((arr[i] - arr[j])) < diff) diff = Math.abs((arr[i] - arr[j]));
+
+    return diff;
+  }
+
+  public static void main(String[] args) {
+
+    int arr[] = new int[] {1, 5, 3, 19, 18, 25};
+
+    System.out.println("Minimum difference is " + findMinDiff(arr, arr.length));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].</s>

@@ -1,0 +1,60 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+
+class SecondSmallest {
+
+  static void print2Smallest(int arr[]) {
+
+    int first, second, arr_size = arr.length;
+
+    if (arr_size < 2) {
+
+      System.out.println(" Invalid Input ");
+
+      return;
+    }
+
+    first = second = Integer.MAX_VALUE;
+
+    for (int i = 0; i < arr_size; i++) {
+
+      if (arr[i] < first) {
+
+        second = first;
+
+        first = arr[i];
+
+      } else if (arr[i] < second && arr[i] != first) second = arr[i];
+    }
+
+    if (second == Integer.MAX_VALUE) System.out.println("There is no second" + "smallest element");
+    else
+      System.out.println(
+          "The smallest element is " + first + " and second Smallest" + " element is " + second);
+  }
+
+  public static void main(String[] args) {
+
+    int arr[] = {12, 13, 1, 10, 34, 1};
+
+    print2Smallest(arr);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].
+
+
+Explanation:
+The time complexity of the given code is O(n), where n is the length of the input array. This is because the algorithm iterates through the entire array once to find the smallest and second smallest elements. At each iteration, it performs a constant number of operations, including comparisons and assignments. Therefore, the total number of operations it performs is directly proportional to the number of elements in the array. Hence, the time complexity is O(n).</s>

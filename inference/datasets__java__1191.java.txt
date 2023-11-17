@@ -1,0 +1,67 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  private static final FS scanner = new FS(System.in);
+
+  public static void main(String[] args) throws Exception {
+
+    int n = scanner.nextInt();
+    int sumA = 0;
+    int sumB = 0;
+    int rem = n % 4;
+    for (int i = rem; i >= 1; i--) {
+      if (sumB <= sumA) {
+        sumB += i;
+      } else {
+        sumA += i;
+      }
+    }
+
+    System.out.println(Math.abs(sumA - sumB));
+  }
+
+  static class FS {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public FS(InputStream i) {
+      br = new BufferedReader(new InputStreamReader(i));
+      st = new StringTokenizer("");
+    }
+
+    public String next() throws IOException {
+      if (st.hasMoreTokens()) return st.nextToken();
+      else st = new StringTokenizer(br.readLine());
+      return next();
+    }
+
+    public int nextInt() throws IOException {
+      return Integer.parseInt(next());
+    }
+
+    public long nextLong() throws IOException {
+      return Long.parseLong(next());
+    }
+
+    public double nextDouble() throws IOException {
+      return Double.parseDouble(next());
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice]. The algorithm has a nested loop, and each iteration in the external loop has a linear number of iterations in the inner loop. Thus, the time complexity is O(n^2).</s>

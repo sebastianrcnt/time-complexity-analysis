@@ -1,0 +1,44 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+public class A {
+  public static int palin(String str) {
+    int flag = 0;
+    int l = str.length();
+    for (int i = 0; i < l / 2; i++) {
+      if (str.charAt(i) != str.charAt(l - i - 1)) {
+        flag = 1;
+        break;
+      }
+    }
+    if (flag == 1) return 0;
+    else return 1;
+  }
+
+  public static void main(String args[]) {
+    Scanner sc = new Scanner(System.in);
+    String str = sc.next();
+    HashSet<Character> hs = new HashSet<>();
+    for (int i = 0; i < str.length(); i++) {
+      hs.add(str.charAt(i));
+    }
+    if (hs.size() == 1) System.out.println(0);
+    else if (palin(str) == 0) System.out.println(str.length());
+    else System.out.println(str.length() - 1);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. 
+The time complexity of the palin() method is O(n/2) since it checks all pairs of characters in the string. Therefore, in the main() method, it iterates through the entire string using a for loop and checks all characters in the HashSet. Since the HashSet size is n, this gives us a total time complexity of O(n).</s>

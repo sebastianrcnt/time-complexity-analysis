@@ -1,0 +1,36 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.Scanner;
+
+public class MargariteBestPresent_1080B {
+
+  private static int f(int x) {
+    return (x % 2 == 0) ? x / 2 : (x - 1) / 2 - x;
+  }
+
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n, r, l;
+    n = sc.nextInt();
+    while (n-- > 0) {
+      l = sc.nextInt();
+      r = sc.nextInt();
+
+      System.out.println(f(r) - f(l - 1));
+    }
+    sc.close();
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].</s>

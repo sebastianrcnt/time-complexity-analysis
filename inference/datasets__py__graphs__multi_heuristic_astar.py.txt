@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    import heapq
+import heapq
 import sys
 
 import numpy as np
@@ -326,20 +320,13 @@ if __name__ == "__main__":
     multi_a_star(start, goal, n_heuristic)
 
 
-[choice]1[/choice] This function implements an implementation of the A*-algorithm. The implementation contains the following algorithmic steps:
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
 
-1. Define the initial conditions of the problem, including:
-- The start and goal states.
-- The problem domain, which includes the possible actions and their associated probabilities (i.e., the heuristic).
-1. Initialize the following data structures:
-- `g_function`: A dictionary that stores the heuristic function for each node in the search space.
-- `back_pointer`: A dictionary that stores the previous node of the path for each node in the search space.
-- `visited`: A set of nodes that have been already evaluated.
-- `open_list`: A list of priority queues, which store the nodes that could potentially lead to the goal state and are yet to be explored fully.
-1. While the `open_list` is not empty:
-- Pop the node with the lowest value from the priority queue.
-- If this node is the goal state, construct the path by backtracking through the `back_pointer` dictionary.
-- Otherwise, add the neighbors of the current node that are not obstacles into the `visited` set and then add them to the `open_list`.
-- Update the `g_function` and `back_pointer` entries for the newly explored neighbors according to the A*-algorithm's equations.
-- If all neighbors of the current node have already been explored, pop them from the `visited` set to prevent a cycle from forming in the search space.
-1. If the goal state has not been found after the `g_function` for all nodes has been evaluated, then the search has failed.</s>
+Among the Options above, the time complexity of the given code is [choice]0[/choice]. 
+
+Note: You have to provide the time complexity of each step in the code (e.g., O(1), O(logn), O(n)) and explain how they get to the final time complexity.</s>

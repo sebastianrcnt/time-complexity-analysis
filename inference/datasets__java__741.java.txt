@@ -1,0 +1,40 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+public class vas2 {
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int n = in.nextInt();
+    String st = in.next();
+    int[] a = new int[n];
+    for (int i = 0; i < n; i++) a[i] = st.charAt(i) - 48;
+    boolean c = false;
+    for (int i = 1; !c && i < n; i++) {
+      int s = 0;
+      for (int j = 0; j < i; j++) s += a[j];
+      int t = 0;
+      for (int j = i; j < n; j++) {
+        t += a[j];
+        if (t > s)
+          if (t - a[j] != s) break;
+          else t = a[j];
+      }
+      if (t == s) c = true;
+    }
+    System.out.println(c ? "YES" : "NO");
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice]. This is because the code uses two nested loops, with the outer loop iterating n times and the inner loop iterating n times again. Therefore, the total number of iterations is 2n^2, which is O(n^2).</s>

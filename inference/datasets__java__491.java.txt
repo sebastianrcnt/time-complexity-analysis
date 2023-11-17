@@ -1,0 +1,103 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class FractionalKnapSack {
+
+  public static void main(String[] args) {
+
+    int[] wt = {10, 40, 20, 30};
+
+    int[] val = {60, 40, 100, 120};
+
+    int capacity = 50;
+
+    double maxValue = getMaxValue(wt, val, capacity);
+
+    System.out.println("Maximum value we can obtain = " + maxValue);
+  }
+
+  private static double getMaxValue(int[] wt, int[] val, int capacity) {
+
+    ItemValue[] iVal = new ItemValue[wt.length];
+
+    for (int i = 0; i < wt.length; i++) {
+
+      iVal[i] = new ItemValue(wt[i], val[i], i);
+    }
+
+    Arrays.sort(
+        iVal,
+        new Comparator<ItemValue>() {
+
+          @Override
+          public int compare(ItemValue o1, ItemValue o2) {
+
+            return o2.cost.compareTo(o1.cost);
+          }
+        });
+
+    double totalValue = 0d;
+
+    for (ItemValue i : iVal) {
+
+      int curWt = (int) i.wt;
+
+      int curVal = (int) i.val;
+
+      if (capacity - curWt >= 0) {
+
+        capacity = capacity - curWt;
+
+        totalValue += curVal;
+
+      } else {
+
+        double fraction = ((double) capacity / (double) curWt);
+
+        totalValue += (curVal * fraction);
+
+        capacity = (int) (capacity - (curWt * fraction));
+
+        break;
+      }
+    }
+
+    return totalValue;
+  }
+
+  static class ItemValue {
+
+    Double cost;
+
+    double wt, val, ind;
+
+    public ItemValue(int wt, int val, int ind) {
+
+      this.wt = wt;
+
+      this.val = val;
+
+      this.ind = ind;
+
+      cost = new Double(val / wt);
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. 
+
+Explanation:
+The time complexity of the given code is `O(log n)` where `n` is the size of the input array. This is because the `Arrays.sort()` function is being used to sort the items in descending order of their value per weight. The `Comparator` being used for sorting has a `O(log n)` time complexity.</s>

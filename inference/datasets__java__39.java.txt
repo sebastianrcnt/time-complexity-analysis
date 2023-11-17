@@ -1,0 +1,51 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+class Multipy {
+
+  static void modify(int arr[], int n) {
+
+    if (n <= 1) return;
+
+    int prev = arr[0];
+
+    arr[0] = arr[0] * arr[1];
+
+    for (int i = 1; i < n - 1; i++) {
+
+      int curr = arr[i];
+
+      arr[i] = prev * arr[i + 1];
+
+      prev = curr;
+    }
+
+    arr[n - 1] = prev * arr[n - 1];
+  }
+
+  public static void main(String[] args) {
+
+    int arr[] = {2, 3, 4, 5, 6};
+
+    int n = arr.length;
+
+    modify(arr, n);
+
+    for (int i = 0; i < n; i++) System.out.print(arr[i] + " ");
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice]. It has a time complexity of O(n^2) because the algorithm uses nested loops (for and if statements) to perform the multiplication operation on every single element of the array.</s>

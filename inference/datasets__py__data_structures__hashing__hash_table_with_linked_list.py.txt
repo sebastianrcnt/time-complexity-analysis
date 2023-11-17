@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    from collections import deque
+from collections import deque
 
 from .hash_table import HashTable
 
@@ -38,4 +32,11 @@ class HashTableWithLinkedList(HashTable):
         return super()._collision_resolution(key, data)
 
 
-[choice]3[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. The O(n) time complexity is because of the calls to the super class's implementation of _collision_resolution. It is also noted that O(nlogn) time complexity is achieved in the balanced_factor() method, which has a total of n+1 iterations. This time complexity is the result of the sum() method and the charge_factor variable iteration.</s>

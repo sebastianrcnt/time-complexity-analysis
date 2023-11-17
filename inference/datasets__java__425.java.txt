@@ -1,0 +1,83 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class Node {
+
+  int data;
+
+  Node left, right;
+
+  Node(int item) {
+
+    data = item;
+
+    left = right = null;
+  }
+}
+
+class BinaryTree {
+
+  Node root;
+
+  boolean isFullTree(Node node) {
+
+    if (node == null) return true;
+
+    if (node.left == null && node.right == null) return true;
+
+    if ((node.left != null) && (node.right != null))
+      return (isFullTree(node.left) && isFullTree(node.right));
+
+    return false;
+  }
+
+  public static void main(String args[]) {
+
+    BinaryTree tree = new BinaryTree();
+
+    tree.root = new Node(10);
+
+    tree.root.left = new Node(20);
+
+    tree.root.right = new Node(30);
+
+    tree.root.left.right = new Node(40);
+
+    tree.root.left.left = new Node(50);
+
+    tree.root.right.left = new Node(60);
+
+    tree.root.left.left.left = new Node(80);
+
+    tree.root.right.right = new Node(70);
+
+    tree.root.left.left.right = new Node(90);
+
+    tree.root.left.right.left = new Node(80);
+
+    tree.root.left.right.right = new Node(90);
+
+    tree.root.right.left.left = new Node(80);
+
+    tree.root.right.left.right = new Node(90);
+
+    tree.root.right.right.left = new Node(80);
+
+    tree.root.right.right.right = new Node(90);
+
+    if (tree.isFullTree(tree.root)) System.out.print("The binary tree is full");
+    else System.out.print("The binary tree is not full");
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. The reason is that the time taken to construct the binary tree by inserting values in a bottom-up manner is O(n), where n is the number of nodes in the binary tree.</s>

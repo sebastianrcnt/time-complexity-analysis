@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    # Author: João Gustavo A. Amorim & Gabriel Kunz
+# Author: João Gustavo A. Amorim & Gabriel Kunz
 # Author email: joaogustavoamorim@gmail.com and gabriel-kunz@uergs.edu.br
 # Coding date:  apr 2019
 # Black: True
@@ -309,4 +303,20 @@ print(
 """
 
 
-[choice]5[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]***. However it is hard to evaluate this without the hamming encoding and decoding steps because they are not given on the code.
+
+If the code is as follows:
+
+def emitter\_converter(size\_par, data):
+<*snip*>
+def receptor\_converter(size\_par, data):
+<*snip*>
+
+The expected time complexity would be O(n) where n is the bit size of the data. This is because the algorithms use multiple iterations through the data, but each iteration is a single step O(1), and there are n iterations.</s>

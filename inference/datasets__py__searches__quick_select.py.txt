@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 A Python implementation of the quick select algorithm, which is efficient for
 calculating the value that would appear in the index of a list if it would be
 sorted, even if it is not already sorted
@@ -72,4 +66,11 @@ def quick_select(items: list, index: int):
         return quick_select(larger, index - (m + count))
 
 
-[choice]1[/choice] The time complexity of the given code is O(n) in the average case and O(n^2) in the worst case. This is because the algorithm uses quick partition to divide the list into sublists, but the worst-case complexity of quick partition is O(n^2).</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice](O(n)).</s>

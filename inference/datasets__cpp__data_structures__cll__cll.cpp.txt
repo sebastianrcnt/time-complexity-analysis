@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /*
+/*
     A simple class for Cicular Linear Linked List
 */
 #include "cll.h"
@@ -121,4 +115,11 @@ void cll::operator++() {
 }
 
 
-[choice]4[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. The reason for this is that the loop in the insert_tail function runs from 0 to n, where n is the total number of elements in the list. This means that the total number of iterations is proportional to the total number of elements in the list. The other operations, such as get_size, display, and insert_front, can be done with constant time complexity, which is why they are not included in the time complexity analysis.</s>

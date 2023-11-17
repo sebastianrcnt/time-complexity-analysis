@@ -1,0 +1,60 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+class GFG {
+
+  static int minElements(int arr[], int n) {
+
+    int halfSum = 0;
+
+    for (int i = 0; i < n; i++) halfSum = halfSum + arr[i];
+
+    halfSum = halfSum / 2;
+
+    Arrays.sort(arr);
+
+    int res = 0, curr_sum = 0;
+
+    for (int i = n - 1; i >= 0; i--) {
+
+      curr_sum += arr[i];
+
+      res++;
+
+      if (curr_sum > halfSum) return res;
+    }
+
+    return res;
+  }
+
+  public static void main(String[] args) {
+
+    int arr[] = {3, 1, 7, 1};
+
+    int n = arr.length;
+
+    System.out.println(minElements(arr, n));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].
+
+
+Explanation:
+The time complexity of the given code is O(n), where n is the length of the given array. This is because the code traverses the array n times:
+- The first for loop iterates n times to calculate the half sum of the array.
+- The second for loop iterates n times to sort the array in ascending order.
+- The third for loop also iterates n times to find the minimum number of elements required to sum up to or greater than half the sorted array.</s>

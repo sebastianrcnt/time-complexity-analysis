@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
         In this problem, we want to determine all possible combinations of k
         numbers out of 1 ... n. We use backtracking to solve this problem.
 
@@ -86,4 +80,11 @@ if __name__ == "__main__":
         print(f"{func:>25}(): {timeit(f'{func}(n=4, k = 2)', globals=globals())}")
 
 
-[choice]4[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice] which is O(n) if the input k is less than or equal to n. If k is greater than n, the time complexity becomes O(nk) as we generate all possible combinations of k numbers out of n.</s>

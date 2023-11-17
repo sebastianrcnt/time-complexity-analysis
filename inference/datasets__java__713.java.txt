@@ -1,0 +1,51 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Cf1017A {
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int n = Integer.parseInt(br.readLine());
+    int result = 1;
+    int thomasSum = 0;
+    StringTokenizer stk;
+    stk = new StringTokenizer(br.readLine());
+    int first = Integer.parseInt(stk.nextToken());
+    int second = Integer.parseInt(stk.nextToken());
+    int third = Integer.parseInt(stk.nextToken());
+    int fourth = Integer.parseInt(stk.nextToken());
+    thomasSum = first + second + third + fourth;
+    int tmp;
+    for (int i = 1; i < n; i++) {
+      stk = new StringTokenizer(br.readLine());
+      first = Integer.parseInt(stk.nextToken());
+      second = Integer.parseInt(stk.nextToken());
+      third = Integer.parseInt(stk.nextToken());
+      fourth = Integer.parseInt(stk.nextToken());
+      tmp = first + second + third + fourth;
+      if (tmp > thomasSum) result++;
+    }
+    System.out.println(result);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].
+
+
+Explanation: The main function reads a series of four integers, and the rest of the code deals with finding the highest sum among them. The outer for loop runs n times (as specified by n input). For each iteration, the stringTokenizer reads four integers and an if condition checks whether the current sum is greater than the previous one (which is stored in thomasSum). The result variable gets incremented every time the if condition is satisfied. Since the number of input integers per iteration is constant at 4, the time complexity of the code is O(n).
+
+Other time complexities such as O(nlogn) and O(n^2) do not apply to this problem because the size of the input is always constant at 4 integers. Similarly, logarithmic and exponential time complexities are not applicable to problems that have a linear time complexity.</s>

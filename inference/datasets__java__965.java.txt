@@ -1,0 +1,49 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+
+    int n = sc.nextInt();
+    int s = sc.nextInt();
+    int[] f = new int[n];
+    int[] t = new int[n];
+    for (int i = 0; i < n; i++) {
+      f[i] = sc.nextInt();
+      t[i] = sc.nextInt();
+    }
+    System.out.println(solve(f, t, s));
+
+    sc.close();
+  }
+
+  static int solve(int[] f, int[] t, int s) {
+    int[] maxTimes = new int[s + 1];
+    for (int i = 0; i < f.length; i++) {
+      maxTimes[f[i]] = Math.max(maxTimes[f[i]], t[i]);
+    }
+
+    int time = 0;
+    for (int i = s; i > 0; i--) {
+      time = Math.max(time, maxTimes[i]);
+
+      time++;
+    }
+    return time;
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. This is because the code has a nested loop with n elements in it, and runs n times.</s>

@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 Pure Python implementation of the jump search algorithm.
 This algorithm iterates through a sorted collection with a step of n^(1/2),
 until the element compared is bigger than the one searched.
@@ -82,4 +76,11 @@ if __name__ == "__main__":
         print(f"Number {x} is at index {res}")
 
 
-[choice]1[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. The algorithm uses a step of `n^(1/2)` where `n` is the size of the input list, and it will perform at most `logn` number of steps before performing a linear search that may take up to `n` comparisons. Therefore, the total number of steps taken by the algorithm is at most `logn + n`, which is proportional to `nlogn`.</s>

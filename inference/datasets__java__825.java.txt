@@ -1,0 +1,34 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+public class A {
+
+  public static void main(String args[]) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int ans = 0;
+    for (int i = 1; i <= n; i++) {
+      ans += ((i * 2) <= n) ? i : n - i + 1;
+    }
+    System.out.println(ans);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3.[/choice] The time complexity of the given code is O(n).
+
+Explanation:
+
+The loop runs n times. For each iteration of the loop, it performs a constant number of operations (2 additions and 1 comparison). Therefore, the total number of operations performed by the loop is 2n + n = 3n. Since the loop runs n times, the time complexity of the loop is O(n).</s>

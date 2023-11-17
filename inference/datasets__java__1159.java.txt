@@ -1,0 +1,48 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+public class ehab4 {
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int a = 0, b = 0;
+    System.out.println("? 0 0 ");
+    System.out.flush();
+    int c = in.nextInt();
+    for (int i = 29; i >= 0; i--) {
+      System.out.println("? " + (a + (1 << i)) + " " + b);
+      System.out.flush();
+      int q1 = in.nextInt();
+      System.out.println("? " + a + " " + (b + (1 << i)));
+      System.out.flush();
+      int q2 = in.nextInt();
+      if (q1 == q2) {
+        if (c == 1) a += (1 << i);
+        else if (c == -1) b += (1 << i);
+        c = q1;
+      } else if (q1 == -1) {
+        a += (1 << i);
+        b += (1 << i);
+      } else if (q1 == -2) return;
+    }
+    System.out.println("! " + a + " " + b);
+    System.out.flush();
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. 
+
+Explanation:
+Assuming you are talking about the code block given:
+The time complexity is O(n) where n is logn of the number of integers. The reason is that for each integer in the range, the program performs two operations: printing a question and reading an answer. So as the nth integers range from 0 to (1s - 1)e2s - 1, where s is the number of integers, the operations will be performed from the 0th integer to the (1s - 1)e2s - 1th integer. That completes the loop from 29 to 0 which will perform 29 operation in total. Since the time complexity of each operation is constant O(1), the total time complexity of the loop is O(29*1) = O(29), which simplifies to O(n).</s>

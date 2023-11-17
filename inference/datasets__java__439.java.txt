@@ -1,0 +1,152 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class LinkedList {
+
+  static LNode head;
+
+  class LNode {
+
+    int data;
+
+    LNode next, prev;
+
+    LNode(int d) {
+
+      data = d;
+
+      next = prev = null;
+    }
+  }
+
+  class TNode {
+
+    int data;
+
+    TNode left, right;
+
+    TNode(int d) {
+
+      data = d;
+
+      left = right = null;
+    }
+  }
+
+  TNode sortedListToBST() {
+
+    int n = countNodes(head);
+
+    return sortedListToBSTRecur(n);
+  }
+
+  TNode sortedListToBSTRecur(int n) {
+
+    if (n <= 0) return null;
+
+    TNode left = sortedListToBSTRecur(n / 2);
+
+    TNode root = new TNode(head.data);
+
+    root.left = left;
+
+    head = head.next;
+
+    root.right = sortedListToBSTRecur(n - n / 2 - 1);
+
+    return root;
+  }
+
+  int countNodes(LNode head) {
+
+    int count = 0;
+
+    LNode temp = head;
+
+    while (temp != null) {
+
+      temp = temp.next;
+
+      count++;
+    }
+
+    return count;
+  }
+
+  void push(int new_data) {
+
+    LNode new_node = new LNode(new_data);
+
+    new_node.prev = null;
+
+    new_node.next = head;
+
+    if (head != null) head.prev = new_node;
+
+    head = new_node;
+  }
+
+  void printList(LNode node) {
+
+    while (node != null) {
+
+      System.out.print(node.data + " ");
+
+      node = node.next;
+    }
+  }
+
+  void preOrder(TNode node) {
+
+    if (node == null) return;
+
+    System.out.print(node.data + " ");
+
+    preOrder(node.left);
+
+    preOrder(node.right);
+  }
+
+  public static void main(String[] args) {
+
+    LinkedList llist = new LinkedList();
+
+    llist.push(7);
+
+    llist.push(6);
+
+    llist.push(5);
+
+    llist.push(4);
+
+    llist.push(3);
+
+    llist.push(2);
+
+    llist.push(1);
+
+    System.out.println("Given Linked List ");
+
+    llist.printList(head);
+
+    TNode root = llist.sortedListToBST();
+
+    System.out.println("");
+
+    System.out.println("Pre-Order Traversal of constructed BST ");
+
+    llist.preOrder(root);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. The sortedListToBST() method iterates over the elements in the linked list and constructs the BST recursively.</s>

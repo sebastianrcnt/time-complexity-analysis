@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * @file
  * @brief Implementation of Linear [Queue using array]
  * (https://www.geeksforgeeks.org/array-implementation-of-queue-simple/).
@@ -150,4 +144,22 @@ int main() {
 }
 
 
-[choice]1[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]
+
+Explanation:
+
+The time complexity of the given code is O(1) in average and worst case scenario for the basic operations of the arrays including insertion and deletion at their first and last index. 
+
+The `enqueue` function checks if the size of the array is equal to max_size, and if so, it prints a message indicating that the stack is full. So, the time complexity of this operation on the array is constant O(1).
+
+The `dequeue` function works similarly to the `enqueue` one, it checks the values of front and rear and performs the corresponding operations.
+Also, it has the same time complexity of O(1).
+
+The `display` function is also O(1) in average case scenario because we are just printing elements but in worst case, if all the elements are located on last positions of the array and there are a lot of them, it will take more time to print as we have to iterate through all the elements.</s>

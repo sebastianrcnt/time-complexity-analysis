@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * @file
  * @brief A balanced binary search tree (BST) on the basis of binary search tree
  * and heap: the [Treap](https://en.wikipedia.org/wiki/Treap) algorithm
@@ -270,4 +264,11 @@ int main() {
 }
 
 
-[choice]1[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. This is because it uses the heap property through rotate operation to keep the depth of the tree at O(logn), and performs insert, erase, and query in O(logn) operations.</s>

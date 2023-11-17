@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * @file
  * @brief Implementation of the [Wildcard
  * Matching](https://www.geeksforgeeks.org/wildcard-pattern-matching/) problem.
@@ -166,4 +160,11 @@ int main() {
 }
 
 
-[choice]1[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. The reason is that the code uses dynamic programming to construct a table that can be used later to determine if a pattern can be matched with a given string. This requires iterating through the input string and pattern to build the table, which takes O(n) time. In addition, the size of the table is relatively small and its construction does not require much memory beyond constant space. As a result, the overall time complexity of the code is O(n).</s>

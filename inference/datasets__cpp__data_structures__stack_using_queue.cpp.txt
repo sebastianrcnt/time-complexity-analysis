@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * @brief Stack Data Structure Using the Queue Data Structure
  * @details
  * Using 2 Queues inside the Stack class, we can easily implement Stack
@@ -129,4 +123,11 @@ int main() {
 }
 
 
-[choice]1[/choice] The time complexity of the given code is O(n), where n is the number of operations performed on the stack. The push function is called n times in the worst case, and it takes log(n) time complexity due to using two queue data structures. Similarly, the pop function is called n times in the worst case and takes O(1) time complexity. Therefore, the overall time complexity of the given code is the sum of these two complexities, which is O(n).</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice] O(n).</s>

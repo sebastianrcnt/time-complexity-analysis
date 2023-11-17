@@ -1,0 +1,75 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+class GfG {
+
+  static class StackWithMax {
+
+    static Stack<Integer> mainStack = new Stack<Integer>();
+
+    static Stack<Integer> trackStack = new Stack<Integer>();
+
+    static void push(int x) {
+
+      mainStack.push(x);
+
+      if (mainStack.size() == 1) {
+
+        trackStack.push(x);
+
+        return;
+      }
+
+      if (x > trackStack.peek()) trackStack.push(x);
+      else trackStack.push(trackStack.peek());
+    }
+
+    static int getMax() {
+
+      return trackStack.peek();
+    }
+
+    static void pop() {
+
+      mainStack.pop();
+
+      trackStack.pop();
+    }
+  }
+  ;
+
+  public static void main(String[] args) {
+
+    StackWithMax s = new StackWithMax();
+
+    s.push(20);
+
+    System.out.println(s.getMax());
+
+    s.push(10);
+
+    System.out.println(s.getMax());
+
+    s.push(50);
+
+    System.out.println(s.getMax());
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].
+
+Explanation:
+
+The time complexity of the push and pop functions is O(1), as they only add or remove an element from</s>

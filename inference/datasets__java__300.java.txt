@@ -1,0 +1,36 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class GFG {
+
+  static int[] dp = new int[1000];
+
+  static int countFriendsPairings(int n) {
+
+    if (dp[n] != -1) return dp[n];
+
+    if (n > 2) return dp[n] = countFriendsPairings(n - 1) + (n - 1) * countFriendsPairings(n - 2);
+    else return dp[n] = n;
+  }
+
+  public static void main(String[] args) {
+
+    for (int i = 0; i < 1000; i++) dp[i] = -1;
+
+    int n = 4;
+
+    System.out.println(countFriendsPairings(n));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].</s>

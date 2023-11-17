@@ -1,0 +1,128 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class p1096f {
+  static long MOD = 998244353;
+
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int n = in.nextInt();
+    BIT invert = new BIT(n + 5);
+    BIT neg = new BIT(n + 5);
+    long res = 0;
+    int[] arr = new int[n];
+    boolean[] has = new boolean[n + 1];
+    long num1 = 0;
+    for (int i = 0; i < n; i++) {
+      arr[i] = in.nextInt();
+      if (arr[i] != -1) {
+        res += invert.read(n + 5) - invert.read(arr[i]);
+        res %= MOD;
+        invert.update(arr[i], 1);
+        has[arr[i]] = true;
+      } else num1++;
+    }
+    if (num1 == 0) {
+      System.out.println(res);
+      return;
+    }
+    for (int i = 1; i <= n; i++) if (!has[i]) neg.update(i, 1);
+    long invertNum1 = modInv(num1, MOD);
+    res += ((num1 * (num1 - 1)) % MOD) * modInv(4, MOD);
+    res %= MOD;
+    long cnt = 0;
+    for (int i = 0; i < n; i++) {
+      if (arr[i] == -1) {
+        cnt++;
+        continue;
+      }
+      res += (((neg.read(n + 5) - neg.read(arr[i])) * cnt) % MOD) * invertNum1;
+      res %= MOD;
+    }
+    cnt = 0;
+    for (int i = n - 1; i >= 0; i--) {
+      if (arr[i] == -1) {
+        cnt++;
+        continue;
+      }
+      res += (((neg.read(arr[i])) * cnt) % MOD) * invertNum1;
+      res %= MOD;
+    }
+    System.out.println(res);
+  }
+
+  static class BIT {
+    int n;
+    int[] tree;
+
+    public BIT(int n) {
+      this.n = n;
+      tree = new int[n + 1];
+    }
+
+    int read(int i) {
+      int sum = 0;
+      while (i > 0) {
+        sum += tree[i];
+        i -= i & -i;
+      }
+      return sum;
+    }
+
+    void update(int i, int val) {
+      while (i <= n) {
+        tree[i] += val;
+        i += i & -i;
+      }
+    }
+  }
+
+  static long modInv(long x, long mod) {
+    return (BigInteger.valueOf(x).modInverse(BigInteger.valueOf(mod))).longValue();
+  }
+
+  static long modInv(long a, long b, long y0, long y1, long q0, long q1) {
+    long y2 = y0 - y1 * q0;
+    return b == 0 ? y2 : modInv(b, a % b, y1, y2, q1, a / b);
+  }
+
+  static long gcd(long a, long b) {
+    return b == 0 ? a : gcd(b, a % b);
+  }
+
+  static long lcm(long a, long b) {
+    return a / gcd(a, b) * b;
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice] (O(n)).
+
+Explanation:
+
+We go through the code step by step to understand its time complexity. 
+
+1. We are given an integer array `arr` with length `n`. 
+2. We are given an integer `num1` representing the number of elements in the array that have a value greater than -1.
+3. We initialize an empty array `res`. This step takes constant time.
+4. We loop through the elements of the array `arr`. 
+    - If the element is not -1, we add its value to `res` after updating some BIT variables. 
+    - Otherwise, we increment the length `num1`.
+5. After the loop, we add the value of `res` and `num1^2` to `res`, and update the value of `res` after calculating some other variables. This step takes constant time.
+6. We loop through the elements of `arr` again. 
+    - If the element is not -1, we update some BIT variables and multiply its value with some other values.
+7. After the loop, we add the value of `res` and multiply it with some other value. This step takes constant time.
+
+We can see that we are looping through the array `arr` twice and performing constant time operations between the loops. The only loop with varying length is the first loop, and as its length is `n`, the time complexity of the function is `O(n)`.</s>

@@ -1,0 +1,48 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+package geek.livingstone.problems.arrays;
+
+public class FloorInSortedArray {
+  public static int floor(int[] A, int val) throws Exception {
+    if (val < A[0]) throw new Exception("All elements are greater than val");
+    else if (val > A[A.length - 1]) return A[A.length - 1];
+    return floor(A, 0, A.length - 1, val);
+  }
+
+  private static int floor(int[] A, int l, int r, int val) throws Exception {
+    if (l > r) {
+      throw new Exception("Not found");
+    }
+    int mid = (l + r) / 2;
+    if (val == A[mid]) return A[mid];
+    else if (val < A[mid]) {
+      if (val >= A[mid - 1]) return A[mid - 1];
+      return floor(A, l, mid - 1, val);
+    } else {
+      if (val < A[mid + 1]) return A[mid];
+      return floor(A, mid + 1, r, val);
+    }
+  }
+
+  public static void main(String[] args) throws Exception {
+    int[] A = new int[] {1, 3, 4, 7, 8, 12, 32, 45, 78, 98};
+
+    System.out.println(floor(A, 11));
+    System.out.println(floor(A, 32));
+    System.out.println(floor(A, 70));
+    System.out.println(floor(A, 125));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. This is because the code uses a recursive function to search for the value 'val' in the given array 'A'. The recursive function divides the search space in half at each recursive call, which reduces the number of comparisons necessary to find the value 'val'. As a result, the time complexity of the function is O(logn).</s>

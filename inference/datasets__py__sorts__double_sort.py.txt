@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    from typing import Any
+from typing import Any
 
 
 def double_sort(collection: list[Any]) -> list[Any]:
@@ -55,4 +49,11 @@ if __name__ == "__main__":
     print(f"{double_sort(unsorted) = }")
 
 
-[choice]2[/choice] The time complexity of the given code is O(n^2) because it has two nested loops that iterate n times each.</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. This is because the code uses two nested loops to iterate through the list, with an outer loop that runs from 0 to n/2 (where n is the length of the input list) and an inner loop that runs from 0 to n-2. Each iteration of the inner loop takes constant time to execute the comparison and swap operations, resulting in a time complexity of O(n \* n = O(n^2)).</s>

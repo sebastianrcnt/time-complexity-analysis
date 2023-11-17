@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 The algorithm finds distance between closest pair of points
 in the given n points.
 Approach used -> Divide and conquer
@@ -154,4 +148,11 @@ if __name__ == "__main__":
     print("Distance:", closest_pair_of_points(points, len(points)))
 
 
-[choice]3</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4.[/choice]4: O(n^2).</s>

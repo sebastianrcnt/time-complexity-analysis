@@ -1,0 +1,61 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args) throws IOException {
+    BufferedReader f = new BufferedReader(new InputStreamReader(System.in));
+    PrintWriter out = new PrintWriter(new PrintStream(System.out));
+    StringTokenizer st = new StringTokenizer(f.readLine());
+    int n = Integer.parseInt(st.nextToken());
+    int m = Integer.parseInt(st.nextToken());
+    long[] arrB = new long[n];
+    long[] arrG = new long[m];
+    st = new StringTokenizer(f.readLine());
+    for (int i = 0; i < n; i++) {
+      arrB[i] = Long.parseLong(st.nextToken());
+    }
+    st = new StringTokenizer(f.readLine());
+    for (int j = 0; j < m; j++) {
+      arrG[j] = Long.parseLong(st.nextToken());
+    }
+    Arrays.sort(arrB);
+    Arrays.sort(arrG);
+    long ans = 0;
+
+    for (int i = 0; i < n; i++) {
+      ans += arrB[i] * (long) m;
+    }
+    for (int i = 1; i < m; i++) {
+      ans += arrG[i] - arrB[n - 1];
+    }
+    if (arrB[n - 1] != arrG[0]) {
+      if (n == 1) {
+        ans = -1;
+      } else {
+
+        ans += arrG[0] - arrB[n - 2];
+      }
+    }
+    if (arrB[n - 1] > arrG[0]) {
+      ans = -1;
+    }
+    System.out.println(ans);
+    f.close();
+    out.close();
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. There are two loops in the code - one that runs n times and the other that runs m times. Since both of these loops run on every execution, the overall time complexity of the code is O(n+m). As n and m are independent variables, the time complexity is O(n) + O(m) = O(n). Since n and m are always positive integers, the time complexity of the code can be simplified to O(n).</s>

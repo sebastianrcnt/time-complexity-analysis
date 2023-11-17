@@ -1,0 +1,42 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class CountSubString {
+
+  int countSubStr(char str[], int n) {
+
+    int m = 0;
+
+    for (int i = 0; i < n; i++) {
+
+      if (str[i] == '1') m++;
+    }
+
+    return m * (m - 1) / 2;
+  }
+
+  public static void main(String[] args) {
+
+    CountSubString count = new CountSubString();
+
+    String string = "00100101";
+
+    char str[] = string.toCharArray();
+
+    int n = str.length;
+
+    System.out.println(count.countSubStr(str, n));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. This is because there is a loop that goes through each element in the array, once. Therefore, the number of iterations the loop performs is equal to the length of the given input string.</s>

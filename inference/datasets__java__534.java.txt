@@ -1,0 +1,41 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class Main {
+
+  static int binarySearch(int arr[], int low, int high) {
+
+    if (high >= low) {
+
+      int mid = (low + high) / 2;
+
+      if (mid == arr[mid]) return mid;
+
+      if (mid > arr[mid]) return binarySearch(arr, (mid + 1), high);
+      else return binarySearch(arr, low, (mid - 1));
+    }
+
+    return -1;
+  }
+
+  public static void main(String args[]) {
+
+    int arr[] = {-10, -1, 0, 3, 10, 11, 30, 50, 100};
+
+    int n = arr.length;
+
+    System.out.println("Fixed Point is " + binarySearch(arr, 0, n - 1));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice], which is O(logn).</s>

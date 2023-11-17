@@ -1,0 +1,32 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+public class NewClass {
+  static Scanner in = new Scanner(System.in);
+
+  public static void main(String[] args) {
+    int n = in.nextInt(), ans = Integer.MAX_VALUE, t = 0;
+    String x = in.next();
+    for (int i = 0; i < n; i++) {
+      if (x.charAt(i) == '-') t--;
+      else t++;
+      ans = Math.min(ans, t);
+    }
+    if (ans <= 0) System.out.println(Math.abs(ans) + t);
+    else System.out.println(t);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice].</s>

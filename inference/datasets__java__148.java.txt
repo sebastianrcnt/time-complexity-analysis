@@ -1,0 +1,94 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+
+class GFG {
+
+  static int R = 4;
+
+  static int C = 4;
+
+  static void counterClockspiralPrint(int m, int n, int arr[][]) {
+
+    int i, k = 0, l = 0;
+
+    int cnt = 0;
+
+    int total = m * n;
+
+    while (k < m && l < n) {
+
+      if (cnt == total) break;
+
+      for (i = k; i < m; ++i) {
+
+        System.out.print(arr[i][l] + " ");
+
+        cnt++;
+      }
+
+      l++;
+
+      if (cnt == total) break;
+
+      for (i = l; i < n; ++i) {
+
+        System.out.print(arr[m - 1][i] + " ");
+
+        cnt++;
+      }
+
+      m--;
+
+      if (cnt == total) break;
+
+      if (k < m) {
+
+        for (i = m - 1; i >= k; --i) {
+
+          System.out.print(arr[i][n - 1] + " ");
+
+          cnt++;
+        }
+
+        n--;
+      }
+
+      if (cnt == total) break;
+
+      if (l < n) {
+
+        for (i = n - 1; i >= l; --i) {
+
+          System.out.print(arr[k][i] + " ");
+
+          cnt++;
+        }
+
+        k++;
+      }
+    }
+  }
+
+  public static void main(String[] args) {
+
+    int arr[][] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+
+    counterClockspiralPrint(R, C, arr);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].
+
+Explanation: The time complexity of the given code is O(n^2) because the outer loop iterates 'm' times and the inner loop iterates 'n' times. The total number of iterations of both loops combined is m × n, which is equal to n^2.</s>

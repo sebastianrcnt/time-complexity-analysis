@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    from __future__ import annotations
+from __future__ import annotations
 
 
 def double_linear_search(array: list[int], search_item: int) -> int:
@@ -48,4 +42,11 @@ if __name__ == "__main__":
     print(double_linear_search(list(range(100)), 40))
 
 
-[choice]3</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice]. The function iterates through the array from both ends a number of times, and at each iteration, it performs a constant amount of comparison and conditional execution. Thus, the overall time complexity is O(n^2).</s>

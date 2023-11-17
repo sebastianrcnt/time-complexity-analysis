@@ -1,0 +1,42 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+
+class GFG {
+
+  static int PermutationCoeff(int n, int k) {
+
+    int Fn = 1, Fk = 1;
+
+    for (int i = 1; i <= n; i++) {
+
+      Fn *= i;
+
+      if (i == n - k) Fk = Fn;
+    }
+
+    int coeff = Fn / Fk;
+
+    return coeff;
+  }
+
+  public static void main(String args[]) {
+
+    int n = 10, k = 2;
+
+    System.out.println("Value of P( " + n + "," + k + ") is " + PermutationCoeff(n, k));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3.[/choice]</s>

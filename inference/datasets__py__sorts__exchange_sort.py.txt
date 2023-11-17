@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    def exchange_sort(numbers: list[int]) -> list[int]:
+def exchange_sort(numbers: list[int]) -> list[int]:
     """
     Uses exchange sort to sort a list of numbers.
     Source: https://en.wikipedia.org/wiki/Sorting_algorithm#Exchange_sort
@@ -38,4 +32,11 @@ if __name__ == "__main__":
     print(exchange_sort(unsorted))
 
 
-[choice]4[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].</s>

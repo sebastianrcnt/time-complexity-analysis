@@ -1,0 +1,28 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+public class A {
+  public static void main(String ar[]) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    String s1[] = br.readLine().split(" ");
+    int n = Integer.parseInt(s1[0]);
+    int S = Integer.parseInt(s1[1]);
+    if (S % n == 0) System.out.println(S / n);
+    else System.out.println(S / n + 1);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. The reason is that the program reads a single line of input with two space-separated integers, which is a linear operation on the input. The rest of the program (including the string manipulation and integer arithmetic) is O(1), as it has a constant time complexity regardless of the input size. Thus, the overall time complexity of the program is O(1), which is the first option above.</s>

@@ -1,0 +1,63 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+/** @file
+ * A sparse matrix is a matrix which has number of zeroes greater than
+ * \f$\frac{m\times n}{2}\f$, where m and n are the dimensions of the matrix.
+ */
+
+#include <iostream>
+
+/** main function */
+int main() {
+    int m, n;
+    int counterZeros = 0;
+
+    std::cout << "Enter dimensions of matrix (seperated with space): ";
+    std::cin >> m;
+    std::cin >> n;
+
+    int **a = new int *[m];
+    for (int i = 0; i < m; i++) a[i] = new int[n];
+
+    std::cout << "Enter matrix elements:";
+    std::cout << "\n";
+
+    // reads the matrix from stdin
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            std::cout << "element? ";
+            std::cin >> a[i][j];
+        }
+    }
+
+    // counts the zero's
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (a[i][j] == 0)
+                counterZeros++;  // Counting number of zeroes
+        }
+    }
+
+    // makes sure the matrix is a sparse matrix
+    if (counterZeros > ((m * n) / 2))  // Checking for sparse matrix
+        std::cout << "Sparse matrix";
+    else
+        std::cout << "Not a sparse matrix";
+
+    for (int i = 0; i < m; i++) delete[] a[i];
+    delete[] a;
+    return 0;
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice], which is O(n^2). The code reads each of the m*n elements of the matrix and performs a few operations on each element. The two loops that iterate through each element constitute the dominant-term of the time complexity, which has a time complexity of O(n^2).</s>

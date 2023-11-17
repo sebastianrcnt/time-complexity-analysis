@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 Source: https://en.wikipedia.org/wiki/Odd%E2%80%93even_sort
 
 This is a non-parallelized implementation of odd-even transposition sort.
@@ -44,4 +38,11 @@ if __name__ == "__main__":
     print(f"Original: {arr}. Sorted: {odd_even_transposition(arr)}")
 
 
-[choice]3[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3. O(n)[/choice].</s>

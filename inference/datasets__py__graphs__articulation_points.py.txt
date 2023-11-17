@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    # Finding Articulation Points in Undirected Graph
+# Finding Articulation Points in Undirected Graph
 def compute_ap(l):  # noqa: E741
     n = len(l)
     out_edge_count = 0
@@ -66,4 +60,11 @@ data = {
 compute_ap(data)
 
 
-[choice]3[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. This is because the function 'dfs' is called recursively for each vertex in the graph, and within the 'dfs' function, the for loop iterations over the neighbors of the current vertex are O(n), but the overall time complexity of the for loop is O(logn) as it is stopping once the min of low[at] and low[to] is found, which is less than or equal to n.</s>

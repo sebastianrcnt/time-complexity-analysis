@@ -1,0 +1,75 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.Scanner;
+
+public class SingleWildcard {
+
+  public static void main(String[] args) {
+
+    Scanner input = new Scanner(System.in);
+    int a = input.nextInt();
+    int b = input.nextInt();
+    char[] s1 = new char[a];
+    s1 = input.next().toCharArray();
+
+    char[] s2 = new char[b];
+    s2 = input.next().toCharArray();
+    boolean condition = false;
+    for (int i = 0; i < a; i++) {
+      if (s1[i] == '*') {
+        condition = true;
+        break;
+      }
+    }
+
+    if (!condition) {
+      if (match(s1, s2)) {
+        System.out.println("YES");
+
+      } else System.out.println("NO");
+      return;
+    } else {
+      int i = 0;
+      if (s1.length - 1 > s2.length) {
+        System.out.println("NO");
+        return;
+      }
+      while (i < s1.length && i < s2.length && s1[i] == s2[i]) {
+        i++;
+      }
+      int j = s2.length - 1;
+      int k = s1.length - 1;
+      while (j >= 0 && k >= 0 && s1[k] == s2[j] && i <= j) {
+        j--;
+        k--;
+      }
+
+      if (i == k && i >= 0 && i < s1.length && s1[i] == '*') {
+        System.out.println("YES");
+        return;
+      }
+      System.out.println("NO");
+    }
+  }
+
+  static boolean match(char[] s1, char[] s2) {
+    if (s1.length != s2.length) return false;
+    for (int i = 0; i < s1.length; i++) {
+      if (s1[i] != s2[i]) return false;
+    }
+    return true;
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. The statement "for (int i = 0; i < a; i++)" is executed n times. In each iteration, it checks for the character '*' to check if wildcard matching is possible. It breaks out of the loop if it finds the '*' character. Therefore, the time complexity of this code is O(n).</s>

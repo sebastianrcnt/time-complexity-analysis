@@ -1,0 +1,85 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+class GFG {
+
+  static boolean isVowel(char ch) {
+
+    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') return true;
+
+    return false;
+  }
+
+  static String createAltStr(String str1, String str2, int start, int l) {
+
+    String finalStr = "";
+
+    for (int i = 0, j = start; j < l; i++, j++)
+      finalStr = (finalStr + str1.charAt(i)) + str2.charAt(j);
+
+    return finalStr;
+  }
+
+  static String findAltStr(String str) {
+
+    int nv = 0, nc = 0;
+
+    String vstr = "", cstr = "";
+
+    int l = str.length();
+
+    for (int i = 0; i < l; i++) {
+
+      char ch = str.charAt(i);
+
+      if (isVowel(ch)) {
+
+        nv++;
+
+        vstr = vstr + ch;
+
+      } else {
+
+        nc++;
+
+        cstr = cstr + ch;
+      }
+    }
+
+    if (Math.abs(nv - nc) >= 2) return "no such string";
+
+    if (nv > nc) return (vstr.charAt(0) + createAltStr(cstr, vstr, 1, nv));
+
+    if (nc > nv) return (cstr.charAt(0) + createAltStr(vstr, cstr, 1, nc));
+
+    if (cstr.charAt(0) < vstr.charAt(0)) return createAltStr(cstr, vstr, 0, nv);
+
+    return createAltStr(vstr, cstr, 0, nc);
+  }
+
+  public static void main(String args[]) {
+
+    String str = "geeks";
+
+    System.out.println(findAltStr(str));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].
+
+Explanation:
+- The function isVowel(char ch) takes a single character as an input and returns true if the character is a vowel, otherwise false. Its time complexity is O(1) since the function performs a constant time operation regardless of the size of the input.
+- The function createAltStr(String str1, String str2, int start, int l) takes four arguments - two strings and two integers. It concatenates the first l characters of str1 with the next l characters of str2, starting from the index start. Its time complexity is O(l) since the function performs linear operations based on the size of the input.
+- The function findAltStr(String str) takes a single string as an input. It first counts the number of vowels and consonants in the string, and then creates two alternate strings by either removing the vowels or consonants from the original string. It then compares the alternate strings to find the one with the maximum number of matches with the original string. Its time complexity is O(n^2) since the function first iterates through the string to count the number of vowels and consonants, and then iterates through the string again to create the alternate strings.</s>

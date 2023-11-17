@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /*
+/*
  * MergeSort implementation.
  *
  * Merge Sort is an algorithm where the main list is divided down into two half sized lists, which then have merge sort
@@ -59,4 +53,15 @@ export function mergeSort(list) {
 }
 
 
-[choice]4[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].
+
+Explanation:
+
+The given code implements the merge sort algorithm, which has a time complexity of O(nlogn) where n is the number of elements to be sorted.</s>

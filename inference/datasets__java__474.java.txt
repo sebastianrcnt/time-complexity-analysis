@@ -1,0 +1,54 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+public class GFG {
+
+  static int MaxSumDifference(Integer[] a, int n) {
+
+    List<Integer> finalSequence = new ArrayList<Integer>();
+
+    Arrays.sort(a);
+
+    for (int i = 0; i < n / 2; ++i) {
+
+      finalSequence.add(a[i]);
+
+      finalSequence.add(a[n - i - 1]);
+    }
+
+    int MaximumSum = 0;
+
+    for (int i = 0; i < n - 1; ++i) {
+
+      MaximumSum = MaximumSum + Math.abs(finalSequence.get(i) - finalSequence.get(i + 1));
+    }
+
+    MaximumSum = MaximumSum + Math.abs(finalSequence.get(n - 1) - finalSequence.get(0));
+
+    return MaximumSum;
+  }
+
+  public static void main(String args[]) {
+
+    Integer[] a = {1, 2, 4, 8};
+
+    int n = a.length;
+
+    System.out.print(MaxSumDifference(a, n));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1.[/choice] The algorithm sorts the array, which is a complexity of O(logn), and adds the first and last element of the array. The time required for the array traversal is O(n/2), which is also O(logn). So the overall time complexity of the given code is O(logn).</s>

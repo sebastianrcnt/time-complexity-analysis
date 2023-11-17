@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  *  @function Timsort is a hybrid stable sorting algorithm, derived from merge sort and insertion sort,
  *  designed to perform well on many kinds of real-world data.
  *  It was implemented by Tim Peters in 2002 for use in the Python programming language.
@@ -126,4 +120,15 @@ const demo = () => {
 export { Timsort, demo }
 
 
-[choice]3[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice].
+
+Insertion Sort is called for each partition of size RUN, which is O(n) in the worst case since it's possible that all partitions have size O(n).
+Merge Sort is called for each partition of size 2^k, where k starts from 1 and goes up to log(n). This is O(logn) in the worst case since each call to Merge Sort is recursive.
+Overall, the time complexity of the given code is O(n)T(1)T(n) + O(logn)T(logn)T(logn), which simplifies to O(nlogn).</s>

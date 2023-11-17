@@ -1,0 +1,49 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class GenerateBNo {
+
+  static void generatePrintBinary(int n) {
+
+    Queue<String> q = new LinkedList<String>();
+
+    q.add("1");
+
+    while (n-- > 0) {
+
+      String s1 = q.peek();
+
+      q.remove();
+
+      System.out.println(s1);
+
+      String s2 = s1;
+
+      q.add(s1 + "0");
+
+      q.add(s2 + "1");
+    }
+  }
+
+  public static void main(String[] args) {
+
+    int n = 10;
+
+    generatePrintBinary(n);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice] O(n^2) in the worst case, as mentioned in the comments that iterate n times to add two items to the queue.</s>

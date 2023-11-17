@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 This is a pure Python implementation of the heap sort algorithm.
 
 For doctests run following command:
@@ -69,4 +63,11 @@ if __name__ == "__main__":
     print(heap_sort(unsorted))
 
 
-[choice]1[/choice] The time complexity of heapify() is O(log n) because the function reduces the size of the subarray being heapified by half with each call.</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3.[/choice] 3. O(n).</s>

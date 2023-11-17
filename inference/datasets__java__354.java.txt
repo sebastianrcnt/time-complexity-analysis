@@ -1,0 +1,46 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+
+class GFG {
+
+  static int countWays(int n, int m) {
+
+    int count[] = new int[n + 1];
+
+    count[0] = 0;
+
+    int i;
+
+    for (i = 1; i <= n; i++) {
+
+      if (i > m) count[i] = count[i - 1] + count[i - m];
+      else if (i < m) count[i] = 1;
+      else count[i] = 2;
+    }
+
+    return count[n];
+  }
+
+  public static void main(String[] args) {
+
+    int n = 7;
+
+    int m = 4;
+
+    System.out.println("Number of ways = " + countWays(n, m));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].</s>

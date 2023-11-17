@@ -1,0 +1,76 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class Node {
+
+  int data;
+
+  Node left, right, nextRight;
+
+  Node(int item) {
+
+    data = item;
+
+    left = right = nextRight = null;
+  }
+}
+
+class BinaryTree {
+
+  Node root;
+
+  int sum(Node node) {
+
+    if (node == null) return 0;
+
+    return sum(node.left) + node.data + sum(node.right);
+  }
+
+  int isSumTree(Node node) {
+
+    int ls, rs;
+
+    if ((node == null) || (node.left == null && node.right == null)) return 1;
+
+    ls = sum(node.left);
+
+    rs = sum(node.right);
+
+    if ((node.data == ls + rs) && (isSumTree(node.left) != 0) && (isSumTree(node.right)) != 0)
+      return 1;
+
+    return 0;
+  }
+
+  public static void main(String args[]) {
+
+    BinaryTree tree = new BinaryTree();
+
+    tree.root = new Node(26);
+
+    tree.root.left = new Node(10);
+
+    tree.root.right = new Node(3);
+
+    tree.root.left.left = new Node(4);
+
+    tree.root.left.right = new Node(6);
+
+    tree.root.right.right = new Node(3);
+
+    if (tree.isSumTree(tree.root) != 0) System.out.println("The given tree is a sum tree");
+    else System.out.println("The given tree is not a sum tree");
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. The sum() method is called recursively twice to get the sum of left and right subtrees of node. Hence, the time complexity of this function is O(n).</s>

@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 This is pure Python implementation of tree traversal algorithms
 """
 from __future__ import annotations
@@ -315,4 +309,14 @@ if __name__ == "__main__":
     print(prompt())
 
 
-[choice]7[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]0[/choice].
+
+
+The code has a time complexity of O(1). This is because the time complexity of each operation is constant. For example, each call to the `pop()` method in the `post_order_iter` function has a time complexity of O(1) because it simply gets or sets the value of a single object property. Similarly, each call to the `append()` method in the `stack1.append()` and `stack2.append()` lines has a time complexity of O(1). Because there are no significant operations that affect the number of nodes in the tree, and each operation only has a constant time complexity, the overall time complexity of the function is O(1).</s>

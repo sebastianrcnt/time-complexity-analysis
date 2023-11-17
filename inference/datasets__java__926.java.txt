@@ -1,0 +1,32 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class Solution {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    HashSet<Integer> set = new HashSet<>();
+    for (int i = 0; i < n; i++) {
+      int a = sc.nextInt();
+      if (a != 0) {
+        set.add(a);
+      }
+    }
+    System.out.println(set.size());
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice], which is O(n^2).</s>

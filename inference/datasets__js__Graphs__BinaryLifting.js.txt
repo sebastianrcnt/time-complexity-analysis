@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * Author: Adrito Mukherjee
  * Binary Lifting implementation in Javascript
  * Binary Lifting is a technique that is used to find the kth ancestor of a node in a rooted tree with N nodes
@@ -93,4 +87,11 @@ function binaryLifting(root, tree, queries) {
 export default binaryLifting
 
 
-[choice]4</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].</s>

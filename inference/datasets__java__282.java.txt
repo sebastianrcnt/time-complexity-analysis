@@ -1,0 +1,49 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+
+class GFG {
+
+  static int countOccurrences(String s, int K) {
+
+    int n = s.length();
+
+    int C = 0, c1 = 0, c2 = 0;
+
+    for (int i = 0; i < n; i++) {
+
+      if (s.charAt(i) == 'a') c1++;
+
+      if (s.charAt(i) == 'b') {
+
+        c2++;
+
+        C += c1;
+      }
+    }
+
+    return C * K + (K * (K - 1) / 2) * c1 * c2;
+  }
+
+  public static void main(String[] args) {
+
+    String S = "abcb";
+
+    int k = 2;
+
+    System.out.println(countOccurrences(S, k));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice] (O(n^2)).</s>

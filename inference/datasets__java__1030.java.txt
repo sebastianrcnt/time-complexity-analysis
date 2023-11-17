@@ -1,0 +1,38 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.math.*;
+import java.util.*;
+
+public class Split {
+
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int k = sc.nextInt();
+    int a[] = new int[n];
+    int d[] = new int[n - 1];
+    for (int i = 0; i < n; i++) {
+      a[i] = sc.nextInt();
+      if (i > 0) d[i - 1] = a[i - 1] - a[i];
+    }
+    Arrays.sort(d);
+    int t = 0;
+    for (int i = 0; i < k - 1; i++) t += d[i];
+    System.out.println(a[n - 1] - a[0] + t);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. The explanation for this answer is as follows:
+
+The code has two for loops, one that iterates from 0 to n-1 and one that iterates from 1 to n-1. Each operation inside each loop takes constant time on average (such as adding or assignment). Therefore, the total time complexity is proportional to the sum of the number of operations in each loop.</s>

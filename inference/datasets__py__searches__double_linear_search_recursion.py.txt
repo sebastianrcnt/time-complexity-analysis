@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    def search(list_data: list, key: int, left: int = 0, right: int = 0) -> int:
+def search(list_data: list, key: int, left: int = 0, right: int = 0) -> int:
     """
     Iterate through the array to find the index of key using recursion.
     :param list_data: the list to be searched
@@ -46,4 +40,14 @@ if __name__ == "__main__":
     doctest.testmod()
 
 
-[choice]3[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice]. 
+
+Note: 
+The time complexity for Options 0 and 1 are O(1) and not applicable for options 2 to 4, which are O(n^2). Hence, there is no need to test option 0 and 1.</s>

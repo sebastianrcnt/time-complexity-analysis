@@ -1,0 +1,46 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class GFG {
+
+  static int catalanDP(int n) {
+
+    int catalan[] = new int[n + 2];
+
+    catalan[0] = 1;
+
+    catalan[1] = 1;
+
+    for (int i = 2; i <= n; i++) {
+
+      catalan[i] = 0;
+
+      for (int j = 0; j < i; j++) {
+
+        catalan[i] += catalan[j] * catalan[i - j - 1];
+      }
+    }
+
+    return catalan[n];
+  }
+
+  public static void main(String[] args) {
+
+    for (int i = 0; i < 10; i++) {
+
+      System.out.print(catalanDP(i) + " ");
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. The outer loop iterates `n` times, and the inner loop iterates `n-1` times, resulting in a total time complexity of O(n).</s>

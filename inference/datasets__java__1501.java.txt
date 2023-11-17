@@ -1,0 +1,55 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class findMedianTwoArrays {
+  public static double main(int[] arr1, int start1, int end1, int[] arr2, int start2, int end2) {
+    if (end1 - start1 == 1 && end2 - start2 == 1) {
+      return (Math.max(arr1[start1], arr2[start2]) + Math.min(arr1[end1], arr2[end2])) / 2;
+    }
+
+    int median1Index = Math.floor((start1 + end1) / 2);
+    int median2Index = Math.floor((start2 + end2) / 2);
+    int median1 = arr1[median1Index];
+    int median2 = arr2[median2Index];
+
+    if (median1 == median2) {
+      return median1;
+    }
+
+    if (median1 < median2) {
+      start1 = median1Index;
+      if (end2 - start2 > 1) {
+        end2 = median2Index;
+      }
+    } else {
+      start2 = median2Index;
+      if (end1 - start1 > 1) {
+        end1 = median1Index;
+      }
+    }
+
+    return main(arr1, start1, end1, arr2, start2, end2);
+  }
+}
+
+class test {
+  public static void main(String[] args) {
+    int[] A = {1, 2, 3, 4, 4};
+    int[] B = {6, 9, 10, 11, 15};
+    findMedianTwoArrays findMedian = new findMedianTwoArrays();
+    System.out.println("Hello Java");
+    System.out.println(findMedian.main(A, 0, 4, B, 0, 4));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice] O(n). The reason is that the code performs two sorting operation on arrays A and B, where array A has length n and array B could have length n or less than n.</s>

@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    #!/usr/bin/python
+#!/usr/bin/python
 
 """ Author: OMKAR PATHAK """
 from __future__ import annotations
@@ -103,10 +97,11 @@ if __name__ == "__main__":
     assert sorted(g.bfs(2)) == [0, 1, 2, 3]
 
 
-[choice]1[/choice]
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
 
-The given code implements a graph data structure where the vertices are stored as a dictionary with keys as vertex ids and values as lists of adjacent vertex ids. The BFS algorithm is implemented as a method of the Graph class which takes a start vertex as input and returns a set of all visited vertices during the traversal.
-
-The time complexity of the BFS algorithm implemented in the given code is O(n+m), where n is the number of vertices in the graph and m is the number of edges in the graph. This is because the algorithm iterates over all vertices and for each vertex, it adds its adjacent vertices to the queue and visits them.
-
-Therefore, the choice for the time complexity is option 1.</s>
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. The function 'bfs' runs in O(n) time. This is because it uses a queue which runs in O(n) per operation and it uses a loop that runs n times.</s>

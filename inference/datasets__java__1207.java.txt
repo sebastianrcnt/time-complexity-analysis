@@ -1,0 +1,51 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+public class aaaaaaaaaaaaaaaa {
+  public void run() throws Exception {
+    Scanner file = new Scanner(System.in);
+    int a = file.nextInt(), b = file.nextInt(), c = file.nextInt(), n = file.nextInt();
+    a -= c;
+    b -= c;
+    if (a < 0 || b < 0) System.out.println(-1);
+    else {
+      int x = a + b + c;
+      if (x >= n) System.out.println(-1);
+      else System.out.println(n - x);
+    }
+  }
+
+  public static void main(String[] args) throws Exception {
+    new aaaaaaaaaaaaaaaa().run();
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice] (O(n^2)).
+
+Explaination:
+- The code has a total of four basic arithmetic operations: `-`, `+=`, `-=`, and `+`. These operations have a time complexity of O(1) since they don't require any additional computations.
+- The code also has four input operations: `nextInt()`. These operations also have a time complexity of O(1) since they read data from standard input in a constant time.
+- The code reads four integers from standard input and stores them in `a`, `b`, `c`, and `n`. Since there are four input operations, the total time complexity of this part of the code is O(4) x O(1) = O(4).
+- After reading four integers from standard input, the code evaluates three arithmetic operations: `a -= c`, `b -= c`, and `x = a + b + c`. The time complexity of each of these operations is O(1) since they don't require any additional computations. Therefore, the total time complexity of this part of the code is O(3) x O(1) = O(3).
+- After evaluating the arithmetic operations in the previous step, the code checks two conditions using an `if` statement. This `if` statement has a time complexity of O(1) since it doesn't require any additional computations. Therefore, the total time complexity of this part of the code is O(3) x O(1) = O(3).
+- If the code reaches this point, it means that neither of the conditions in the `if` statement is true, so it prints `-1`. Since printing `-1` doesn't require any additional computations, the total time complexity of this part of the code is O(1).
+- Therefore, the time complexity of the entire code is the sum of the time complexities of the previous steps, which are:
+  - O(4) x O(1)
+  - O(3) x O(1)
+  - O(3) x O(1)
+  - O(1)
+  - O(1)
+So, the time complexity of the entire code is: 4 x 1 + 3 x 

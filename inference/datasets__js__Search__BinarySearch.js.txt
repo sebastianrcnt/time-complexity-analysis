@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /* Binary Search: https://en.wikipedia.org/wiki/Binary_search_algorithm
+/* Binary Search: https://en.wikipedia.org/wiki/Binary_search_algorithm
  *
  * Search a sorted array by repeatedly dividing the search interval
  * in half. Begin with an interval covering the whole array. If the value of the
@@ -63,4 +57,19 @@ function binarySearchIterative(arr, x, low = 0, high = arr.length - 1) {
 export { binarySearchIterative, binarySearchRecursive }
 
 
-[choice]3[/choice] The given code has a time complexity of O(n), where n is the length of the input array. This is because the binary search algorithm iterates through the array once, and the recursive function calls itself n times. The iterative function calls the same steps n times, but it avoids multiple function calls and optimizes the performance.</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].
+
+Explanation:
+The time complexity of the given code can be calculated as follows:
+- The algorithm makes a constant amount of operations independently of the array size.
+- The recursive calls to `binarySearchRecursive` are made with a smaller range of possible values at each call.
+- The time required to search the array is logarithmic in the number of elements in the array.
+- The iterative version of the algorithm is less efficient than the recursive version because of the higher number of operations performed.
+- Therefore, the time complexity of the given code is O(logn).</s>

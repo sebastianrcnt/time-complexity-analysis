@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 Heap's algorithm returns the list of all permutations possible from a list.
 It minimizes movement by generating each permutation from the previous one
 by swapping only two elements.
@@ -67,4 +61,11 @@ if __name__ == "__main__":
     print(heaps(arr))
 
 
-[choice]3[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. It has a time complexity of O(nlogn) in the first calling, n log n in the second and subsequent calls, and n in O(n^2) in the last line, resulting in an average time complexity of O(n). However, in the original formulation, the time complexity of the recursive algorithm used to create a heap is O(nlogn).</s>

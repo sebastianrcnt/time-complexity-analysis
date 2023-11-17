@@ -1,0 +1,51 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class Pair {
+
+  int a;
+
+  int b;
+
+  public Pair(int a, int b) {
+
+    this.a = a;
+
+    this.b = b;
+  }
+
+  static int maxChainLength(Pair arr[], int n) {
+
+    int i, j, max = 0;
+
+    int mcl[] = new int[n];
+
+    for (i = 0; i < n; i++) mcl[i] = 1;
+
+    for (i = 1; i < n; i++)
+      for (j = 0; j < i; j++) if (arr[i].a > arr[j].b && mcl[i] < mcl[j] + 1) mcl[i] = mcl[j] + 1;
+
+    for (i = 0; i < n; i++) if (max < mcl[i]) max = mcl[i];
+
+    return max;
+  }
+
+  public static void main(String[] args) {
+
+    Pair arr[] = new Pair[] {new Pair(5, 24), new Pair(15, 25), new Pair(27, 40), new Pair(50, 60)};
+
+    System.out.println("Length of maximum size chain is " + maxChainLength(arr, arr.length));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice].</s>

@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /* Bubble Sort is an algorithm to sort an array. It
+/* Bubble Sort is an algorithm to sort an array. It
  *  compares adjacent element and swaps their position
  *  The big O on bubble sort in worst and best case is O(N^2).
  *  Not efficient.
@@ -71,4 +65,11 @@ export function alternativeBubbleSort(arr) {
 }
 
 
-[choice]2[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].</s>

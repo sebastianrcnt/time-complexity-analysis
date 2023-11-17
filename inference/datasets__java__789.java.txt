@@ -1,0 +1,68 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+public class MinimumDiameterTree {
+  public static void main(String[] args) {
+    InputReader in = new InputReader(System.in);
+    PrintWriter out = new PrintWriter(System.out);
+
+    int n = in.nextInt();
+    int s = in.nextInt();
+    int deg[] = new int[n];
+
+    for (int i = 1; i < n; ++i) {
+      deg[in.nextInt() - 1]++;
+      deg[in.nextInt() - 1]++;
+    }
+
+    int l = 0;
+    for (int i = 0; i < n; ++i) if (deg[i] == 1) l++;
+
+    out.println((double) 2 * s / l);
+    out.close();
+  }
+
+  public static class InputReader {
+    public BufferedReader reader;
+    public StringTokenizer tokenizer;
+
+    public InputReader(InputStream stream) {
+      reader = new BufferedReader(new InputStreamReader(stream), 32768);
+      tokenizer = null;
+    }
+
+    public String next() {
+      while (tokenizer == null || !tokenizer.hasMoreTokens()) {
+        try {
+          tokenizer = new StringTokenizer(reader.readLine());
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        }
+      }
+      return tokenizer.nextToken();
+    }
+
+    public int nextInt() {
+      return Integer.parseInt(next());
+    }
+
+    public long nextLong() {
+      return Long.parseLong(next());
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice] because the number of operations performed by the program grows linearly with the input size (in this case, n).</s>

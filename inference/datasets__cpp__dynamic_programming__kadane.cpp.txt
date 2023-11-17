@@ -1,0 +1,44 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+#include <climits>
+#include <iostream>
+
+int maxSubArraySum(int a[], int size) {
+    int max_so_far = INT_MIN, max_ending_here = 0;
+
+    for (int i = 0; i < size; i++) {
+        max_ending_here = max_ending_here + a[i];
+        if (max_so_far < max_ending_here)
+            max_so_far = max_ending_here;
+
+        if (max_ending_here < 0)
+            max_ending_here = 0;
+    }
+    return max_so_far;
+}
+
+int main() {
+    int n, i;
+    std::cout << "Enter the number of elements \n";
+    std::cin >> n;
+    int a[n];  // NOLINT
+    for (i = 0; i < n; i++) {
+        std::cin >> a[i];
+    }
+    int max_sum = maxSubArraySum(a, n);
+    std::cout << "Maximum contiguous sum is " << max_sum;
+    return 0;
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice]. This is because the code iterates through each element in the input array once, and inside the loop, each element is accessed once. Therefore, the time complexity of the code is O(n).</s>

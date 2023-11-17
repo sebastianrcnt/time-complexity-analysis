@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    #include <iostream>
+#include <iostream>
 
 struct node {
     int val;
@@ -77,4 +71,11 @@ int main() {
 }
 
 
-[choice]3[/choice] The time complexity of this code is O(n) because the show() function iterates through the linked list, and the number of iterations is equal to the number of elements in the linked list. So, the time complexity is directly proportional to the size of the input.</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice], which is O(n^2). This is because the show() function loops through the linked list from the top to the end, which takes O(n) time to finish. However, within the loop, it then prints each element in the list. The function push() also has a time complexity of O(1) when it is used to insert an element at the top of the linked list, making the total time complexity of the given code O(n) for the number of elements visited (n) in the link.</s>

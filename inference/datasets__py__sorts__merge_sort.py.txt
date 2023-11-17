@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 This is a pure Python implementation of the merge sort algorithm.
 
 For doctests run following command:
@@ -74,4 +68,11 @@ if __name__ == "__main__":
         print("Invalid input. Please enter valid integers separated by commas.")
 
 
-[choice]4[/choice] The time complexity of the given code is O(n^2). The reason is that the merge function repeatedly recursively calls itself until the base case is reached. However, at each level of the recursion, the merge function is merging two sorted lists of size n, which takes O(n) time. Therefore, the overall time complexity is O(n * n) = O(n^2).</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. This is because the code has a recursive nature with a base case of one element in the list.</s>

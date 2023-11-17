@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 Hash map with open addressing.
 
 https://en.wikipedia.org/wiki/Hash_table
@@ -315,12 +309,17 @@ if __name__ == "__main__":
     doctest.testmod()
 
 
-[choice]1[/choice] The time complexity of HashMap is O(1) in the average case and O(n) in the worst case.
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
 
-In the average case, where the probability of a collision is very low, the time complexity is O(1), as accessing and modifying an item takes a constant amount of time.
+Among the Options above, the time complexity of the given code is [choice]2[/choice].
 
-In the worst case, where there is a high probability of a collision, accessing and modifying an item takes linear time in the number of items, which leads to a time complexity of O(n). This can happen when we repeatedly remove and insert an item without properly resizing the array.
+Open addressing involves linear probing for empty slots until a slot that does not contain a deleted marker is found, or a predefined number of probes is reached.
 
-However, if we implement proper resizing (when necessary) and use a probing sequence to handle collisions, the time complexity can decrease to O(1) in the average case and O(log n) in the worst case, where n is the number of items in the hash map.
-
-Additionally, the time complexity of lookup, insertion, and deletion operations in a HashMap is O(1) in the average case and O(n) in the worst case.</s>
+1. In the worst case, n^2 probes are needed.
+2. The average case time is O(n) where n is the average number of probes. However, the average case may not always provide enough information.
+3. A lower bound for the average-case time is (2/3) * n^2, which is O(n^2).</s>

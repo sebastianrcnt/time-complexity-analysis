@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * @file
  * @brief Implementation of [merge
  * sort](https://en.wikipedia.org/wiki/Merge_sort) algorithm
@@ -150,4 +144,13 @@ int main(void)
 }
 
 
-[choice]0[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. The merge\_sort function is called recursively, with n-1 subproblems. Each subproblem has a linear time complexity, thus the overall time complexity of merge\_sort is O(nlogn) where n is the number of elements in the array to be sorted.
+
+The main function reads n integers n, creates an array of size n and calls the merge\_sort function on the array. Since merge\_sort has a time complexity of O(nlogn), the main function is also O(nlogn).</s>

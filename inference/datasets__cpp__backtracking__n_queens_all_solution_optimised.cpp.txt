@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * @file
  * @brief [N queens](https://en.wikipedia.org/wiki/Eight_queens_puzzle) all
  * optimized
@@ -142,6 +136,11 @@ int main() {
 }
 
 
-[choice]4[/choice]
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
 
-The time complexity of the given code is O(n^2) because it uses nested loops to iterate through each row and column to check if a queen can be placed at a given position. The outer loop iterates through the rows, and the inner loop iterates through the columns. So, the total number of iterations is O(n * n) = O(n^2).</s>
+Among the Options above, the time complexity of the given code is [choice]3. [/choice] 3</s>

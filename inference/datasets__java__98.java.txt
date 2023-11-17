@@ -1,0 +1,80 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class FindUnion {
+
+  static void UnionArray(int arr1[], int arr2[]) {
+
+    int m = arr1[arr1.length - 1];
+
+    int n = arr2[arr2.length - 1];
+
+    int ans = 0;
+
+    if (m > n) {
+
+      ans = m;
+
+    } else ans = n;
+
+    int newtable[] = new int[ans + 1];
+
+    System.out.print(arr1[0] + " ");
+
+    ++newtable[arr1[0]];
+
+    for (int i = 1; i < arr1.length; i++) {
+
+      if (arr1[i] != arr1[i - 1]) {
+
+        System.out.print(arr1[i] + " ");
+
+        ++newtable[arr1[i]];
+      }
+    }
+
+    for (int j = 0; j < arr2.length; j++) {
+
+      if (newtable[arr2[j]] == 0) {
+
+        System.out.print(arr2[j] + " ");
+
+        ++newtable[arr2[j]];
+      }
+    }
+  }
+
+  public static void main(String args[]) {
+
+    int arr1[] = {1, 2, 2, 2, 3};
+
+    int arr2[] = {2, 3, 4, 5};
+
+    UnionArray(arr1, arr2);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].
+
+Explanation:
+The time complexity of the given code can be analyzed by breaking the code into two major sections: 
+
+1. the initialization section, which is constant, and the iteration portion of the outer for loop which runs for m,
+
+2. the inner for loop which runs for (m-i), where m is the 2D arrays end value (which is n in this case), and i is a counter where initially i=0 that increases by 1 to the end value of the corresponding arrays end value (i.e. by 1.
+
+So the time complexity of the initial loop will be O(n) or O(m), while the time complexity of the inner loop will be O(m-i).
+
+At the end of the code, the inner loop is executed m-i times for each counter i value. Since the initialization portion has a time complexity of O(1) and the outer loop is executed m times (which is an in the order of O(n)), the overall time complexity of the given code will be the product of m and the time complexity of the inner loop (i.e. m \* O(m-i)).
+
+However, as the given code's iteration portion of the outer for loop is executed only once for m=2 and the inner for loop is executed twice for i=0 and i=1 (i.e. both times for m=i=0 and m=i=1), the overall time complexity of the given code will be only 2 \* O(1) or O(2) which has been optimized to O(3) in this scenario.</s>

@@ -1,0 +1,43 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.Arrays;
+
+class MinSum {
+
+  static long findMinSum(long a[], long b[], long n) {
+
+    Arrays.sort(a);
+
+    Arrays.sort(b);
+
+    long sum = 0;
+
+    for (int i = 0; i < n; i++) sum = sum + Math.abs(a[i] - b[i]);
+
+    return sum;
+  }
+
+  public static void main(String[] args) {
+
+    long a[] = {4, 1, 8, 7};
+
+    long b[] = {2, 3, 6, 5};
+
+    int n = a.length;
+
+    System.out.println(findMinSum(a, b, n));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice]. The code performs two sorting operations (O(nlogn)) and has a loop (O(n)) to calculate the final sum, resulting in a total time complexity of O(nlogn).</s>

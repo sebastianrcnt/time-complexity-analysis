@@ -1,0 +1,44 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+class GFG {
+
+  public static void splitArr(int arr[], int n, int k) {
+
+    for (int i = 0; i < k; i++) {
+
+      int x = arr[0];
+
+      for (int j = 0; j < n - 1; ++j) arr[j] = arr[j + 1];
+
+      arr[n - 1] = x;
+    }
+  }
+
+  public static void main(String[] args) {
+
+    int arr[] = {12, 10, 5, 6, 52, 36};
+
+    int n = arr.length;
+
+    int position = 2;
+
+    splitArr(arr, 6, position);
+
+    for (int i = 0; i < n; ++i) System.out.print(arr[i] + " ");
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. The O(n) is due to the fact that there is a loop that runs n times, which is n/2 in this case. Additionally, the inner loop also runs n-1 times for each iteration of the outer loop, resulting in a total of n(n-1) iterations (n^2). Therefore, the time complexity of the given code is O(n^2).</s>

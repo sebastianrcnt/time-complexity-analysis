@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    def stooge_sort(arr: list[int]) -> list[int]:
+def stooge_sort(arr: list[int]) -> list[int]:
     """
     Examples:
     >>> stooge_sort([18.1, 0, -7.1, -1, 2, 2])
@@ -50,4 +44,11 @@ if __name__ == "__main__":
     print(stooge_sort(unsorted))
 
 
-[choice]1[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. The reasoning is that the implementation of the `stooge` function uses nested loops resulting in a total of three nested loops in the worst case. This results in a time complexity of O(n^3), where n is the length of the input list.</s>

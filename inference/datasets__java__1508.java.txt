@@ -1,0 +1,59 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+package com.interview.binarysearch;
+
+public class MonotonicallyIncreasingFunctionBecomesPositive {
+
+  private int f(int x) {
+    return x * x - 10 * x - 20;
+  }
+
+  public int findPoint() {
+    int i = 1;
+    while (f(i) <= 0) {
+      i = i * 2;
+    }
+    return binarySearch(i / 2, i);
+  }
+
+  private int binarySearch(int start, int end) {
+    int mid = (start + end) / 2;
+    while (start < end) {
+      mid = (start + end) / 2;
+      if (f(mid) > 0 && f(mid - 1) <= 0) {
+        return mid;
+      }
+      if (f(mid) <= 0 && f(mid + 1) > 0) {
+        return mid + 1;
+      }
+      if (f(mid) <= 0) {
+        start = mid + 1;
+      } else {
+        end = mid - 1;
+      }
+    }
+    return mid;
+  }
+
+  public static void main(String args[]) {
+    MonotonicallyIncreasingFunctionBecomesPositive mif =
+        new MonotonicallyIncreasingFunctionBecomesPositive();
+    System.out.print(mif.findPoint());
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].
+
+Explanation:
+The code uses binary search to find the number of elements in the range [-10, 10] that have a value greater than or equal to zero. The time complexity of binary search is O(logn), where n is the number of elements in the range. Therefore, the time complexity of the given code is O(logn).</s>

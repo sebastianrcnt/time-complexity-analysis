@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /*
+/*
   > Counting sort is a sorting technique based on keys between a specific range.
   > integer sorting algorithm
   > Worst-case performance O(n+k)
@@ -59,4 +53,12 @@ int main()
 }
 
 
-[choice]1[/choice] The time complexity of the given code is O(n).</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. This is because the algorithm uses an array to count the number of occurrences of each value present in the input array. The outer for-loop runs from 0 to the number of values in the array (excluding the highest value) which is O(n). The inner loop runs the number of times equal to the value of the outer loop element (which is essentially the count of that particular value) which is also O(n). Therefore, the overall time complexity of the algorithm is O(n+n) which further simplifies to O(n).
+Answer: [choice]3[/choice]</s>

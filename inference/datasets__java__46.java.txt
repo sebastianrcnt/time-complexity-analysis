@@ -1,0 +1,57 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.Arrays;
+
+class GFG {
+
+  void find3largest(int[] arr) {
+
+    Arrays.sort(arr);
+
+    int n = arr.length;
+
+    int check = 0, count = 1;
+
+    for (int i = 1; i <= n; i++) {
+
+      if (count < 4) {
+
+        if (check != arr[n - i]) {
+
+          System.out.print(arr[n - i] + " ");
+
+          check = arr[n - i];
+
+          count++;
+        }
+
+      } else break;
+    }
+  }
+
+  public static void main(String[] args) {
+
+    GFG obj = new GFG();
+
+    int[] arr = {12, 45, 1, -1, 45, 54, 23, 5, 0, -10};
+
+    obj.find3largest(arr);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1. [/choice]
+
+Explanation:
+The time complexity of the given code is O(logn) because the code uses the Arrays.sort(arr) method which has a time complexity of O(nlogn). The main loop of the find3largest() method runs n times, but the inner if statement executes O(logn) times in each iteration. Therefore, the overall time complexity of the code is O(n * logn) which can be simplified to O(logn).</s>

@@ -1,0 +1,99 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.StringTokenizer;
+
+public class TaskA {
+  public static void main(String[] args) throws Exception {
+    Scanner sc = new Scanner(System.in);
+    PrintWriter out = new PrintWriter(System.out);
+
+    long i = sc.nextInt();
+    long goal = sc.nextLong();
+
+    if (i > goal) {
+      i = goal;
+    }
+    int count = 0;
+    while (goal >= 0) {
+      if (goal - i >= 0) {
+        goal = goal - i;
+        count++;
+      } else i--;
+      if (goal == 0) break;
+    }
+    out.print(count);
+
+    out.flush();
+  }
+
+  static class Scanner {
+    StringTokenizer st;
+    BufferedReader br;
+
+    public Scanner(InputStream system) {
+      br = new BufferedReader(new InputStreamReader(system));
+    }
+
+    public Scanner(String file) throws Exception {
+      br = new BufferedReader(new FileReader(file));
+    }
+
+    public String next() throws IOException {
+      while (st == null || !st.hasMoreTokens()) st = new StringTokenizer(br.readLine());
+      return st.nextToken();
+    }
+
+    public String nextLine() throws IOException {
+      return br.readLine();
+    }
+
+    public int nextInt() throws IOException {
+      return Integer.parseInt(next());
+    }
+
+    public double nextDouble() throws IOException {
+      return Double.parseDouble(next());
+    }
+
+    public char nextChar() throws IOException {
+      return next().charAt(0);
+    }
+
+    public Long nextLong() throws IOException {
+      return Long.parseLong(next());
+    }
+
+    public boolean ready() throws IOException {
+      return br.ready();
+    }
+
+    public void waitForInput() throws InterruptedException {
+      Thread.sleep(3000);
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].
+
+The given code reads `n` elements, performs operations on each element, and writes the final result. 
+
+The operation in the given code is checking whether the goal value is greater than or equal to the number `i`, and if so, subtracting the value of `i` and decrementing `i` by 1. 
+
+The `while` loop runs `n` times at least if we consider the upper bound of the value `i`. Therefore, the time complexity of the given code is O(n).</s>

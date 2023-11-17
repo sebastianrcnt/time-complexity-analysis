@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 Pure Python implementation of a binary search algorithm.
 
 For doctests run following command:
@@ -70,4 +64,11 @@ if __name__ == "__main__":
     print(f"{target} was {not_str}found in {sequence}")
 
 
-[choice]1[/choice] The given code has a time complexity of O(log n). This is because the algorithm divides the input list in half repeatedly until it finds the target element, and each division reduces the number of elements in the list by half. Therefore, the maximum number of divisions needed is log n, which gives us a time complexity of O(log n).</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].</s>

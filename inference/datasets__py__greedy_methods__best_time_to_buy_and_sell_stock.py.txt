@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 Given a list of stock prices calculate the maximum profit that can be made from a
 single buy and sell of one share of stock.  We only allowed to complete one buy
 transaction and one sell transaction but must buy before we sell.
@@ -53,4 +47,11 @@ if __name__ == "__main__":
     print(max_profit([7, 1, 5, 3, 6, 4]))
 
 
-[choice]4[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3.[/choice] The time complexity of the given code is O(n). This is because the algorithm runs through the list once, and each element is visited exactly once. The number of iterations the algorithm make is the same as the number of elements in the input list, so the time complexity is O(n).</s>

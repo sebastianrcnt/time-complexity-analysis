@@ -1,0 +1,122 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+public class Solution {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    Comp c1 = getComp(scanner);
+    Comp c2 = getComp(scanner);
+    c1.sortByPrice();
+    c2.sortByPrice();
+    int i = 0;
+    int j = 0;
+    while (i < c1.num || j < c2.num) {
+      Elem xi = (i < c1.num) ? c1.elems.get(i) : null;
+      Elem yj = (j < c2.num) ? c2.elems.get(j) : null;
+      if (xi != null && yj != null) {
+        if (xi.price >= yj.price) {
+          if (!c2.resultSet.contains(xi)) {
+            c1.resultSet.add(xi);
+          }
+          i++;
+        } else {
+          if (!c1.resultSet.contains(yj)) {
+            c2.resultSet.add(yj);
+          }
+          j++;
+        }
+      } else if (xi != null) {
+        if (!c2.resultSet.contains(xi)) {
+          c1.resultSet.add(xi);
+        }
+        i++;
+      } else {
+        if (!c1.resultSet.contains(yj)) {
+          c2.resultSet.add(yj);
+        }
+        j++;
+      }
+    }
+
+    long result = c1.getResultPrice() + c2.getResultPrice();
+    System.out.println(result);
+  }
+
+  private static Comp getComp(Scanner scanner) {
+    Comp c = new Comp();
+    c.num = scanner.nextInt();
+    for (int i = 0; i < c.num; i++) {
+      c.addElem(scanner.nextLong(), scanner.nextLong());
+    }
+    return c;
+  }
+}
+
+class Comp {
+  int num;
+  List<Elem> elems = new ArrayList<>();
+  Set<Elem> resultSet = new HashSet<>();
+
+  void addElem(long el, long pr) {
+    Elem elem = new Elem(el, pr);
+    elems.add(elem);
+  }
+
+  void sortByPrice() {
+    Collections.sort(elems);
+  }
+
+  long getResultPrice() {
+    long sumPrice = 0;
+    for (Elem elem : resultSet) {
+      sumPrice += elem.price;
+    }
+
+    return sumPrice;
+  }
+}
+
+class Elem implements Comparable<Elem> {
+  long elem;
+  long price;
+
+  public Elem(long el, long pr) {
+    this.elem = el;
+    this.price = pr;
+  }
+
+  public int compareTo(Elem other) {
+    return (int) (other.price - price);
+  }
+
+  public boolean equals(Object o) {
+    if (!(o instanceof Elem)) {
+      return false;
+    }
+
+    Elem other = (Elem) o;
+    return (other.elem == elem);
+  }
+
+  public int hashCode() {
+    return (int) elem;
+  }
+
+  public String toString() {
+    return "(" + elem + ", " + price + ")";
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice]. The reason behind this is that the algorithm used to solve the problem has a nested loop (i.e. two loops that are nested inside each other) which has a time complexity of O(n^2). However, it would be more efficient if we utilized the sortedSet() method of the Set class which has a time complexity of O(logn) and utilized it to minimize the nested loop. Additionally, the sorting of the elems array takes O(nlogn) time, and the while-loop in the main method is used to add each element to the resultSet array, which adds another O(n) time complexity for each iteration. Therefore, the total time complexity of the code is approximately O(n^2) which is not optimal.</s>

@@ -1,0 +1,43 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+class GFG {
+
+  static int binomialCoeff(int n, int k) {
+
+    int C[] = new int[k + 1];
+
+    C[0] = 1;
+
+    for (int i = 1; i <= n; i++) {
+
+      for (int j = Math.min(i, k); j > 0; j--) C[j] = C[j] + C[j - 1];
+    }
+
+    return C[k];
+  }
+
+  public static void main(String[] args) {
+
+    int n = 5, k = 2;
+
+    System.out.printf("Value of C(%d, %d) is %d ", n, k, binomialCoeff(n, k));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].
+
+Explanation:
+The for loop runs for (n-1) times because the inner loop runs until the (i-1)-th index which is less than or equal to k. However, the inner loop also executes k times but this counts multiple values of binomialCoeff(n-1,j-1) for the same value of j. Since the sum of binomialCoeff(n-1,j-1) is the sum of all values of binomialCoeff(n-i,j-1) and binomialCoeff(n-i,j) for i up to (n-1) for j up to k, the inner loop runs n times, then k times for n>0, which is n/2 times for n>0, which is O(logn).</s>

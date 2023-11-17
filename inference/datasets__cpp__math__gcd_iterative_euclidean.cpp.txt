@@ -1,0 +1,77 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+/**
+ * @file
+ * @brief Compute the greatest common denominator of two integers using
+ * *iterative form* of
+ * [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm)
+ *
+ * @see gcd_recursive_euclidean.cpp, gcd_of_n_numbers.cpp
+ */
+#include <iostream>
+#include <stdexcept>
+
+/**
+ * algorithm
+ */
+int gcd(int num1, int num2) {
+    if (num1 <= 0 | num2 <= 0) {
+        throw std::domain_error("Euclidean algorithm domain is for ints > 0");
+    }
+
+    if (num1 == num2) {
+        return num1;
+    }
+
+    int base_num = 0;
+    int previous_remainder = 1;
+
+    if (num1 > num2) {
+        base_num = num1;
+        previous_remainder = num2;
+    } else {
+        base_num = num2;
+        previous_remainder = num1;
+    }
+
+    while ((base_num % previous_remainder) != 0) {
+        int old_base = base_num;
+        base_num = previous_remainder;
+        previous_remainder = old_base % previous_remainder;
+    }
+
+    return previous_remainder;
+}
+
+/**
+ * Main function
+ */
+int main() {
+    std::cout << "gcd of 120,7 is " << (gcd(120, 7)) << std::endl;
+    try {
+        std::cout << "gcd of -120,10 is " << gcd(-120, 10) << std::endl;
+    } catch (const std::domain_error &e) {
+        std::cout << "Error handling was successful" << std::endl;
+    }
+    std::cout << "gcd of 312,221 is " << (gcd(312, 221)) << std::endl;
+    std::cout << "gcd of 289,204 is " << (gcd(289, 204)) << std::endl;
+
+    return 0;
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice].
+
+
+Explanation:
+The time complexity of the given code is O(n), where n is the absolute value of the second number. This is because the algorithm iteratively divides the two numbers and keeps track of the remainder until the remainder becomes 0. Each iteration takes constant time, so the overall time complexity is linear with the number of iterations. In the worst case, the two numbers are of different signs and have their absolute values close to each other, which means that the algorithm needs to make a large number of iterations before finding a common factor. This makes the time complexity O(n).</s>

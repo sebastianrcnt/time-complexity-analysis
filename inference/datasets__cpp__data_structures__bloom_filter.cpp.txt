@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * @file
  * @brief [Bloom Filter](https://en.wikipedia.org/wiki/Bloom_filter)
  * generic implementation in C++
@@ -302,4 +296,13 @@ int main() {
 }
 
 
-[choice]2</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]0[/choice]. 
+
+The code makes several operations on the size of the bitset, using the function `add` and `contains`, which are called with `blockSize` and `x`. The hash function `hashInt_*` and `hashStr` have their own constant for each operation, which are added to the bloom filter, but it is not counting any additional operations. Also, there is only one call to the `contains` function of the bitset. Therefore we don't need a separate counter.</s>

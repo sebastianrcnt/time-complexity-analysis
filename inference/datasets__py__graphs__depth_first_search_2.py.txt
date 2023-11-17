@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    #!/usr/bin/python
+#!/usr/bin/python
 
 """ Author: OMKAR PATHAK """
 
@@ -138,4 +132,14 @@ if __name__ == "__main__":
     g.dfs()
 
 
-[choice]1[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].
+
+Explanation:
+The time complexity of the given code is O(n^2) because the algorithm uses nested loops to perform the breadth-first search (BFS) traversal on the graph. The outer loop iterates through each vertex in the graph, and the inner loop performs a BFS on each vertex. This means that the time taken by the algorithm to execute grows quadratically with the number of vertices in the graph.</s>

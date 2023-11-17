@@ -1,0 +1,41 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+public class CodeForces {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(new BufferedReader(new InputStreamReader(System.in)));
+
+    int n = input.nextInt();
+    String s = input.next();
+    boolean done = false;
+    for (int i = 0; i < s.length() - 1; i++) {
+      if (s.charAt(i) != s.charAt(i + 1)) {
+        System.out.println("YES");
+        System.out.println(s.charAt(i) + "" + s.charAt(i + 1));
+        done = true;
+        break;
+      }
+    }
+    if (!done) {
+      System.out.println("NO");
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. 
+
+The for loop in the code iterates from 0 to n-1, and inside the for loop, it executes till the second last character of the string is reached. Hence, The time complexity can be considered as O(n).</s>

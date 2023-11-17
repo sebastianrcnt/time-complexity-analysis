@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /* Sorting of array list using binary insertion sort
+/* Sorting of array list using binary insertion sort
  * Using binary search to find the proper location for
  * inserting the selected item at each iteration. */
 #include <stdio.h>
@@ -90,4 +84,14 @@ int main(int argc, const char *argv[])
 }
 
 
-[choice]4[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].
+
+Explanation:
+The time complexity of insertionSort is O(n^2) because for each element in the input array, it performs an inner loop to find the correct position to insert the element. In the inner loop, it performs binary search operation which takes O(logn) time complexity, but that is a constant factor in respect to the n iteration of the inner loop. So, the overall time complexity is O(n^2).</s>

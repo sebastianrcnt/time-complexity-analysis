@@ -1,0 +1,28 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+public class C {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    double n = sc.nextDouble(), r = sc.nextDouble();
+    System.out.println(r / (1 / Math.sin(Math.PI / n) - 1));
+    sc.close();
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].
+The reason for this choice is that the algorithm calculates the value of the ratios using the natural logarithm, which may take O(log log) time in average case, but in the worst case, it may take O(n log n).
+Additionally, if we take the denominator, 1/(1-Math.sin(Math.PI/n)), we can see that it is also in the form of 1/((1-sin(π/n))^n). So, if we substitute sin(π/n) with cos(π/n), we can simplify the denominator to 1/((1-cos(π/n))^n). 
+This operation takes O(n log n) time, and the sin(π/n) function is called n times, making the overall time complexity O(n log n).</s>

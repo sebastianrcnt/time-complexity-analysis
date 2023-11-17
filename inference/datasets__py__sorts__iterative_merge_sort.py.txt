@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 Implementation of iterative merge sort in Python
 Author: Aman Gupta
 
@@ -104,4 +98,11 @@ if __name__ == "__main__":
     print(iter_merge_sort(unsorted))
 
 
-[choice]3[/choice] The time complexity of the given code is O(nlogn) due to two nested loops with a linear time complexity for each and a logarithmic time complexity for merging. The outer loop runs n times (since it iterates over the unsorted list once), while the inner loop runs log(n) times (since it bins the length of the list in half at each iteration) resulting in a total of nlog(n) iterations.</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3.</s>

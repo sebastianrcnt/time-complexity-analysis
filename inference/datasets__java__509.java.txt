@@ -1,0 +1,47 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+public class GfG {
+
+  public static String noAdjacentDup(String s1) {
+
+    int n = s1.length();
+
+    char[] s = s1.toCharArray();
+
+    for (int i = 1; i < n; i++) {
+
+      if (s[i] == s[i - 1]) {
+
+        s[i] = 'a';
+
+        while (s[i] == s[i - 1] || (i + 1 < n && s[i] == s[i + 1])) s[i]++;
+
+        i++;
+      }
+    }
+
+    return (new String(s));
+  }
+
+  public static void main(String argc[]) {
+
+    String s = "geeksforgeeks";
+
+    System.out.println(noAdjacentDup(s));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].</s>

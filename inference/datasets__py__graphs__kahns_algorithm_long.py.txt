@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    # Finding longest distance in Directed Acyclic Graph using KahnsAlgorithm
+# Finding longest distance in Directed Acyclic Graph using KahnsAlgorithm
 def longest_distance(graph):
     indegree = [0] * len(graph)
     queue = []
@@ -42,4 +36,16 @@ graph = {0: [2, 3, 4], 1: [2, 7], 2: [5], 3: [5, 7], 4: [7], 5: [6], 6: [7], 7: 
 longest_distance(graph)
 
 
-[choice]2[/choice] The given algorithm has a time complexity of O(n), since the number of vertices in the graph is n. Therefore, option 2 is the correct choice.</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].
+
+Option Explanation:
+1. O(1) is the time complexity of basic operations such as constant time access to elements in arrays and dictionaries.
+2. O(logn) is the time complexity of most binary search algorithms, such as binary search on sorted arrays, as well as some other algorithms such as merge sort with log(n) base.
+3. O(n) is a linear time complexity.</s>

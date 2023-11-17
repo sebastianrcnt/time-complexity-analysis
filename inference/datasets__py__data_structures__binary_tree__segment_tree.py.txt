@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    import math
+import math
 
 
 class SegmentTree:
@@ -127,4 +121,11 @@ if __name__ == "__main__":
     segt.show_data()
 
 
-[choice]3[/choice] This code has a time complexity of O(nlogn). The reason is that the build method iterates through the range l to r, which are separated by a factor of 2 (half) at each level, and each iteration takes constant time on average. This means that the total time taken to build the segment tree is O(logn) for n elements.</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. The reason is that the code is using dynamic programming technique to construct the segment tree, which has a time complexity of O(nlogn) in the average and worst case scenarios.</s>

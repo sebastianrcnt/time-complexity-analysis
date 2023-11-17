@@ -1,0 +1,111 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+    MyScanner scan = new MyScanner();
+    out = new PrintWriter(new BufferedOutputStream(System.out));
+
+    int n = scan.nextInt();
+    int[] vals = new int[n];
+    for (int i = 0; i < n; i++) {
+      vals[i] = scan.nextInt();
+    }
+
+    for (int i = 0; i < n; i++) {
+      if (solve(i, vals)) {
+        out.print('A');
+      } else {
+        out.print('B');
+      }
+    }
+
+    out.close();
+  }
+
+  static HashMap<Integer, Boolean> dpResult = new HashMap<>();
+
+  private static boolean solve(int pos, int[] vals) {
+    if (dpResult.containsKey(pos)) return dpResult.get(pos);
+    int val = vals[pos];
+    boolean hasLose = false;
+    for (int i = pos; i < vals.length; i += val) {
+      if (i == pos) continue;
+      if (vals[i] <= vals[pos]) continue;
+      if (hasLose) break;
+      if (!solve(i, vals)) {
+        hasLose = true;
+      }
+    }
+    for (int i = pos; i >= 0; i -= val) {
+      if (i == pos) continue;
+      if (vals[i] <= vals[pos]) continue;
+      if (hasLose) break;
+      if (!solve(i, vals)) {
+        hasLose = true;
+      }
+    }
+    dpResult.put(pos, hasLose);
+    return hasLose;
+  }
+
+  public static PrintWriter out;
+
+  public static class MyScanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    public MyScanner() {
+      br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() {
+      while (st == null || !st.hasMoreElements()) {
+        try {
+          st = new StringTokenizer(br.readLine());
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+      return st.nextToken();
+    }
+
+    int nextInt() {
+      return Integer.parseInt(next());
+    }
+
+    long nextLong() {
+      return Long.parseLong(next());
+    }
+
+    double nextDouble() {
+      return Double.parseDouble(next());
+    }
+
+    String nextLine() {
+      String str = "";
+      try {
+        str = br.readLine();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      return str;
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. The for loop in the main method runs n times, and inside the for loop, the call to the solve method recursively runs at most 2^n times, each time reducing the size of the problem space, hence the total time taken is O(n*2^n).</s>

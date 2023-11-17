@@ -1,0 +1,118 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+public class Main {
+  public static void main(String[] args) {
+    InputStream inputStream = System.in;
+    OutputStream outputStream = System.out;
+    Scanner in = new Scanner(inputStream);
+    PrintWriter out = new PrintWriter(outputStream);
+    TaskC solver = new TaskC();
+    solver.solve(1, in, out);
+    out.close();
+  }
+
+  static class TaskC {
+    public void solve(int testNumber, Scanner in, PrintWriter out) {
+      int n = in.nextInt();
+      int m = in.nextInt();
+
+      TaskC.pair[] songs = new TaskC.pair[n];
+      long sum = 0;
+      for (int i = 0; i < n; i++) {
+        songs[i] = new TaskC.pair(in.nextInt(), in.nextInt());
+        sum += songs[i].a;
+      }
+      Arrays.sort(songs);
+
+      int res = 0;
+      int idx = n - 1;
+      while (sum > m) {
+        if (idx < 0) {
+          break;
+        }
+        sum -= (songs[idx].a - songs[idx].b);
+
+        res++;
+        idx--;
+      }
+
+      if (sum > m) {
+        out.println(-1);
+      } else {
+        out.println(res);
+      }
+    }
+
+    static class pair implements Comparable<TaskC.pair> {
+      int a;
+      int b;
+
+      pair(int a, int b) {
+        this.a = a;
+        this.b = b;
+      }
+
+      public int compareTo(TaskC.pair p) {
+        return (this.a - this.b) - (p.a - p.b);
+      }
+    }
+  }
+
+  static class Scanner {
+    StringTokenizer st;
+    BufferedReader br;
+
+    public Scanner(InputStream s) {
+      br = new BufferedReader(new InputStreamReader(s));
+    }
+
+    public Scanner(String s) {
+      try {
+        br = new BufferedReader(new FileReader(s));
+      } catch (FileNotFoundException e) {
+        e.printStackTrace();
+      }
+    }
+
+    public String next() {
+      while (st == null || !st.hasMoreTokens()) {
+        try {
+          st = new StringTokenizer(br.readLine());
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+      return st.nextToken();
+    }
+
+    public int nextInt() {
+      return Integer.parseInt(next());
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. This is because there is one sorting operation in the code that runs in O(nlogn) time, which is the only operation that affects the overall time complexity of the code.
+
+This sorting operation is used to sort the given array of pairs in ascending order of their second elements. In the worst case, the given array may have n log n elements, which would mean that the sorting operation will take O(nlogn) time. Since there is no other operation in the code that affects the overall time complexity, we can conclude that the time complexity of the given code is O(nlogn).</s>

@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * @function Introsort (As implemented in STD C++ Lib)
  * The function performs introsort which is used in
  * C++ Standard LIbrary, the implementation is inspired from]
@@ -320,6 +314,14 @@ function demo2() {
 export { introsort, demo1, demo2 }
 
 
-[choice]2[/choice]
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
 
-The time complexity of the given code is O(nlogn), where n is the number of elements in the array. This is because the code uses a recursive quicksort algorithm with a depth limit of log2(n), which means that the algorithm will divide the array into smaller subarrays and sort each subarray until the maximum depth is reached. At this point, the algorithm switches to a heapsort algorithm, which has a time complexity of O(nlogn) in the worst case. Therefore, the overall time complexity of the code is O(nlogn).</s>
+Among the Options above, the time complexity of the given code is [choice]1[/choice].
+
+
+The function sorts an array of integers using the quicksort algorithm. The time complexity of quicksort is O(nlogn) on average, but worst-case O(n^2) if the partitioning function is implemented improperly or the pivot chosen sub-optimally. The given implementation chooses the pivot as the median of the first, middle, and last elements of the array. It then partitions the array into two sub-arrays by iteratively inserting the elements in each sub-array in ascending and descending order. The partitioning function thus has an average-case time complexity of O(n). After all the sub-arrays are sorted recursively, they are combined together in non-descending order to obtain the final sorted array. Hence, the overall time complexity of the given implementation is O(nlogn) on average.</s>

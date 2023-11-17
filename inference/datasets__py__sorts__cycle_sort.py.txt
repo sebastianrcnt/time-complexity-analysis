@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 Code contributed by Honey Sharma
 Source: https://en.wikipedia.org/wiki/Cycle_sort
 """
@@ -64,10 +58,11 @@ if __name__ == "__main__":
     assert cycle_sort([0, 1, -10, 15, 2, -2]) == [-10, -2, 0, 1, 2, 15]
 
 
-[choice]3[/choice]
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
 
-Explanation:
-
-The time complexity of Cycle Sort is O(n^2) in the worst case, where n is the length of the input array. This is because the algorithm iterates n - 1 times around the array to find the cycles, and within each iteration, the innermost loop also iterates n - 1 times. Therefore, the overall time complexity is O(n * (n - 1)) = O(n^2).
-
-Note that the average and best cases of Cycle Sort have a time complexity of O(n), but they are not discussed in this example.</s>
+Among the Options above, the time complexity of the given code is [choice]2[/choice].</s>

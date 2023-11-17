@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /* In insertion sort, we divide the initial unsorted array into two parts;
+/* In insertion sort, we divide the initial unsorted array into two parts;
  * sorted part and unsorted part. Initially the sorted part just has one
  * element (Array of only 1 element is a sorted array). We then pick up
  * element one by one from unsorted part; insert into the sorted part at
@@ -73,4 +67,15 @@ export function insertionSortAlternativeImplementation(array) {
 }
 
 
-[choice]2[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].
+
+
+Note:
+- In Big-O analysis of the given code, the average and worst-case time complexities are O(n^2). However, the best-case scenario of insertion sort is O(n) which is achieved when the input array is already almost sorted. Therefore, the choice of [choice]1[/choice] is not a valid option.</s>

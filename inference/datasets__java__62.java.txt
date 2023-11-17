@@ -1,0 +1,47 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class GFG {
+
+  static int answer_query(int a[], int n, int l, int r) {
+
+    int count = 0;
+
+    for (int i = l; i < r; i++) if (a[i] == a[i + 1]) count += 1;
+
+    return count;
+  }
+
+  public static void main(String[] args) {
+
+    int a[] = {1, 2, 2, 2, 3, 3, 4, 4, 4};
+
+    int n = a.length;
+
+    int L, R;
+
+    L = 1;
+
+    R = 8;
+
+    System.out.println(answer_query(a, n, L, R));
+
+    L = 0;
+
+    R = 4;
+
+    System.out.println(answer_query(a, n, L, R));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].</s>

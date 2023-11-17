@@ -1,0 +1,47 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+  public static void main(String[] args) throws IOException {
+    PrintWriter pw = new PrintWriter(System.out);
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    StringTokenizer st = new StringTokenizer(br.readLine());
+
+    int n = Integer.parseInt(st.nextToken());
+    int k = Integer.parseInt(st.nextToken());
+    st = new StringTokenizer(br.readLine());
+    String str = st.nextToken();
+    char[] arr = str.toCharArray();
+    Arrays.sort(arr);
+    int weight = arr[0] - 96;
+    char a = arr[0];
+    int included = 1;
+    for (int i = 1; i < arr.length; ++i) {
+      if (included == k) break;
+      char c = arr[i];
+      if (c - a < 2) continue;
+
+      weight += arr[i] - 96;
+      ++included;
+      a = arr[i];
+    }
+    if (included == k) pw.println(weight);
+    else pw.println(-1);
+    pw.close();
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].</s>

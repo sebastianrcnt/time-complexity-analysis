@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 A pure implementation of Dutch national flag (DNF) sort algorithm in Python.
 Dutch National Flag algorithm is an algorithm originally designed by Edsger Dijkstra.
 It is the most optimal sort for 3 unique values (eg. 0, 1, 2) in a sequence.  DNF can
@@ -110,4 +104,11 @@ if __name__ == "__main__":
     print(f"{dutch_national_flag_sort(unsorted)}")
 
 
-[choice]1[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2.</s>

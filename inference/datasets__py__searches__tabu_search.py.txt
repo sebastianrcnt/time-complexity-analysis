@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 This is pure Python implementation of Tabu search algorithm for a Travelling Salesman
 Problem, that the distances between the cities are symmetric (the distance between city
 'a' and city 'b' is the same between city 'b' and city 'a').
@@ -302,4 +296,11 @@ if __name__ == "__main__":
     main(parser.parse_args())
 
 
-[choice]1[/choice] The choice is [O(n^2)]. While generating `neighbors`, we need to check if a neighbor has already been exchanged with the current node in same iteration, this is necessary because of the tabu search rule. So, we traverse the list `k` in `dict_of_neighbours[k]` that gives us neighbors of node `k`. Here we have to check for each neighbor, so the nested loop runs `m` times where `m` is the number of neighbors of node. So, total time complexity of this part is `nm`, which is `O(n^2)` because `n` is the number of nodes in the graph.</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].</s>

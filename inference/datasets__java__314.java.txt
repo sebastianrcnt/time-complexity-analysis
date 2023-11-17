@@ -1,0 +1,44 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class Sequences {
+
+  static int getTotalNumberOfSequences(int m, int n) {
+
+    int T[][] = new int[m + 1][n + 1];
+
+    for (int i = 0; i < m + 1; i++) {
+
+      for (int j = 0; j < n + 1; j++) {
+
+        if (i == 0 || j == 0) T[i][j] = 0;
+        else if (i < j) T[i][j] = 0;
+        else if (j == 1) T[i][j] = i;
+        else T[i][j] = T[i - 1][j] + T[i / 2][j - 1];
+      }
+    }
+
+    return T[m][n];
+  }
+
+  public static void main(String[] args) {
+
+    int m = 10;
+
+    int n = 4;
+
+    System.out.println("Total number of possible sequences " + getTotalNumberOfSequences(m, n));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice], which is O(n).</s>

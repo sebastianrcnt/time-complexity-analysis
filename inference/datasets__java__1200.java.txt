@@ -1,0 +1,46 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+public class CodeForces {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(new BufferedReader(new InputStreamReader(System.in)));
+    int k = input.nextInt();
+    int n = input.nextInt();
+    int s = input.nextInt();
+    int p = input.nextInt();
+
+    int each = n / s;
+    if (n % s != 0) {
+      each++;
+    }
+    int all = each * k;
+
+    if (all % p == 0) {
+      System.out.println(all / p);
+    } else {
+      System.out.println(all / p + 1);
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].
+
+Explanation:
+- The given code reads four integers from input. So overall, the time complexity of reading input is O(1).
+- The code does some mathematical operations, such as calculating the integer quotients, which are O(1) operations.
+- Then the code finds the division result or the remainder, which is done using the modulo operator, which is also an O(1) operation.
+- Hence, the overall time complexity of the code is O(1).</s>

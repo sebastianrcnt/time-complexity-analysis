@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    #include <iostream>
+#include <iostream>
 using namespace std;
 
 int queue[10];
@@ -68,4 +62,11 @@ int main() {
 }
 
 
-[choice]4[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].  The reason is that the given code involves a loop to iterate through the "show" function, and the length of the queue is n. Therefore, the time complexity of the show function is O(n). Since show function is called in the given program, the overall time complexity of the given code is O(n), where n is the length of the queue.</s>

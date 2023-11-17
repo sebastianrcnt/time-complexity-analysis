@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /*
+/*
  * Find Second Largest is a real technical interview question.
  * Chances are you will be asked to find the second largest value
  * inside of an array of numbers. You must also be able to filter
@@ -36,19 +30,11 @@ const secondLargestElement = (array) => {
 export { secondLargestElement }
 
 
-[choice]1[/choice]
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
 
-The time complexity of the given code is O(n). This is because it iterates through the entire array once, performing a constant time operation (comparison) on each element.
-
-To get this result, consider the loop that iterates through the `array`:
-```javascript
-for (let i = 0; i < array.length; i++) {
-  // ...
-  if (element < array[i] && array[i] !== largestElement) {
-    // ...
-  }
-}
-```
-Each iteration of the `for` loop performs a constant number of operations (comparing `element` to `array[i]` and checking if `array[i]` is different from `largestElement`). Therefore, the overall time complexity of the code is O(n), since it iterates through the entire array once.
-
-Note that there are other solutions to this problem with better time complexity. For example, a solution using a hash table (a Map) instead of an array could have a time complexity of O(1), since it would only need to perform constant time operations to find the second largest element. However, this solution may not be as intuitive or easy to understand as the solution presented here.</s>
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. This is because the code has a time complexity of O(n) since the for loop iterates through the entire array and performs a constant operation (a comparison) on each element.</s>

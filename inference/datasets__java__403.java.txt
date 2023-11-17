@@ -1,0 +1,104 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class Node {
+
+  int data;
+
+  Node left, right;
+
+  public Node(int data) {
+
+    this.data = data;
+
+    left = right = null;
+  }
+}
+
+class Index {
+
+  int index;
+}
+
+class BinaryTree {
+
+  Node buildUtil(int in[], int post[], int inStrt, int inEnd, Index pIndex) {
+
+    if (inStrt > inEnd) return null;
+
+    Node node = new Node(post[pIndex.index]);
+
+    (pIndex.index)--;
+
+    if (inStrt == inEnd) return node;
+
+    int iIndex = search(in, inStrt, inEnd, node.data);
+
+    node.right = buildUtil(in, post, iIndex + 1, inEnd, pIndex);
+
+    node.left = buildUtil(in, post, inStrt, iIndex - 1, pIndex);
+
+    return node;
+  }
+
+  Node buildTree(int in[], int post[], int n) {
+
+    Index pIndex = new Index();
+
+    pIndex.index = n - 1;
+
+    return buildUtil(in, post, 0, n - 1, pIndex);
+  }
+
+  int search(int arr[], int strt, int end, int value) {
+
+    int i;
+
+    for (i = strt; i <= end; i++) {
+
+      if (arr[i] == value) break;
+    }
+
+    return i;
+  }
+
+  void preOrder(Node node) {
+
+    if (node == null) return;
+
+    System.out.print(node.data + " ");
+
+    preOrder(node.left);
+
+    preOrder(node.right);
+  }
+
+  public static void main(String[] args) {
+
+    BinaryTree tree = new BinaryTree();
+
+    int in[] = new int[] {4, 8, 2, 5, 1, 6, 3, 7};
+
+    int post[] = new int[] {8, 4, 5, 2, 6, 7, 3, 1};
+
+    int n = in.length;
+
+    Node root = tree.buildTree(in, post, n);
+
+    System.out.println("Preorder of the constructed tree : ");
+
+    tree.preOrder(root);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. The main function in the class BinaryTree has method 'buildTree' which calls 'buildUtil' recursively with parameter in[], post[], inStrt, inEnd and pIndex. buildUtil function is also recursive on these parameters and the base case for this is when inStrt is greater than inEnd. But, the main loop in buildUtil function runs from 0 to n-1 repeatedly which means that the total number of comparisons in buildUtil is of the order O(n^2). Therefore, the total time complexity of the given code will be O(n^2).</s>

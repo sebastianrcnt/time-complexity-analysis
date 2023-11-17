@@ -1,0 +1,32 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+
+    long n = sc.nextLong();
+    long k = sc.nextLong();
+    System.out.println(solve(n, k));
+
+    sc.close();
+  }
+
+  static long solve(long n, long k) {
+    return Math.max(0, Math.min(n, k - 1) - ((k + 2) / 2) + 1);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice]. This is because the solution requires iterating over every element of the array n times, resulting in O(n^2) time complexity of the solve function, and hence O(n^2) time complexity overall for the main function when it calls solve. Therefore, the time complexity of the given code is [choice]4[/choice].</s>

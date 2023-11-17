@@ -1,0 +1,31 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws IOException {
+    BufferedReader st = new BufferedReader(new InputStreamReader(System.in));
+    StringTokenizer s = new StringTokenizer(st.readLine());
+    long n = Long.parseLong(s.nextToken());
+    long k = Long.parseLong(s.nextToken());
+    long ans = k / n;
+    if (k % n != 0) ans++;
+    System.out.println(ans + "");
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. This is because the code has two input variables (n and k) and it reads both of them using the `stringTokenizer` class, which takes O(logn) time to tokenize the string entered by the user. Additionally, the code computes and outputs k/n as the answer, which takes O(1) constant time to execute. Thus, the overall time complexity of the code is O(logn).</s>

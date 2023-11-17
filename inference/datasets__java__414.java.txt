@@ -1,0 +1,124 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+class GFG {
+
+  static class Node {
+
+    int data;
+
+    Node left, right;
+  }
+  ;
+
+  static Node newNode(int data) {
+
+    Node temp = new Node();
+
+    temp.data = data;
+
+    temp.left = temp.right = null;
+
+    return temp;
+  }
+
+  static Node flipBinaryTree(Node root) {
+
+    Node curr = root;
+
+    Node next = null;
+
+    Node temp = null;
+
+    Node prev = null;
+
+    while (curr != null) {
+
+      next = curr.left;
+
+      curr.left = temp;
+
+      temp = curr.right;
+
+      curr.right = prev;
+
+      prev = curr;
+
+      curr = next;
+    }
+
+    return prev;
+  }
+
+  static void printLevelOrder(Node root) {
+
+    if (root == null) return;
+
+    Queue<Node> q = new LinkedList<Node>();
+
+    q.add(root);
+
+    while (true) {
+
+      int nodeCount = q.size();
+
+      if (nodeCount == 0) break;
+
+      while (nodeCount > 0) {
+
+        Node node = q.peek();
+
+        System.out.print(node.data + " ");
+
+        q.remove();
+
+        if (node.left != null) q.add(node.left);
+
+        if (node.right != null) q.add(node.right);
+
+        nodeCount--;
+      }
+
+      System.out.println();
+    }
+  }
+
+  public static void main(String args[]) {
+
+    Node root = newNode(1);
+
+    root.left = newNode(2);
+
+    root.right = newNode(3);
+
+    root.right.left = newNode(4);
+
+    root.right.right = newNode(5);
+
+    System.out.print("Level order traversal " + "of given tree\n");
+
+    printLevelOrder(root);
+
+    root = flipBinaryTree(root);
+
+    System.out.print("\nLevel order traversal " + "of the flipped tree\n");
+
+    printLevelOrder(root);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. 
+
+The `flipBinaryTree(Node root)` function is traversing the tree by doing a left to right traversal on the tree. Each node is visited once during the traversal. There are two nested loops that are being executed, which are in the order of `O(nlogn)` complexity.</s>

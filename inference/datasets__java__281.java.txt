@@ -1,0 +1,44 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+public class No_of_subsequence {
+
+  static int countSubsequences(String s) {
+
+    int aCount = 0;
+
+    int bCount = 0;
+
+    int cCount = 0;
+
+    for (int i = 0; i < s.length(); i++) {
+
+      if (s.charAt(i) == 'a') aCount = (1 + 2 * aCount);
+      else if (s.charAt(i) == 'b') bCount = (aCount + 2 * bCount);
+      else if (s.charAt(i) == 'c') cCount = (bCount + 2 * cCount);
+    }
+
+    return cCount;
+  }
+
+  public static void main(String args[]) {
+
+    String s = "abbc";
+
+    System.out.println(countSubsequences(s));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice]. It is because the iterative loop runs from 0 to n-1 in the worst case, which makes the time complexity O(n).
+
+Note: The time complexity of [choice]2[/choice] and [choice]4[/choice] are not applicable in this case because the given code is not recursive.</s>

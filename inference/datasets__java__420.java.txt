@@ -1,0 +1,106 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+class Node {
+
+  int data;
+
+  Node left, right;
+
+  Node(int key) {
+
+    int data = key;
+
+    left = right = null;
+  }
+}
+
+class GFG {
+
+  static boolean checkLevelLeafNode(Node root) {
+
+    if (root == null) return true;
+
+    Queue<Node> q = new LinkedList<>();
+
+    q.add(root);
+
+    int result = Integer.MAX_VALUE;
+
+    int level = 0;
+
+    while (q.size() != 0) {
+
+      int size = q.size();
+
+      level++;
+
+      while (size > 0) {
+
+        Node temp = q.remove();
+
+        if (temp.left != null) {
+
+          q.add(temp.left);
+
+          if (temp.left.left == null && temp.left.right == null) {
+
+            if (result == Integer.MAX_VALUE) result = level;
+            else if (result != level) return false;
+          }
+        }
+
+        if (temp.right != null) {
+
+          q.add(temp.right);
+
+          if (temp.right.left == null && temp.right.right == null) {
+
+            if (result == Integer.MAX_VALUE) result = level;
+            else if (result != level) return false;
+          }
+        }
+
+        size--;
+      }
+    }
+
+    return true;
+  }
+
+  public static void main(String args[]) {
+
+    Node root = new Node(1);
+
+    root.left = new Node(2);
+
+    root.right = new Node(3);
+
+    root.left.right = new Node(4);
+
+    root.right.left = new Node(5);
+
+    root.right.right = new Node(6);
+
+    boolean result = checkLevelLeafNode(root);
+
+    if (result == true) System.out.println("All leaf nodes are at same level");
+    else System.out.println("Leaf nodes not at same level");
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. The explanation for this choice is that the depth of the nodes traveled for an unvisited child node is always less or equal to the depth of its parent node. The depth of any node is visited is kept track of using the variable 'level'. It is initially set to 0 and incremented by 1, whenever a new layer of nodes is visited. From this observation, we know that the number of nodes visited while traversing from a leaf node to its current parent node should be at most logarithmic in the depth of the tree.
+    
+As we are traversing from a leaf node to its current parent, we have to go along the parent pointers, right or left but only to the level of parent node. Hence the time taken will be always less or equal to the distance to the root from the current leaf node. Since the height of the maximum path from any leaf node to its parent node will be less then or equal to h, the time taken will be less then or equal to h where h is height of the tree and the current leaf node is at maximum distance from the root. Thus the time taken will be less than or equal to logarithmic.</s>

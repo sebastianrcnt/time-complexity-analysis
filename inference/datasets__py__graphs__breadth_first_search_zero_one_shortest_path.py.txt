@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 Finding the shortest path in 0-1-graph in O(E + V) which is faster than dijkstra.
 0-1-graph is the weighted graph with the weights equal to 0 or 1.
 Link: https://codeforces.com/blog/entry/22276
@@ -153,4 +147,19 @@ if __name__ == "__main__":
     doctest.testmod()
 
 
-[choice]4[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice].
+
+The `adjacency_list` has 1 `add_edge` operation with a time complexity of O(1), 1 `get_shortest_path` operation with a time complexity of O(n^2), and total of 1 `__getitem__` operation. 
+
+This is because the `add_edge` operation needs to check if the vertex index is in range and if the weight is either 0 or 1, which takes O(1) time. 
+
+Also, the `get_shortest_path` operation uses Breadth-first search for finding the shortest path from the start vertex to finish vertex, which has a time complexity of O(nlogn). 
+
+Considering all the operations mentioned above, the final time complexity of the given code is O(n^2).</s>

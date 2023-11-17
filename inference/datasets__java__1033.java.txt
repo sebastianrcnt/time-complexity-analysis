@@ -1,0 +1,51 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+public class codef {
+  public static void main(String ar[]) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    StringTokenizer nk = new StringTokenizer(br.readLine());
+    int n = Integer.parseInt(nk.nextToken());
+    int k = Integer.parseInt(nk.nextToken());
+    String st[] = br.readLine().split(" ");
+
+    int ans[] = new int[n];
+    int a[] = new int[n];
+    for (int i = 0; i < n; i++) ans[i] = Integer.parseInt(st[i]);
+
+    for (int i = 1; i < n; i++) a[i] = ans[i] - ans[i - 1];
+    a[0] = -1;
+
+    Arrays.sort(a);
+    int count = 0, sum = 0;
+    for (int i = 0; i < n; i++)
+      if (a[i] < 0) count++;
+      else sum = sum + a[i];
+
+    k = k - count;
+    int i = n - 1;
+    while (k > 0 && i >= 0) {
+      if (a[i] > -1) {
+        sum = sum - a[i];
+        k--;
+      }
+      i--;
+    }
+    System.out.println(sum);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. This is because the number of operations executed in the given code is proportional to the size of the input. Specifically, it performs a constant number of operations (such as input/output, memory allocation) regardless of the size of the input, and then performs a linear scan of the input array to compute the difference between adjacent elements. Therefore, the time complexity of the given code is O(n).</s>

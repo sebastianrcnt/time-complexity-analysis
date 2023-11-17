@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    #include <iostream>
+#include <iostream>
 #include <list>
 using namespace std;
 
@@ -130,4 +124,11 @@ int main() {
 }
 
 
-[choice]3[/choice] The time complexity of the given code is O(nlogn) because the CreateTree function is called in the Preorder Depth First traversal of the tree. Each time the CreateTree function is called, it takes O(logn) time to decide whether a new node should be inserted in the left subtree or the right subtree, which is based on the value of the new node to be inserted. Therefore, the number of times CreateTree is called is equal to the number of nodes in the tree, which is O(nlogn).</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].</s>

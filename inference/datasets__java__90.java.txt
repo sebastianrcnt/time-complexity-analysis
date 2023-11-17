@@ -1,0 +1,39 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+public class GFG {
+
+  static void sortit(int[] arr, int n) {
+
+    for (int i = 0; i < n; i++) {
+
+      arr[i] = i + 1;
+    }
+  }
+
+  public static void main(String args[]) {
+
+    int[] arr = {10, 7, 9, 2, 8, 3, 5, 4, 6, 1};
+
+    int n = arr.length;
+
+    sortit(arr, n);
+
+    for (int i = 0; i < n; i++) System.out.print(arr[i] + " ");
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. This is because the code uses a for loop that iterates n times, meaning the time taken to execute the code is directly proportional to the size of the input.</s>

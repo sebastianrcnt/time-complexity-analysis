@@ -1,0 +1,67 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class GFG {
+
+  static void findSmallest(int m, int s) {
+
+    if (s == 0) {
+
+      System.out.print(m == 1 ? "Smallest number is 0" : "Not possible");
+
+      return;
+    }
+
+    if (s > 9 * m) {
+
+      System.out.println("Not possible");
+
+      return;
+    }
+
+    int[] res = new int[m];
+
+    s -= 1;
+
+    for (int i = m - 1; i > 0; i--) {
+
+      if (s > 9) {
+
+        res[i] = 9;
+
+        s -= 9;
+
+      } else {
+
+        res[i] = s;
+
+        s = 0;
+      }
+    }
+
+    res[0] = s + 1;
+
+    System.out.print("Smallest number is ");
+
+    for (int i = 0; i < m; i++) System.out.print(res[i]);
+  }
+
+  public static void main(String[] args) {
+
+    int s = 9, m = 2;
+
+    findSmallest(m, s);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]0[/choice]. (Constant-factor O(1) time complexity.)</s>

@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 This is a pure Python implementation of the binary insertion sort algorithm
 
 For doctests run following command:
@@ -77,4 +71,11 @@ if __name__ == "__main":
     print(f"{binary_insertion_sort(unsorted) = }")
 
 
-[choice]0[/choice] The given code's time complexity is O(1) because the binary insertion sort algorithm has a fixed number of operations regardless of the size of the input. Specifically, the for loop runs from i=1 to i=n-1, and within that loop, the while loop runs from low=0 to high=i-1. Additionally, the for loop that inserts the value_to_insert into the sorted list runs from j=i to j=low-1. Therefore, the total number of operations in the worst case is n+i-1+i-1=2n-1, which is constant with respect to the input size.</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].</s>

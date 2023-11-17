@@ -1,0 +1,31 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.Scanner;
+
+public class IfAtFIrstYouDIdnt {
+
+  public static void main(String[] args) {
+
+    Scanner input = new Scanner(System.in);
+    int a = input.nextInt();
+    int b = input.nextInt();
+    int c = input.nextInt();
+    int n = input.nextInt();
+    if (a < n && b < n && c < n && (a + b - c) < n && c <= a && c <= b) {
+      System.out.println((n) - (a + b - c));
+    } else System.out.println("-1");
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice] (O(n^2)). This is because the if statement checks for five comparisons, and each comparison takes constant time. Thus, the total number of comparisons is 5 * 5 = 25, which is proportional to the square of n.</s>

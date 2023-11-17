@@ -1,0 +1,58 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class GFG {
+
+  static int maximumSum(int arr[], int n, int k) {
+
+    for (int i = 1; i <= k; i++) {
+
+      int min = +2147483647;
+
+      int index = -1;
+
+      for (int j = 0; j < n; j++) {
+
+        if (arr[j] < min) {
+
+          min = arr[j];
+
+          index = j;
+        }
+      }
+
+      if (min == 0) break;
+
+      arr[index] = -arr[index];
+    }
+
+    int sum = 0;
+
+    for (int i = 0; i < n; i++) sum += arr[i];
+
+    return sum;
+  }
+
+  public static void main(String arg[]) {
+
+    int arr[] = {-2, 0, 5, -1, 2};
+
+    int k = 4;
+
+    int n = arr.length;
+
+    System.out.print(maximumSum(arr, n, k));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3.</s>

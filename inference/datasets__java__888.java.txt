@@ -1,0 +1,72 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.Scanner;
+
+public class JavaApplication7 {
+
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int m = sc.nextInt();
+    long sum = 0;
+    long[] d = new long[n];
+    long[] ds = new long[n];
+    for (int i = 0; i < n; i++) {
+      d[i] = sc.nextLong();
+      sum += d[i];
+      ds[i] = sum;
+    }
+    long[] le = new long[m];
+    for (int i = 0; i < m; i++) {
+      le[i] = sc.nextLong();
+    }
+    int l = 0;
+    int h = n;
+    int k = (h - l) / 2;
+    k += l;
+    for (int i = 0; i < m; i++) {
+      l = 0;
+      h = n;
+      k = (h - l) / 2;
+      k += l;
+      for (; l <= h; ) {
+        k = (h - l) / 2;
+        k += l;
+        if (ds[k] < le[i]) {
+          l = k + 1;
+        } else if (ds[k] == le[i]) {
+          break;
+        } else {
+          h = k - 1;
+        }
+      }
+
+      if (ds[k] < le[i]) {
+        k++;
+      }
+      if (k == 0) {
+        System.out.println((int) (k + 1) + " " + le[i]);
+      } else {
+        System.out.println((int) (k + 1) + " " + (long) (le[i] - ds[k - 1]));
+      }
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].
+
+Explanation for the choice: 
+The time complexity of the given code is O(logn) because there is a single loop that repeatedly cuts the search interval in half until the desired solution is found. The outer loop runs m times, and the inner loop runs n times in each iteration, resulting in a total of mn iterations. Since the search interval is cut in half at each iteration, the number of iterations required to find the solution is logarithmic in the size of the input.
+
+Therefore, the time complexity of the given code is [choice]1[/choice].</s>

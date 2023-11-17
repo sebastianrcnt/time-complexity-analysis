@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
     @file
     @author [Krishna Vedala](https://github.com/kvedala)
     @date 2 October, 2019
@@ -96,4 +90,11 @@ int main(int argc, char *argv[])
 }
 
 
-[choice]2[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. The recursive half-interval decimation used in the implementation of the fib() function reduces the number of calls made to compute F(n) by repeatedly dividing the interval in half until only the left half is left, and then computing F(n) using that left half, and F(n+1) using the right half. This results in a time complexity of logarithmic order with respect to n.</s>

@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """A merge sort which accepts an array as input and recursively
+"""A merge sort which accepts an array as input and recursively
 splits an array in half and sorts and combines them.
 """
 
@@ -75,6 +69,11 @@ if __name__ == "__main__":
     doctest.testmod()
 
 
-[choice] 3 [[choice]1[/choice]3
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
 
-The time complexity of the given code is O(n log n) because</s>
+Among the Options above, the time complexity of the given code is [choice]4[/choice] O(n^2)</s>

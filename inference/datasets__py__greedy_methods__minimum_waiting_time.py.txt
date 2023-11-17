@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 Calculate the minimum waiting time using a greedy algorithm.
 reference: https://www.youtube.com/watch?v=Sf3eiO12eJs
 
@@ -59,5 +53,11 @@ if __name__ == "__main__":
     doctest.testmod()
 
 
-[choice]#
-[/choice] 1</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].</s>

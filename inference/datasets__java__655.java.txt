@@ -1,0 +1,53 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+public class Codeforces {
+
+  static int n;
+  static double max;
+  static int[] pre;
+
+  public static void findIntensity(int l) {
+    for (int i = 0, j = i + l; j < n + 1; i++, j++) {
+      double res = (pre[j] - pre[i]) / (double) l;
+      max = Math.max(max, res);
+    }
+  }
+
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    StringTokenizer st = new StringTokenizer(br.readLine());
+    n = Integer.parseInt(st.nextToken());
+    int k = Integer.parseInt(st.nextToken());
+    int[] heat = new int[n];
+    st = new StringTokenizer(br.readLine());
+    for (int i = 0; i < n; i++) {
+      heat[i] = Integer.parseInt(st.nextToken());
+    }
+    max = 0;
+    pre = new int[n + 1];
+    pre[0] = 0;
+    for (int i = 0; i < n; i++) {
+      pre[i + 1] = pre[i] + heat[i];
+    }
+    for (int i = k; i <= n; i++) {
+      findIntensity(i);
+    }
+    System.out.println(max);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice].</s>

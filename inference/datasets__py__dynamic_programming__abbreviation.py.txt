@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 https://www.hackerrank.com/challenges/abbr/problem
 You can perform the following operation on some string, :
 
@@ -50,4 +44,11 @@ if __name__ == "__main__":
     doctest.testmod()
 
 
-[choice]1[/choice] Since we need to maintain dp[i][j] based on previously seen characters in both strings, we have to use nested loops and comparisons within them. This means the time complexity of the function is O(n \* m), where n is the length of the first string and m is the length of the second string.</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice] O(nlogn). The function abbr has two nested loops where the outer loop runs n times and the inner loop runs m times. So, the total time complexity of the function is O(n\*m) which is O(nlogn) in the worst case.</s>

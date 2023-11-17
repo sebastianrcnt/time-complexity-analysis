@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 Bead sort only works for sequences of non-negative integers.
 https://en.wikipedia.org/wiki/Bead_sort
 """
@@ -54,6 +48,15 @@ if __name__ == "__main__":
     assert bead_sort([7, 9, 4, 3, 5]) == [3, 4, 5, 7, 9]
 
 
-[choice]3[/choice]
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
 
-The time complexity of the given Bead sort code is O(nlogn) on average and worst-case time complexity.</s>
+Among the Options above, the time complexity of the given code is [choice]3. [/choice]
+
+
+Explanation:
+The given code implements the Bead Sort algorithm, which has an average and worst-case time complexity of O(nlogn). The algorithm iterates over the input sequence once, and for each element, it performs a constant-time operation to swap the element with its correct position in the sorted sequence. Additionally, the algorithm may perform a constant-time operation to increment or decrement the count of a specific integer value in the sequence. The total number of operations performed by the algorithm is therefore O(n), and the time complexity is O(nlogn) on average.</s>

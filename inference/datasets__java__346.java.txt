@@ -1,0 +1,56 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+public class LongestCommonSubSequence {
+
+  static int LCSubStr(char X[], char Y[], int m, int n) {
+
+    int LCStuff[][] = new int[m + 1][n + 1];
+
+    int result = 0;
+
+    for (int i = 0; i <= m; i++) {
+
+      for (int j = 0; j <= n; j++) {
+
+        if (i == 0 || j == 0) LCStuff[i][j] = 0;
+        else if (X[i - 1] == Y[j - 1]) {
+
+          LCStuff[i][j] = LCStuff[i - 1][j - 1] + 1;
+
+          result = Integer.max(result, LCStuff[i][j]);
+
+        } else LCStuff[i][j] = 0;
+      }
+    }
+
+    return result;
+  }
+
+  public static void main(String[] args) {
+
+    String X = "OldSite:GeeksforGeeks.org";
+
+    String Y = "NewSite:GeeksQuiz.com";
+
+    int m = X.length();
+
+    int n = Y.length();
+
+    System.out.println(
+        "Length of Longest Common Substring is "
+            + LCSubStr(X.toCharArray(), Y.toCharArray(), m, n));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice] O(n^2). This is because there is a two nested loop iterating through the characters of 2 strings with a total time complexity of n x n (n for both strings).</s>

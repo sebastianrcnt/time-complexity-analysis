@@ -1,0 +1,43 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+class GFG {
+
+  static int maxSumIS(int arr[], int n) {
+
+    int i, j, max = 0;
+
+    int msis[] = new int[n];
+
+    for (i = 0; i < n; i++) msis[i] = arr[i];
+
+    for (i = 1; i < n; i++)
+      for (j = 0; j < i; j++)
+        if (arr[i] > arr[j] && msis[i] < msis[j] + arr[i]) msis[i] = msis[j] + arr[i];
+
+    for (i = 0; i < n; i++) if (max < msis[i]) max = msis[i];
+
+    return max;
+  }
+
+  public static void main(String args[]) {
+
+    int arr[] = new int[] {1, 101, 2, 3, 100, 4, 5};
+
+    int n = arr.length;
+
+    System.out.println("Sum of maximum sum " + "increasing subsequence is " + maxSumIS(arr, n));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice] i.e. O(n^2). This is because the given code first initializes all the maximum sum increasing subsequence ending at each index as the value of the corresponding element in the array itself. Afterwards, it iterates over all pairs of indices, performing a linear scan of the array to find the maximum sum subsequence ending at the second index that can extend the subsequence ending at the first index. The overall time complexity of the operation is thus given by the product of the two iterations, which is O(n^2</s>

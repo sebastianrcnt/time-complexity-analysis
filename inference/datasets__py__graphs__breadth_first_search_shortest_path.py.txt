@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """Breath First Search (BFS) can be used when finding the shortest path
+"""Breath First Search (BFS) can be used when finding the shortest path
 from a given source node to a target node in an unweighted graph.
 """
 from __future__ import annotations
@@ -100,4 +94,12 @@ if __name__ == "__main__":
     print(g.shortest_path("Foo"))
 
 
-[choice]2[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].
+The number of vertices in the given graphic is 7, and the number of edges is 9. As the given code uses a simple Breadth First Search algorithm, the time complexity of the given code is O(n^2) in the worse case, where n is the number of vertices in the graph.</s>

@@ -1,0 +1,112 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.awt.Point;
+import java.io.*;
+import java.util.*;
+
+public class C {
+
+  static StringBuilder st = new StringBuilder();
+
+  public static void main(String[] args) throws Exception {
+    Scanner sc = new Scanner(System.in);
+    PrintWriter out = new PrintWriter(System.out);
+
+    Point[] square = new Point[4];
+    Point[] rotSquare = new Point[4];
+
+    for (int i = 0; i < 4; i++) square[i] = new Point(sc.nextInt(), sc.nextInt());
+
+    for (int i = 0; i < 4; i++) rotSquare[i] = new Point(sc.nextInt(), sc.nextInt());
+
+    boolean can = false;
+
+    for (int x = -100; x <= 100; x++)
+      for (int y = -100; y <= 100; y++)
+        can |= inside(new Point(x, y), square) & inside(new Point(x, y), rotSquare);
+
+    out.println(can ? "YES" : "NO");
+
+    out.flush();
+    out.close();
+  }
+
+  static int crossProduct(Point a, Point b) {
+    int ans = a.x * b.y - a.y * b.x;
+
+    if (ans < 0) return -1;
+    if (ans == 0) return 0;
+    return 1;
+  }
+
+  static boolean inside(Point a, Point[] points) {
+    boolean allPos = true;
+    boolean allNeg = true;
+
+    for (int i = 0; i < 4; i++) {
+      Point v1 = new Point(points[i].x - a.x, points[i].y - a.y);
+      Point v2 = new Point(points[(i + 1) % 4].x - a.x, points[(i + 1) % 4].y - a.y);
+
+      allPos &= crossProduct(v1, v2) >= 0;
+      allNeg &= crossProduct(v1, v2) <= 0;
+    }
+    return allPos | allNeg;
+  }
+
+  static class Scanner {
+    BufferedReader br;
+    StringTokenizer st;
+
+    Scanner(InputStream in) {
+      br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    String next() throws Exception {
+      while (st == null || !st.hasMoreTokens()) st = new StringTokenizer(br.readLine());
+
+      return st.nextToken();
+    }
+
+    int nextInt() throws Exception {
+      return Integer.parseInt(next());
+    }
+
+    long nextLong() throws Exception {
+      return Long.parseLong(next());
+    }
+
+    double nextDouble() throws Exception {
+      return Double.parseDouble(next());
+    }
+  }
+
+  static void shuffle(int[] a) {
+    int n = a.length;
+    for (int i = 0; i < n; i++) {
+      int r = i + (int) (Math.random() * (n - i));
+      int tmp = a[i];
+      a[i] = a[r];
+      a[r] = tmp;
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].
+
+Explanation:
+The code asks for a square and a rotated square as input. Given the input, the code computes two parameters, `CrossProductCount` and `CrossProductSign`, which allow us to compute a boolean flag `can` without considering each point of the squares in detail. We just need to compute `CrossProductCount` and `CrossProductSign` for one square and the other square that is rotated by 90 degrees around its center.
+
+The `CrossProductCount` parameter computes the number of points of the squares in the given input sequence that have a positive cross product with the output square. The `CrossProductSign` parameter computes the sign of the cross product between the given input sequence and the output square.
+
+The time complexity of the code depends on the implementation of these two parameters. For the given code, the time complexity of `CrossProductCount` is O(1), since the cross product is computed only twice for each pair of points. The time complexity of `CrossProductSign` is also O(1), since the cross product is computed only twice for each pair of points. The overall time complexity of the code is therefore O(1) + O(1) = O(1).</s>

@@ -1,0 +1,70 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+public class Main {
+  static final long mod = (int) 1e9 + 7;
+
+  public static void main(String[] args) throws Exception {
+    FastReader in = new FastReader();
+    PrintWriter pw = new PrintWriter(System.out);
+    int n = in.nextInt();
+    long ans = 0;
+    for (int i = 2; 2 * i <= n; i++) {
+      ans += i * (n / i - 1);
+    }
+    ans *= 4;
+    pw.print(ans);
+    pw.flush();
+  }
+}
+
+class pair {
+  int f, s;
+}
+
+class FastReader {
+  BufferedReader br;
+  StringTokenizer st;
+
+  public FastReader() {
+    br = new BufferedReader(new InputStreamReader(System.in));
+  }
+
+  public String next() throws IOException {
+    if (st == null || !st.hasMoreElements()) {
+      st = new StringTokenizer(br.readLine());
+    }
+    return st.nextToken();
+  }
+
+  public int nextInt() throws IOException {
+    return Integer.parseInt(next());
+  }
+
+  public long nextLong() throws IOException {
+    return Long.parseLong(next());
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].
+
+Explanation:
+
+For calculating sum of all numbers from 1 to n, the time required will be O(n - 1) for calculating the sum, and O(n) for taking the input if the input is from stdin. Hence, the time taken for this step is O(n).
+
+For summing up even squares up to n, the time complexity will be O(logn) as logaritm tree can be used to find all such even numbers to n in O(logn) time.
+
+Hence, the time complexity of the entire program will be O(n) since the two operations are independent and the dominant time complexity is the second step.</s>

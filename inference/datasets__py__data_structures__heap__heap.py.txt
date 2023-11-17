@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    from __future__ import annotations
+from __future__ import annotations
 
 from abc import abstractmethod
 from collections.abc import Iterable
@@ -287,4 +281,13 @@ if __name__ == "__main__":
         print(f"heap-sorted array: {heap}\n")
 
 
-[choice]1[/choice] The time complexity of the given code is [O(logn)].</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. This is because the time complexity of the parent\_index() method is O(log n) (since it involves computing the floor divided by 2, which is a logarithmic operation). Therefore, the overall complexity of the build\_max\_heap() method, which contains multiple calls to parent\_index(), is O(log n).
+
+The insert() method also involves calling parent\_index(), which means its time complexity is also O(log n). However, the heap\_sort() method has a time complexity of O(n log n), which dominates the overall complexity of the code. Therefore, the time complexity of the given code is [choice]1[/choice], which is O(n log n).</s>

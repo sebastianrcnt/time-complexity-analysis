@@ -1,0 +1,62 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.Arrays;
+
+class GFG {
+
+  static int MaxTotalRectangleArea(int[] a, int n) {
+
+    Arrays.sort(a);
+
+    int sum = 0;
+
+    boolean flag = false;
+
+    int len = 0;
+
+    for (int i = 0; i < n; i++) {
+
+      if ((a[i] == a[i + 1] || a[i] - a[i + 1] == 1) && !flag) {
+
+        flag = true;
+
+        len = a[i + 1];
+
+        i++;
+
+      } else if ((a[i] == a[i + 1] || a[i] - a[i + 1] == 1) && (flag)) {
+
+        sum = sum + a[i + 1] * len;
+
+        flag = false;
+
+        i++;
+      }
+    }
+
+    return sum;
+  }
+
+  public static void main(String args[]) {
+
+    int[] a = {10, 10, 10, 10, 11, 10, 11, 10, 9, 9, 8, 8};
+
+    int n = a.length;
+
+    System.out.print(MaxTotalRectangleArea(a, n));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. The reasoning behind this is that the code contains a single loop that runs n times, and the operations inside the loop take constant amount of time. Therefore, the overall time taken by the code is O(n).</s>

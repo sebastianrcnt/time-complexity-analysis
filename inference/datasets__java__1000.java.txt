@@ -1,0 +1,32 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class A1180 {
+
+  public static void main(String[] args) throws FileNotFoundException {
+    Scanner scan = new Scanner(System.in);
+    int n = scan.nextInt();
+    int layers = n - 1;
+    int counter = 0;
+    for (int i = 1; i < layers + 1; i++) {
+      counter += i;
+    }
+
+    System.out.println(1 + counter * 4);
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].</s>

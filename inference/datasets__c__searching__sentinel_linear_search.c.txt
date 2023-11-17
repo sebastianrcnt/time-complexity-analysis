@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * @file
  * @brief [Linear Search with Sentinel](https://en.wikipedia.org/wiki/Linear_search#With_a_sentinel) algorithm implementation
  * @details
@@ -90,4 +84,12 @@ int main(){
 }
 
 
-[choice]2[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice], and it is O(n).
+This is because the algorithm has a loop, which runs n times in the worst case scenario.</s>

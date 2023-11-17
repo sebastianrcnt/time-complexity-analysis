@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    r"""
+r"""
 A binary search Tree
 
 Example
@@ -325,4 +319,11 @@ if __name__ == "__main__":
     doctest.testmod(verbose=True)
 
 
-[choice]3[/choice] The time complexity is O(logn). The method being tested is `remove`, which calls `search` in order to find the node to be deleted. `search` uses recursive inorder traversal of the tree to find the node, which takes O(logn) time.</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].</s>

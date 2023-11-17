@@ -1,0 +1,32 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.Scanner;
+
+public class Main {
+
+  public static void main(String[] args) {
+
+    Scanner kai = new Scanner(System.in);
+    while (kai.hasNext()) {
+      int a = kai.nextInt();
+      if ((a & 1) == 0) {
+        System.out.println("Mahmoud");
+      } else {
+        System.out.println("Ehab");
+      }
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. The O notation used above represents a linear time complexity. The while loop in the given code runs n number of times, and the operations performed in the loop also has a linear time complexity. Hence the overall time complexity of the given code is O(n).</s>

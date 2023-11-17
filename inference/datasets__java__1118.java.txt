@@ -1,0 +1,45 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+public class pr1023B {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    PrintWriter out = new PrintWriter(System.out);
+
+    long n = sc.nextLong();
+    long k = sc.nextLong();
+
+    out.println(solve(n, k));
+    out.flush();
+    out.close();
+  }
+
+  static long solve(long n, long k) {
+    if (k <= n) return (long) Math.floor((double) (k - 1) / 2);
+    else {
+      long mx = n;
+      long mn = k - n;
+      return Math.max(0, (long) Math.floor((double) (mx - mn + 1) / 2));
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice].
+The function solve(n, k) takes two input parameters n and k and runs recursively until the base case is reached. The complexity of this function is O(n) as it runs n times in the worst case.
+
+The function main(args[]) reads input from the user and calls the solve function as many times as n times. This increases the complexity of the program by n times. 
+
+Thus, overall time complexity of the given code is O(n).</s>

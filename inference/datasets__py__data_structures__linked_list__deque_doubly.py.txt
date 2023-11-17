@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 Implementing Deque using DoublyLinkedList ...
 Operations:
     1. insertion in the front -> O(1)
@@ -154,25 +148,11 @@ class LinkedDeque(_DoublyLinkedBase):
         return self._delete(self._trailer._prev)
 
 
-[choice]2
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
 
-LinkedDeque is a class that implements a doubly-linked list to store a collection of elements that follow the order of Last-In-First-Out (LIFO) or Double-Ended Queue data structure. It has the following methods:
-
-1. `first()`: returns the last element added to the deque (LIFO).
-2. `last()`: returns the first element added to the deque.
-3. `add_first(element)`: inserts the given element at the front of the deque.
-4. `add_last(element)`: inserts the given element at the end of the deque.
-5. `remove_first()`: removes the last element added to the deque.
-6. `remove_last()`: removes the first element added to the deque.
-7. `__len__()`: returns the length of the deque.
-8. `is_empty()`: returns `True` if the deque is empty, and `False` otherwise.
-
-The time complexity for accessing the first element of the deque is O(1). The time complexity for accessing the last element of the deque is also O(1).
-
-The time complexity for insertions at the front and end of the deque is O(1).
-
-The time complexity for deleting from the front or end of the deque is also O(1).
-
-The time complexity for iterating over the elements in the deque is O(n) where n is the size of the deque, since the operations we traverse the list exactly once.
-
-Therefore, on balance, the time complexity of this implementation is O(1) for accessing and inserting elements at the front and end, and O(n) for iterating over the elements in the deque.</s>
+Among the Options above, the time complexity of the given code is [choice]1[/choice] because the operations of inserting at the front and removing at the front (add_first and remove_first) have a time complexity of O(1), while the operations of inserting at the end and removing at the end (add_last and remove_last) also have a time complexity of O(1).</s>

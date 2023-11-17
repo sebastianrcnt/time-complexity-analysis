@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /*
+/*
     Quicksort is the most popular sorting algorithm and there have
     lots of different implementations but the "recursive" or "Partition in place"
     is one of the most efficient implementations below we have discussed how to
@@ -76,4 +70,11 @@ const partition = (partitionList, low, high) => {
 export { quickSort }
 
 
-[choice]4[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2. O(n)[/choice] since the number of function calls is equal to the number of items in the array.</s>

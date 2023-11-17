@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * \file
  * \brief A C++ program to demonstrate common Binary Heap Operations
  */
@@ -153,4 +147,23 @@ int main() {
 }
 
 
-[choice]1[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].
+
+Explanation:
+
+The code is provided with a class named 'MinHeap', which can be used to implement the Binary Heap data structure. It provides various methods to perform common operations on the binary heap such as the following:
+
+1. 'MinHeapify()' - This is a recursive function that is used to heapify the subtree with the root at the given index. The time complexity of this function is O(logn).
+2. 'extractMin()' - This is a function that is used to remove the minimum element (or root) from the min heap. It has a time complexity of O(logn).
+3. 'decreaseKey()' - This is a function that is used to decrease the value of a key to a new value smaller than its current value. It has a time complexity of O(logn).
+4. 'deleteKey()' - This is a function that is used to delete a key stored at the given index from the min heap. It has a time complexity of O(logn).
+5. 'insertKey()' - This is a function that is used to insert a new key in the min heap. It has a time complexity of O(logn).
+
+The driver program provided in the code also demonstrates the usage of these functions. The runtime complexity of the given code would depend on the implementation. However, we can assume a time complexity of O(logn) for this code, as the majority of its methods have a time complexity of O(logn). Therefore, the time complexity of the given code is [choice]1[/choice].</s>

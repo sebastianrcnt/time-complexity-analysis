@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    #include <iostream>
+#include <iostream>
 
 int *stack;
 int stack_idx = 0, stack_size;
@@ -73,4 +67,11 @@ int main() {
 }
 
 
-[choice]4[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. This is because the push and pop function operation directly change the top of the stack which means their time complexity is O(1) in average case, constant time. Additionally, since the size of the stack is fixed after user input in the main function and the array allocation takes a constant time, the overall time complexity of the program is O(n) where n is the number of push or pop operations performed.</s>

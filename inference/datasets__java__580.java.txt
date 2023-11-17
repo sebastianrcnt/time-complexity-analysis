@@ -1,0 +1,67 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+
+public class First {
+  StreamTokenizer in;
+  PrintWriter out;
+
+  int nextInt() throws IOException {
+    in.nextToken();
+    return (int) in.nval;
+  }
+
+  long nextLong() throws IOException {
+    in.nextToken();
+    return (long) in.nval;
+  }
+
+  String nextString() throws IOException {
+    in.nextToken();
+    return in.sval;
+  }
+
+  void run() throws IOException {
+    in = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
+    out = new PrintWriter(System.out);
+    solve();
+    out.flush();
+  }
+
+  void solve() throws IOException {
+    int n = nextInt(), k = nextInt(), sum = 0, count = 0;
+    String str = nextString();
+    char[] arr = str.toCharArray();
+    boolean[] bool = new boolean[26];
+    for (char ch : arr) {
+      bool[((int) ch) - 97] = true;
+    }
+    for (int i = 0; i < 26; i++) {
+      if (bool[i]) {
+        sum += i + 1;
+        count++;
+        i += 1;
+      }
+      if (count == k) break;
+    }
+    if (count == k) out.println(sum);
+    else out.println(-1);
+  }
+
+  public static void main(String[] args) throws IOException {
+    new First().run();
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].</s>

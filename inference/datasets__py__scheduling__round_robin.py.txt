@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 Round Robin is a scheduling algorithm.
 In Round Robin each process is assigned a fixed time slot in a cyclic way.
 https://en.wikipedia.org/wiki/Round-robin_scheduling
@@ -77,4 +71,11 @@ if __name__ == "__main__":
     print(f"Average turn around time = {mean(turn_around_times):.5f}")
 
 
-[choice]1[/choice] The time complexity of the given code is O(nlogn).</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].</s>

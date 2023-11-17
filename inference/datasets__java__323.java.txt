@@ -1,0 +1,45 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+class GFG {
+
+  public static int maxLenSub(int arr[], int n) {
+
+    int mls[] = new int[n], max = 0;
+
+    for (int i = 0; i < n; i++) mls[i] = 1;
+
+    for (int i = 1; i < n; i++)
+      for (int j = 0; j < i; j++)
+        if (Math.abs(arr[i] - arr[j]) <= 1 && mls[i] < mls[j] + 1) mls[i] = mls[j] + 1;
+
+    for (int i = 0; i < n; i++) if (max < mls[i]) max = mls[i];
+
+    return max;
+  }
+
+  public static void main(String[] args) {
+
+    int arr[] = {2, 5, 6, 3, 7, 6, 5, 8};
+
+    int n = arr.length;
+
+    System.out.println("Maximum length subsequence = " + maxLenSub(arr, n));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]3[/choice].
+
+The time complexity of the code is O(n), which occurs due to the inner loop that runs `i` times and then again it runs `i` times inside the previous loop.</s>

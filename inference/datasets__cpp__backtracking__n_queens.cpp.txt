@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * @file
  * @brief [Eight Queens](https://en.wikipedia.org/wiki/Eight_queens_puzzle)
  * puzzle
@@ -139,4 +133,13 @@ int main() {
 }
 
 
-[choice]0[/choice] The time complexity of the given code is O(1) because the algorithm only makes a constant number of assignments (20 in this case) regardless of the size of the input. The algorithm does not depend on the size of the input, and it does not make use of loops to iterate through the input. As a result, the time taken to execute the algorithm does not increase with the size of the input, and it can be said to have a constant time complexity of O(1).</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice].
+This is because the outermost loop runs n times and then the inner loop runs n times again
+for each iteration of the outer loop. This results in a total time complexity of O(n^2).</s>

@@ -1,0 +1,40 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+
+class GFG {
+
+  static int bellNumber(int n) {
+
+    int[][] bell = new int[n + 1][n + 1];
+
+    bell[0][0] = 1;
+
+    for (int i = 1; i <= n; i++) {
+
+      bell[i][0] = bell[i - 1][i - 1];
+
+      for (int j = 1; j <= i; j++) bell[i][j] = bell[i - 1][j - 1] + bell[i][j - 1];
+    }
+
+    return bell[n][0];
+  }
+
+  public static void main(String[] args) {
+
+    for (int n = 0; n <= 5; n++) System.out.println("Bell Number " + n + " is " + bellNumber(n));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice].</s>

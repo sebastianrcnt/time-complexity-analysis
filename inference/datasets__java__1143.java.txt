@@ -1,0 +1,147 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.Writer;
+import java.util.InputMismatchException;
+
+public class Main {
+  public static void main(String[] args) {
+    InputStream inputStream = System.in;
+    OutputStream outputStream = System.out;
+    InputReader in = new InputReader(inputStream);
+    OutputWriter out = new OutputWriter(outputStream);
+    ABirthday solver = new ABirthday();
+    solver.solve(1, in, out);
+    out.close();
+  }
+
+  static class ABirthday {
+    public void solve(int testNumber, InputReader in, OutputWriter out) {
+      long N = in.readLong(), M = in.readLong(), K = in.readLong(), L = in.readLong();
+
+      long ans = ((L + K) - 1) / M + 1;
+      if (ans * M > N || ans * M - K < L) out.printLine(-1);
+      else out.printLine(ans);
+    }
+  }
+
+  static class OutputWriter {
+    private final PrintWriter writer;
+
+    public OutputWriter(OutputStream outputStream) {
+      writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(outputStream)));
+    }
+
+    public OutputWriter(Writer writer) {
+      this.writer = new PrintWriter(writer);
+    }
+
+    public void close() {
+      writer.close();
+    }
+
+    public void printLine(long i) {
+      writer.println(i);
+    }
+
+    public void printLine(int i) {
+      writer.println(i);
+    }
+  }
+
+  static class InputReader {
+    private InputStream stream;
+    private byte[] buf = new byte[1024];
+    private int curChar;
+    private int numChars;
+    private InputReader.SpaceCharFilter filter;
+
+    public InputReader(InputStream stream) {
+      this.stream = stream;
+    }
+
+    public int read() {
+      if (numChars == -1) {
+        throw new InputMismatchException();
+      }
+      if (curChar >= numChars) {
+        curChar = 0;
+        try {
+          numChars = stream.read(buf);
+        } catch (IOException e) {
+          throw new InputMismatchException();
+        }
+        if (numChars <= 0) {
+          return -1;
+        }
+      }
+      return buf[curChar++];
+    }
+
+    public long readLong() {
+      int c = read();
+      while (isSpaceChar(c)) {
+        c = read();
+      }
+      int sgn = 1;
+      if (c == '-') {
+        sgn = -1;
+        c = read();
+      }
+      long res = 0;
+      do {
+        if (c < '0' || c > '9') {
+          throw new InputMismatchException();
+        }
+        res *= 10;
+        res += c - '0';
+        c = read();
+      } while (!isSpaceChar(c));
+      return res * sgn;
+    }
+
+    public boolean isSpaceChar(int c) {
+      if (filter != null) {
+        return filter.isSpaceChar(c);
+      }
+      return isWhitespace(c);
+    }
+
+    public static boolean isWhitespace(int c) {
+      return c == ' ' || c == '\n' || c == '\r' || c == '\t' || c == -1;
+    }
+
+    public interface SpaceCharFilter {
+      public boolean isSpaceChar(int ch);
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2.[/choice].
+The code reads the input and performs basic arithmetic operations on it. The number of arithmetic operations is directly proportional to the size of the input. Specifically, it performs four arithmetic operations on the four numbers in the input, which are all of the same order of magnitude. Therefore, the asymptotic time complexity of the given code is O(n), where n is the size of the input.
+
+Option [choice]0.[/choice] is not a valid option here because the number of characters read as input is directly proportional to the size of the input. Therefore, the number of characters read grows linearly with the size of the input, which is not constant.
+
+Option [choice]1.[/choice] is not a valid option here because there are no logarithmic operations in the code. So it is not possible for the time complexity to be O(logn).
+
+Option [choice]3.[/choice] is not a valid option here because the output size of the code is the same as the input size. So it is not possible for the time complexity to be O(nlogn).
+
+Option [choice]4.[/choice] is not a valid option here because the number of arithmetic operations in the code is constant. Specifically, it performs four arithmetic operations on the four input numbers. So the number of arithmetic operations does not depend on the size of the input, but rather on a fixed constant. Therefore, the time complexity of the code cannot be O(n^2).
+
+Therefore, the only valid option among the given options is [choice]2.[/choice]. The time complexity of the given code is O(n), where n is the size of the input.</s>

@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * @file
  * @brief Implementation of [Reversing
  * a single linked list](https://simple.wikipedia.org/wiki/Linked_list)
@@ -317,4 +311,31 @@ int main() {
 }
 
 
-[choice]1[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]number.
+
+So, how is the time complexity calculated for this code?
+
+- The traverse function is used to access elements in the list, so if the number of elements in the list is 4, we can access 4 elements using the traverse function. After 4 elements, we have accessed all elements in the list, so the time complexity of the function is O(n), where n is the number of elements in the list.
+- If we insert an element into the list, the time complexity of the function is O(nlogn) because we have to allocate a new node and insert it in the correct position in the list, which involves iterating through the list and adding to its current value and pointer.
+- The insertion operation involves creating a new node and updating the pointers to add it to the list, so the time complexity of the operation is O(nlogn).
+- If we delete an element from the list, the time complexity of the function is O(n^2) because we have to iterate through the list twice: once to find the node to delete and again to remove it.
+- The delete_all_nodes function is used to delete all elements in the list so the time complexity of this function is O(n^2) where n is the number of elements in the list.
+
+
+So, the time complexity of the given code is [choice].
+
+
+[choice] The time complexity of this code is 2.
+
+
+[/choice] The time complexity of this code is [choice]2.
+
+
+[choice] The time complexity of this code is [choice]2</s>

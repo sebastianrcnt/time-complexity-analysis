@@ -1,0 +1,103 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+import java.util.*;
+
+public class main {
+  public static void main(String[] args) throws IOException {
+    init();
+    int x = nextInt();
+    int y = nextInt();
+    int z = nextInt();
+    int t1 = nextInt();
+    int t2 = nextInt();
+    int t3 = nextInt();
+    int lift = Math.abs(z - x) * t2 + 2 * t3 + Math.abs(x - y) * t2 + t3;
+    int stair = Math.abs(x - y) * t1;
+    if (lift <= stair) {
+      pw.print("YES");
+    } else {
+      pw.print("NO");
+    }
+    pw.close();
+  }
+
+  static StringTokenizer st;
+  static BufferedReader sc;
+  static PrintWriter pw;
+
+  static String next() throws IOException {
+    while (st == null || !st.hasMoreElements()) {
+      st = new StringTokenizer(sc.readLine());
+    }
+    return st.nextToken();
+  }
+
+  static int nextInt() throws IOException {
+    return Integer.parseInt(next());
+  }
+
+  static long nextLong() throws IOException {
+    return Long.parseLong(next());
+  }
+
+  static void init(String in, String out) throws IOException {
+    sc = new BufferedReader(new FileReader(in));
+    pw = new PrintWriter(out);
+  }
+
+  static void init() {
+    sc = new BufferedReader(new InputStreamReader(System.in));
+    pw = new PrintWriter(System.out);
+  }
+}
+
+class DSU {
+  int parent[];
+
+  public DSU(int n) {
+    parent = new int[n];
+    for (int i = 0; i < n; i++) {
+      parent[i] = i;
+    }
+  }
+
+  int get(int i) {
+    if (i == parent[i]) {
+      return i;
+    }
+    int p = get(parent[i]);
+    parent[i] = p;
+    return p;
+  }
+
+  boolean union(int a, int b) {
+    a = get(a);
+    b = get(b);
+    if (a == b) return false;
+    parent[a] = b;
+    return true;
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice].
+
+
+Explanation:
+
+1. The method `nextInt()` and `nextLong()` are used to read integers and long integers from standard input using a `StringTokenizer` and `BufferedReader`. The time complexity of this method is O(1) as it reads a constant number of characters from standard input.
+2. The method `init()` initializes `BufferedReader`, `PrintWriter` and `StringTokenizer`. The time complexity of this method is O(1).
+3. The method `get()` is used to find the root of a disjoint set. The time complexity of this method is O(logn).
+4. The method `union()` is used to merge two disjoint sets. The time complexity of this method is O(n).
+5. The main method uses the above methods to solve the problem. The time complexity of the `for` loop which iterates `n` times is O(n). The time complexity of the `if` statement is O(1) as it uses the `get()` method. Hence, the time complexity of the main method is O(nlogn).</s>

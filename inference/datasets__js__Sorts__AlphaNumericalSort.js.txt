@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /*
+/*
   https://en.wikipedia.org/wiki/Natural_sort_order
 
   In computing, natural sort order (or natural sorting) is the ordering of strings in alphabetical order,
@@ -49,4 +43,11 @@ const alphaNumericalSort = (a, b) => {
 export { alphaNumericalSort }
 
 
-[choice]1[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. O(n) time complex. The function is called a fixed number of times (once for each comparison), which dominates the overall time complexity of the loop. However, the lookup for the current element may take a nontrivial amount of time, especially if it needs to traverse a large number of elements, leading to an increase in the time complexity of the loop.</s>

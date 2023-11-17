@@ -1,0 +1,58 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.io.*;
+
+class GFG {
+
+  static int count(int n) {
+
+    if (n < 4) return -1;
+
+    int rem = n % 4;
+
+    if (rem == 0) return n / 4;
+
+    if (rem == 1) {
+
+      if (n < 9) return -1;
+
+      return (n - 9) / 4 + 1;
+    }
+
+    if (rem == 2) return (n - 6) / 4 + 1;
+
+    if (rem == 3) {
+
+      if (n < 15) return -1;
+
+      return (n - 15) / 4 + 2;
+    }
+
+    return 0;
+  }
+
+  public static void main(String[] args) {
+
+    int n = 90;
+
+    System.out.println(count(n));
+
+    n = 143;
+
+    System.out.println(count(n));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. 
+The main method of the given code calls the count method recursively for different values of n until a base condition is satisfied. The time complexity of the count method depends on the remainder when n is divided by 4, and the amount of times n is divided by 4 until the remainder is 0. Since, the maximum possible remainder for n divided by 4 can be 3, the time complexity of the count method is O(logn).</s>

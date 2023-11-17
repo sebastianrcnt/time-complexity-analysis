@@ -1,0 +1,32 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.*;
+
+public class OrangeJuice {
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int n = in.nextInt();
+    int s = in.nextInt();
+    if (n >= 1 && n <= 100000 && s >= 1 && s <= 1000000000) {
+      if (s % n == 0) {
+        System.out.println(s / n);
+      } else {
+        int o = s % n;
+        System.out.println((s - o) / n + 1);
+      }
+    }
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]4[/choice]. This is because the outermost loop has to iterate through every number 'n' from 1 to 1,00,000, which costs O(n^2) time. Additionally, the inner loop also has to iterate through every number 's' from 1 to 1,00,000,000, which again costs O(n^2) time. Therefore, the overall time complexity of the given code is O(n^2).</s>

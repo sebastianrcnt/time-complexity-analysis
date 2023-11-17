@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    /**
+/**
  * \file
  * \brief Linked list implementation using Arrays
  *
@@ -125,4 +119,15 @@ int main() {
 }
 
 
-[choice]2[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]2[/choice]. Here are the reasons why this is the correct choice:
+
+The given implementation is an array-based implementation of linked list. The linked list operations like insertion and deletion are constant time operations (O(1)) because all we do is change the next pointer of a node. However, the cost of creating a new linked list comes in when we have to insert or delete the first node in the linked list as the head node has to be updated. This operation happens in the main function and we are calling insertAtTheBeginning() or insertAtTheEnd() in the loop until the user exits the loop or chooses option 4 (which exits the loop).
+
+So, the cost of creating a new linked list happens n times (where n is the maximum number of times the user enters the while loop) and each operation costs O(1). Therefore, the overall time complexity of the given implementation is O(n).</s>

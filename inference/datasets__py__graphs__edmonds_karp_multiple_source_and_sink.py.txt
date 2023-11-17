@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    class FlowNetwork:
+class FlowNetwork:
     def __init__(self, graph, sources, sinks):
         self.source_index = None
         self.sink_index = None
@@ -204,4 +198,11 @@ if __name__ == "__main__":
     print(f"maximum flow is {maximum_flow}")
 
 
-[choice]3[/choice]</s>
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. This is because there are certain constant time operations like checking if a graph has edges. The time complexity of some steps is O(n), so if the number of elements (i.e. n) gets larger, it's more likely the function runs in O(n). It also involves iterations, if we consider iterations as increasing as n. The only operation that doesn't follow a constant time rate is the graph.push() algorithm which is O(n), however only in the worst-case conditions. It is important to note that the push() method is called once per edge, so while the time it takes to grow n decreases with n, the number of times a call is made doesn't decrease. Therefore, the overall time complexity is O(n*n).</s>

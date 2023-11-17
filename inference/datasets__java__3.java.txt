@@ -1,0 +1,43 @@
+<s> 
+Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
+
+
+Given Code:
+import java.util.Arrays;
+
+public class Test {
+
+  static int arr[] = new int[] {1, 2, 3, 4, 5};
+
+  static void rotate() {
+
+    int x = arr[arr.length - 1], i;
+
+    for (i = arr.length - 1; i > 0; i--) arr[i] = arr[i - 1];
+
+    arr[0] = x;
+  }
+
+  public static void main(String[] args) {
+
+    System.out.println("Given Array is");
+
+    System.out.println(Arrays.toString(arr));
+
+    rotate();
+
+    System.out.println("Rotated Array is");
+
+    System.out.println(Arrays.toString(arr));
+  }
+}
+
+
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
+
+Among the Options above, the time complexity of the given code is [choice]1[/choice]. The code is using a for loop iterating over half of the array length which is O(logn). The rest of the time is constant O(1). So it takes O(logn) time for the loop to iterate half the length, and O(1) time for the constant values to remain.</s>

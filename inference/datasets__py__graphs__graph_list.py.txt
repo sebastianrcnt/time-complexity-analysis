@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    #!/usr/bin/env python3
+#!/usr/bin/env python3
 
 # Author: OMKAR PATHAK, Nwachukwu Chidiebere
 
@@ -161,6 +155,11 @@ class GraphAdjacencyList(Generic[T]):
         return pformat(self.adj_list)
 
 
-[choice]1[/choice]
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
 
-The time complexity of the given code is O(n). This is because the `add_edge` method iterates over the keys (vertices) of the dictionary in the worst case, and the dictionary itself can grow linearly with the number of edges being added. Since the average number of edges is n, the time complexity is O(n).</s>
+Among the Options above, the time complexity of the given code is [choice]3[/choice], where 'n' refers to the number of vertices</s>

@@ -1,15 +1,9 @@
 <s> 
 Analyize the time complexity of the given code. Include your choice in the [choice][/choice] tag, and only include the number of the option. (e.g. [choice]1[/choice])
 
-Options:
-    0. O(1)
-    1. O(logn)
-    2. O(n)
-    3. O(nlogn)
-    4. O(n^2)
 
 Given Code:
-    """
+"""
 A Python implementation of the Median of Medians algorithm
 to select pivots for quick_select, which is efficient for
 calculating the value that would appear in the index of a
@@ -118,12 +112,11 @@ def quick_select(arr: list, target: int) -> int:
 print(median_of_five([5, 4, 3, 2]))
 
 
-[choice]2[/choice] 
+Options:
+    0. O(1)
+    1. O(logn)
+    2. O(n)
+    3. O(nlogn)
+    4. O(n^2)
 
-The given code is implementing the Quicksort algorithm. The number of operations required for the algorithm to function properly depends on the data being sorted. In general, the number of operations depends on the size of the input, its range and the desired order of output, or rank, at which the data is stored. Therefore, the time complexity of the algorithm is difficult to determine without analyzing every possible case of different input sizes, ranks, and shapes. 
-
-However, we can estimate the worst-case time complexity of the Quicksort algorithm, which occurs when the data is already fully sorted or already fully reversed in the desired order. In such cases, the algorithm will have to perform n-1 comparisons at the base of the recursion, which leads to n comparisons in the whole process. Therefore, the worst-case time complexity of Quicksort is O(n2), where n = size of the input. 
-
-Furthermore, the median_of_medians function is used to find the pivot to partition the input at each recursive call. The time complexity of median_of_medians function is O(n), because the input array is sorted and only one partition is made at each call. Therefore, the time complexity of Quicksort with median_of_medians pivot is O(n).
-
-Overall, the time complexity of the given code is O(n) where n = size of the input, according to the information provided by the code comments. However, as mentioned earlier, the actual time complexity can vary depending on the size and shape of the input.</s>
+Among the Options above, the time complexity of the given code is [choice]2[/choice], where [choice]2[/choice] represents the option number corresponding to the time complexity. Therefore the time complexity is O(n).</s>
