@@ -16,6 +16,8 @@ warnings.filterwarnings(
     "always"
 )  # "error", "ignore", "always", "default", "module" or "once"
 
+RANDOM_STATE = 42
+
 
 class HyperParams:
     metadata_path = "./labels.csv"
@@ -97,7 +99,7 @@ def do_svm_classification(
     y_test = test["complexity"].values
 
     # Initialize and train the SVM classifier
-    classifier = SVC(kernel="linear", random_state=42)
+    classifier = SVC(kernel="linear", random_state=RANDOM_STATE)
     classifier.fit(X_train, y_train)  # type: ignore
 
     # Validate the classifier
@@ -151,7 +153,7 @@ def do_random_forest_classification(
     y_test = test["complexity"].values
 
     # Initialize and train the Random Forest classifier
-    rf_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+    rf_classifier = RandomForestClassifier(n_estimators=100, random_state=RANDOM_STATE)
     rf_classifier.fit(X_train, y_train)  # type: ignore
 
     # Validate the classifier
@@ -226,9 +228,9 @@ def do_knn_classification(
 
 def main():
     md = load_metadata()
-    md = md.sample(frac=1.0, random_state=99)
-    train_data, testval_data = train_test_split(md, test_size=0.3, random_state=99)
-    test_data, val_data = train_test_split(testval_data, test_size=0.5, random_state=99)
+    md = md.sample(frac=1.0, random_state=RANDOM_STATE)
+    train_data, testval_data = train_test_split(md, test_size=0.3, random_state=RANDOM_STATE)
+    test_data, val_data = train_test_split(testval_data, test_size=0.5, random_state=RANDOM_STATE)
 
     logger.info(
         f"total data: {len(md)}, test data: {len(test_data)}, val data: {len(val_data)}, train data: {len(train_data)}"
