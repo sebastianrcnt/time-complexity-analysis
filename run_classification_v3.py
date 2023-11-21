@@ -361,7 +361,8 @@ def main():
         f"total data: {len(md)}, test data: {len(test_data)}, val data: {len(val_data)}, train data: {len(train_data)}"
     )
 
-    methods = ["svm", "rf", "knn", "kmeans", "nb", "lr", "dt", "mlp"]
+    # methods = ["svm", "rf", "knn", "kmeans", "nb", "lr", "dt", "mlp"]
+    methods = ["svm", "rf", "knn"]
     models = ["bert", "codebert"]
 
     __gb__ = globals()
