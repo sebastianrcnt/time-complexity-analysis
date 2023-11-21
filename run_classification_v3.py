@@ -1,8 +1,14 @@
 from typing import Literal
+from sklearn.linear_model import LogisticRegression
+from sklearn.cluster import KMeans
+from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import classification_report, accuracy_score
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 import torch
+from tqdm import tqdm
 from logger import logger
 import pandas as pd
 import numpy as np
@@ -126,7 +132,7 @@ def do_svm_classification(
     return y_train_pred, y_val_pred, y_test_pred
 
 
-def do_random_forest_classification(
+def do_rf_classification(
     model: Literal["bert", "codebert"],
     train: pd.DataFrame,
     val: pd.DataFrame,
@@ -191,6 +197,156 @@ def do_knn_classification(
     return y_train_pred, y_val_pred, y_test_pred
 
 
+def do_kmeans_classification(
+    model: Literal["bert", "codebert"],
+    train: pd.DataFrame,
+    val: pd.DataFrame,
+    test: pd.DataFrame,
+):
+    logger.info(f"Starting K-Means classification for {model}")
+    X_train, y_train, X_val, y_val, X_test, y_test = split_data(model, train, val, test)
+
+    # Initialize and train the K-Means classifier
+    kmeans_classifier = KMeans(n_clusters=5)  # Assuming 5 clusters for simplicity
+    kmeans_classifier.fit(X_train)
+
+    # Predictions
+    y_train_pred = kmeans_classifier.predict(X_train)
+    y_val_pred = kmeans_classifier.predict(X_val)
+    y_test_pred = kmeans_classifier.predict(X_test)
+
+    # Log information about the classifier performance
+    logger.info(
+        f"{model} K-Means Cluster Centers: {kmeans_classifier.cluster_centers_}"
+    )
+
+    # Additional performance metrics can be logged if necessary
+    logger.info(f"{model} K-Means Classification Report (Validation Set):\n" + classification_report(y_val, y_val_pred))  # type: ignore
+    logger.info(f"{model} K-Means Classification Report (Test Set):\n" + classification_report(y_test, y_test_pred))  # type: ignore
+
+    return y_train_pred, y_val_pred, y_test_pred
+
+
+def do_nb_classification(
+    model: Literal["bert", "codebert"],
+    train: pd.DataFrame,
+    val: pd.DataFrame,
+    test: pd.DataFrame,
+):
+    logger.info(f"Starting Naive Bayes classification for {model}")
+    X_train, y_train, X_val, y_val, X_test, y_test = split_data(model, train, val, test)
+
+    # Initialize and train the Naive Bayes classifier
+    nb_classifier = GaussianNB()
+    nb_classifier.fit(X_train, y_train)  # type: ignore
+
+    # Predictions and accuracy
+    y_train_pred = nb_classifier.predict(X_train)
+    y_val_pred = nb_classifier.predict(X_val)
+    y_test_pred = nb_classifier.predict(X_test)
+
+    # Log accuracy and classification report
+    val_accuracy = accuracy_score(y_val, y_val_pred)  # type: ignore
+    test_accuracy = accuracy_score(y_test, y_test_pred)  # type: ignore
+    logger.info(f"{model} Naive Bayes Validation Accuracy: {val_accuracy}")
+    logger.info(f"{model} Naive Bayes Test Accuracy: {test_accuracy}")
+
+    # Additional performance metrics can be logged if necessary
+    logger.info(f"{model} Naive Bayes Classification Report (Validation Set):\n" + classification_report(y_val, y_val_pred))  # type: ignore
+    logger.info(f"{model} Naive Bayes Classification Report (Test Set):\n" + classification_report(y_test, y_test_pred))  # type: ignore
+
+    return y_train_pred, y_val_pred, y_test_pred
+
+
+def do_lr_classification(
+    model: Literal["bert", "codebert"],
+    train: pd.DataFrame,
+    val: pd.DataFrame,
+    test: pd.DataFrame,
+):
+    logger.info(f"Starting Logistic Regression classification for {model}")
+    X_train, y_train, X_val, y_val, X_test, y_test = split_data(model, train, val, test)
+
+    # Initialize and train the Logistic Regression classifier
+    lr_classifier = LogisticRegression(
+        max_iter=1000
+    )  # Increased max_iter for convergence
+    lr_classifier.fit(X_train, y_train)  # type: ignore
+
+    # Predictions and accuracy
+    y_train_pred = lr_classifier.predict(X_train)
+    y_val_pred = lr_classifier.predict(X_val)
+    y_test_pred = lr_classifier.predict(X_test)
+
+    # Log accuracy and classification report
+    val_accuracy = accuracy_score(y_val, y_val_pred)  # type: ignore
+    test_accuracy = accuracy_score(y_test, y_test_pred)  # type: ignore
+    logger.info(f"{model} Logistic Regression Validation Accuracy: {val_accuracy}")
+    logger.info(f"{model} Logistic Regression Test Accuracy: {test_accuracy}")
+
+    # Additional performance metrics can be logged if necessary
+    logger.info(f"{model} Logistic Regression Classification Report (Validation Set):\n" + classification_report(y_val, y_val_pred))  # type: ignore
+    logger.info(f"{model} Logistic Regression Classification Report (Test Set):\n" + classification_report(y_test, y_test_pred))  # type: ignore
+
+    return y_train_pred, y_val_pred, y_test_pred
+
+
+def do_dt_classification(
+    model: Literal["bert", "codebert"],
+    train: pd.DataFrame,
+    val: pd.DataFrame,
+    test: pd.DataFrame,
+):
+    logger.info(f"Starting Decision Tree classification for {model}")
+    X_train, y_train, X_val, y_val, X_test, y_test = split_data(model, train, val, test)
+
+    # Initialize and train the Decision Tree classifier
+    dt_classifier = DecisionTreeClassifier()
+    dt_classifier.fit(X_train, y_train)  # type: ignore
+
+    # Predictions and accuracy
+    y_train_pred = dt_classifier.predict(X_train)
+    y_val_pred = dt_classifier.predict(X_val)
+    y_test_pred = dt_classifier.predict(X_test)
+
+    # Log accuracy and classification report
+    val_accuracy = accuracy_score(y_val, y_val_pred)  # type: ignore
+    test_accuracy = accuracy_score(y_test, y_test_pred)  # type: ignore
+    logger.info(f"{model} Decision Tree Validation Accuracy: {val_accuracy}")
+    logger.info(f"{model} Decision Tree Test Accuracy: {test_accuracy}")
+
+    # Additional performance metrics can be logged if necessary
+    logger.info(f"{model} Decision Tree Classification Report (Validation Set):\n" + classification_report(y_val, y_val_pred))  # type: ignore
+    logger.info(f"{model} Decision Tree Classification Report (Test Set):\n" + classification_report(y_test, y_test_pred))  # type: ignore
+
+    return y_train_pred, y_val_pred, y_test_pred
+
+
+def do_mlp_classification(model: Literal["bert", "codebert"], train: pd.DataFrame, val: pd.DataFrame, test: pd.DataFrame):
+    logger.info(f"Starting MLP classification for {model}")
+    X_train, y_train, X_val, y_val, X_test, y_test = split_data(model, train, val, test)
+
+    # Initialize and train the MLP classifier
+    mlp_classifier = MLPClassifier(max_iter=1000)  # Increased max_iter for convergence
+    mlp_classifier.fit(X_train, y_train) # type: ignore
+
+    # Predictions and accuracy
+    y_train_pred = mlp_classifier.predict(X_train)
+    y_val_pred = mlp_classifier.predict(X_val)
+    y_test_pred = mlp_classifier.predict(X_test)
+
+    # Log accuracy and classification report
+    val_accuracy = accuracy_score(y_val, y_val_pred) # type: ignore
+    test_accuracy = accuracy_score(y_test, y_test_pred) # type: ignore
+    logger.info(f"{model} MLP Validation Accuracy: {val_accuracy}")
+    logger.info(f"{model} MLP Test Accuracy: {test_accuracy}")
+
+    # Additional performance metrics can be logged if necessary
+    logger.info(f"{model} MLP Classification Report (Validation Set):\n" + classification_report(y_val, y_val_pred)) # type: ignore
+    logger.info(f"{model} MLP Classification Report (Test Set):\n" + classification_report(y_test, y_test_pred)) # type: ignore
+
+    return y_train_pred, y_val_pred, y_test_pred
+
 def main():
     md = load_metadata()
     md = md.sample(frac=1, random_state=RANDOM_STATE)
@@ -204,88 +360,24 @@ def main():
     logger.info(
         f"total data: {len(md)}, test data: {len(test_data)}, val data: {len(val_data)}, train data: {len(train_data)}"
     )
-    # do a SVM classification
 
-    # bert_svm_train_pred, bert_svm_val_pred, bert_svm_test_pred = do_svm_classification(
-    #     "bert", train_data, val_data, test_data
-    # )
-
-    # (
-    #     codebert_svm_train_pred,
-    #     codebert_svm_val_pred,
-    #     codebert_svm_test_pred,
-    # ) = do_svm_classification("codebert", train_data, val_data, test_data)
-
-    # (
-    #     bert_rf_train_pred,
-    #     bert_rf_val_pred,
-    #     bert_rf_test_pred,
-    # ) = do_random_forest_classification("bert", train_data, val_data, test_data)
-
-    # (
-    #     codebert_rf_train_pred,
-    #     codebert_rf_val_pred,
-    #     codebert_rf_test_pred,
-    # ) = do_random_forest_classification("codebert", train_data, val_data, test_data)
-
-    # bert_knn_train_pred, bert_knn_val_pred, bert_knn_test_pred = do_knn_classification(
-    #     "bert", train_data, val_data, test_data
-    # )
-
-    # (
-    #     codebert_knn_train_pred,
-    #     codebert_knn_val_pred,
-    #     codebert_knn_test_pred,
-    # ) = do_knn_classification("codebert", train_data, val_data, test_data)
-
-    # # save the predictions
-    # train_data["bert_svm_train_pred"] = bert_svm_train_pred
-    # train_data["codebert_svm_train_pred"] = codebert_svm_train_pred
-    # train_data["bert_rf_train_pred"] = bert_rf_train_pred
-    # train_data["codebert_rf_train_pred"] = codebert_rf_train_pred
-    # train_data["bert_knn_train_pred"] = bert_knn_train_pred
-    # train_data["codebert_knn_train_pred"] = codebert_knn_train_pred
-
-    # train_data.to_csv("train_data_with_predictions.csv", index=False)
-
-    # val_data["bert_svm_val_pred"] = bert_svm_val_pred
-    # val_data["codebert_svm_val_pred"] = codebert_svm_val_pred
-    # val_data["bert_rf_val_pred"] = bert_rf_val_pred
-    # val_data["codebert_rf_val_pred"] = codebert_rf_val_pred
-    # val_data["bert_knn_val_pred"] = bert_knn_val_pred
-    # val_data["codebert_knn_val_pred"] = codebert_knn_val_pred
-
-    # val_data.to_csv("val_data_with_predictions.csv", index=False)
-
-    # test_data["bert_svm_test_pred"] = bert_svm_test_pred
-    # test_data["codebert_svm_test_pred"] = codebert_svm_test_pred
-    # test_data["bert_rf_test_pred"] = bert_rf_test_pred
-    # test_data["codebert_rf_test_pred"] = codebert_rf_test_pred
-    # test_data["bert_knn_test_pred"] = bert_knn_test_pred
-    # test_data["codebert_knn_test_pred"] = codebert_knn_test_pred
-
-    # test_data.to_csv("test_data_with_predictions.csv", index=False)
-
-    methods = ['svm', 'rf', 'knn', 'blue']
-    models = ['bert', 'codebert']
+    methods = ["svm", "rf", "knn", "kmeans", "nb", "lr", "dt", "mlp"]
+    models = ["bert", "codebert"]
 
     __gb__ = globals()
 
-    for model in models:
-        for method in methods:
-            # classify
-            train_data[f"{model}_{method}_train_pred"] = __gb__[f"classify_{method}"](train_data, model)
-            val_data[f"{model}_{method}_val_pred"] = __gb__[f"classify_{method}"](val_data, model)
-            test_data[f"{model}_{method}_test_pred"] = __gb__[f"classify_{method}"](test_data, model)
+
+
+
+    for model, method in tqdm([(model, method) for model in models for method in methods]):
+        # classify
+        train_data[f"{model}_{method}_train_pred"], val_data[f"{model}_{method}_val_pred"], test_data[f"{model}_{method}_test_pred"] = __gb__[f"do_{method}_classification"](model, train_data, val_data, test_data)
+
+
 
     train_data.to_csv("train_data_with_predictions.csv", index=False)
     val_data.to_csv("val_data_with_predictions.csv", index=False)
     test_data.to_csv("test_data_with_predictions.csv", index=False)
-
-
-
-
-
 
 
 if __name__ == "__main__":
